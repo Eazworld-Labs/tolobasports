@@ -6,5 +6,4 @@ dist
 pnpm-lock.yaml
 pnpm-workspace.yaml
 Dockerfile
-docker-compose.yml
 .dockerignore
