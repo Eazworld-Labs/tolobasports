@@ -2,8 +2,6 @@
 import styled, { css } from 'styled-components'
 import { HiXMark } from 'react-icons/hi2'
 import { NavLink } from 'react-router-dom'
-import Modal from '../ui/Modal'
-import NewsLetter from '../features/newsletter/NewsLetter'
 import ButtonIcon from './ButtonIcon'
 
 const StyledSideBar = styled.div`
@@ -74,14 +72,6 @@ function Sidebar({ setIsOpen, type }) {
           <NavLink to="/testimonial">Testimonials</NavLink>
           <NavLink to="/blog">Media & Blog</NavLink>
           <NavLink to="/faq">FAQ</NavLink>
-          <Modal>
-            <Modal.Open opens="newsletter">
-              <NavLink>Newsletter</NavLink>
-            </Modal.Open>
-            <Modal.Window name="newsletter">
-              <NewsLetter />
-            </Modal.Window>
-          </Modal>
           <NavLink to="/contact">Contact Us</NavLink>
         </MenuList>
       </StyledNav>
