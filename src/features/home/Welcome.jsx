@@ -302,19 +302,6 @@ const Slab = styled.div`
   }
 `
 
-const Glow = styled.div`
-  position: absolute;
-  inset: 0 -10% 0 5%;
-  z-index: 1;
-  background: radial-gradient(
-    55% 60% at 58% 42%,
-    rgba(181, 211, 52, 0.26),
-    rgba(201, 29, 55, 0.14) 55%,
-    transparent 75%
-  );
-  filter: blur(18px);
-`
-
 // The cut-out is cropped at its right and bottom edges, so both fade out.
 const Figure = styled.div`
   position: absolute;
@@ -366,22 +353,16 @@ const StatsBar = styled.div`
 const Stats = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--color-grey-700);
   border-radius: var(--radius-xs);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.07),
-    rgba(255, 255, 255, 0.02)
-  );
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background-color: var(--color-ink-900);
 `
 
 const Stat = styled.li`
   padding: 14px clamp(12px, 2.4vw, 32px);
 
   & + & {
-    border-left: 1px solid rgba(255, 255, 255, 0.14);
+    border-left: 1px solid var(--color-grey-700);
   }
 `
 
@@ -544,7 +525,6 @@ function Welcome() {
 
         <Stage>
           <Slab aria-hidden="true" />
-          <Glow aria-hidden="true" />
           <Figure>
             <Founder
               src="/optimized/founder-soft-780.webp"
