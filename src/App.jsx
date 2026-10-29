@@ -20,6 +20,7 @@ import Blog from './pages/Blog'
 import Programmes from './pages/Programmes'
 import Trainer from './pages/Trainer'
 import BlogContent from './features/blog/BlogContent'
+import ScrollToTop from './ui/ScrollToTop'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <GlobalStyles />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<HomePage />} />
