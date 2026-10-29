@@ -1,11 +1,11 @@
 // Per-route <title> and meta description. Descriptions use sentences that already
 // appear in the site copy (hero tagline, page paragraphs, headings); the contact and
 // gallery pages have no prose, so theirs only restate facts shown on the page.
-export const SITE_NAME = 'Toloba Sports Consult'
+const SITE_NAME = 'Toloba Sports Consult'
 
 const COMING_SOON = 'We are still preparing this page. Get in touch and we will be happy to talk.'
 
-export const PAGES = {
+const PAGES = {
   '/': {
     title: SITE_NAME,
     description:
