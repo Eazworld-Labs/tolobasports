@@ -1,9 +1,15 @@
 // Home page content. Wording is kept exactly as it was in the components.
 
 export const hero = {
-  title: 'Toloba Sports consult',
-  tagline:
-    'We prioritize Fostering talent, enhancing skills, and nurturing athletes to reach their full potential in the world of sports',
+  eyebrow: ['Scouting', 'Consulting', 'Mentoring'],
+  // H1 = titleStart + highlighted titleHighlight. Options considered:
+  //  A. Turning raw talent into professional football careers  (chosen)
+  //  B. Find the talent. Build the player. Open the door.
+  //  C. Where hidden talent becomes professional football.
+  titleStart: 'Turning raw talent into professional',
+  titleHighlight: 'football careers',
+  // The old tagline, with "We prioritize" dropped and the casing fixed.
+  lead: 'Fostering talent, enhancing skills, and nurturing athletes to reach their full potential in the world of sports.',
   primaryCta: { label: 'Contact us', to: '/contact' },
   secondaryCta: { label: 'About us', to: '/aboutus' },
   imageAlt: 'Musah Toloba, Founder and CEO of Toloba Sports Consult',

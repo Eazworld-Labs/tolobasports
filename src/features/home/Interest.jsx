@@ -139,7 +139,7 @@ const Explore = styled.span`
 
 function Interest() {
   return (
-    <Wrap aria-labelledby="interest-title">
+    <Wrap id="interests" aria-labelledby="interest-title">
       <Header>
         <Heading as="h2" id="interest-title">
           {interestsHeading}
