@@ -5,7 +5,6 @@ import CtaBand from '../../ui/CtaBand'
 import Heading from '../../ui/Heading'
 import Picture from '../../ui/Picture'
 import Underline from '../../ui/UnderLine'
-import PartnerLogos from './PartnerLogos'
 import { cta, intro, items, whyHeading } from './partnersCopy'
 
 const Band = styled.section`
@@ -183,12 +182,6 @@ function PartContent() {
               </Card>
             ))}
           </Cards>
-        </Container>
-      </Band>
-
-      <Band $tone="grey" aria-label="Partner logos">
-        <Container>
-          <PartnerLogos />
         </Container>
       </Band>
 

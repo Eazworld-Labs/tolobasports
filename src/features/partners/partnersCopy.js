@@ -27,8 +27,9 @@ export const items = [
   { label: "Join Us in Shaping Football's Future:", text: 'Toloba Sports Consult is your partner in shaping the future of football. Whether you are a passionate individual, a proprietor, or an organization, together we can build a brighter future for football and empower the next generation of footballers and careers around the sport.' },
 ]
 
-// Placeholder artwork: see the note in the project report. Alt text stays generic
-// until the owner supplies real partner names.
+// Placeholder artwork (stock logos; com4 is the Apple logo), not shown on the page.
+// PartnerLogos.jsx renders these and can be put back once the owner supplies real
+// partner logos and names.
 export const logos = [
   { base: 'logo-com1', width: 225, height: 225, alt: 'Partner logo' },
   { base: 'logo-com2', width: 400, height: 400, alt: 'Partner logo' },
