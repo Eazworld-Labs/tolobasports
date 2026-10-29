@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../ui/Footer'
 
-import Header from '../features/home/HomeHeader'
+import Header from './SiteHeader'
 
 const StyledAppLayout = styled.div``
 
@@ -14,7 +14,7 @@ function AppLayout() {
   return (
     <StyledAppLayout>
       <Header />
-      <Main>
+      <Main id="main" tabIndex={-1}>
         <Outlet />
       </Main>
       <Footer />
