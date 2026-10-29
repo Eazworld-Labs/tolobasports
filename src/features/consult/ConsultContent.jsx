@@ -1,143 +1,199 @@
-import Header from '../../ui/Header'
-import Heading from '../../ui/Heading'
-import Section from '../../ui/Section'
-import Row from '../../ui/Row'
-import Underline from '../../ui/UnderLine'
+/* eslint react/prop-types: 0 */
 import styled from 'styled-components'
-import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { devicesMax } from '../../styles/BreakPoint'
+import Container from '../../ui/Container'
+import Header from '../../ui/Header'
+import ButtonLink from '../../ui/ButtonLink'
+import Picture from '../../ui/Picture'
+import YoutubeEmbed from '../../ui/YoutubeEmbed'
+import { cta, pageTitle, sections } from './consultCopy'
 
-const ContentDetail = styled.div`
-  padding: 4rem;
-  display: flex;
-  justify-content: space-around;
+const Page = styled.div`
+  padding-block: var(--space-9) 0;
+`
+
+const Row = styled.section`
+  padding-block: var(--space-9);
+
+  &:nth-of-type(even) {
+    background-color: var(--color-grey-50);
+  }
+
+  @media ${devicesMax.md} {
+    padding-block: var(--space-8);
+  }
+`
+
+// Text and media alternate sides; a row without media is a single readable column.
+const RowGrid = styled.div`
+  display: grid;
+  grid-template-columns: ${(props) =>
+    props.$hasMedia ? 'minmax(0, 1fr) minmax(0, 1fr)' : 'minmax(0, 1fr)'};
+  gap: var(--space-10);
   align-items: center;
-  gap: 20px;
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-7);
+  }
+`
+
+const Text = styled.div`
+  max-width: 62ch;
+  order: ${(props) => (props.$flip ? 2 : 1)};
+
+  @media ${devicesMax.lg} {
+    order: 1;
+  }
+`
+
+const Accent = styled.span`
+  display: block;
+  width: 7.2rem;
+  height: 0.6rem;
+  margin-bottom: var(--space-5);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-signal);
+`
+
+const RowTitle = styled.h2`
+  font-size: var(--heading-2);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink-900);
+`
+
+const Paragraph = styled.p`
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--color-grey-700);
+  hyphens: manual;
+`
+
+const Media = styled.div`
+  order: ${(props) => (props.$flip ? 1 : 2)};
+
+  @media ${devicesMax.lg} {
+    order: 2;
+  }
+`
+
+const Photo = styled(Picture)`
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+`
+
+const Video = styled.div`
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
+`
+
+const Closing = styled.section`
+  padding-block: var(--space-11);
+  background-color: var(--color-ink-900);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-ink-900) 0%,
+    var(--color-ink-700) 100%
+  );
+  color: var(--color-white);
 
   @media ${devicesMax.md} {
-    flex-direction: column;
+    padding-block: var(--space-9);
   }
 `
-const TextDetail = styled.div`
-  border: 1px solid var(--color-ink-700);
-  border-top: 5px solid var(--color-ink-900);
-  padding: 2rem;
-  flex: 1;
+
+const ClosingTitle = styled.h2`
+  font-size: var(--heading-2);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-white);
 `
-const VideoContent = styled.div`
-  flex: 1;
-  height: 34.4rem;
-  @media ${devicesMax.md} {
-    width: 90%;
+
+const ClosingText = styled.p`
+  max-width: 62ch;
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-grey-200);
+  hyphens: manual;
+`
+
+const LimeAccent = styled(Accent)`
+  background-color: var(--color-lime);
+`
+
+function ConsultMedia({ section, flip }) {
+  if (section.embedId) {
+    return (
+      <Media $flip={flip}>
+        <Video>
+          <YoutubeEmbed embedId={section.embedId} title={section.videoTitle} />
+        </Video>
+      </Media>
+    )
   }
-`
-const P = styled.p`
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-`
+  if (section.image) {
+    return (
+      <Media $flip={flip}>
+        <Photo {...section.image} sizes="(max-width: 1024px) 92vw, 46vw" />
+      </Media>
+    )
+  }
+  return null
+}
 
 function ConsultContent() {
+  const rows = sections.slice(0, -1)
+  const closing = sections[sections.length - 1]
+
   return (
     <>
-      <Header images="mentor"></Header>
-      <Section>
-        <Row>
-          <Heading as="h1">CONSULT WITH US</Heading>
-          <Underline />
-        </Row>
-        <ContentDetail>
-          <VideoContent>
-            <YoutubeEmbed embedId="" />
-          </VideoContent>
-          <TextDetail>
-            <P>
-              <strong>Toloba Sports Consult:</strong> Your Trusted Partner in
-              Football Consulting
-            </P>
-            <P>
-              At Toloba Sports Consult, we are dedicated to providing
-              professional and comprehensive football consultancy services
-              tailored to student-athletes, coaches, and football entities
-              across the continents of Europe, Asia, Australia, and North &
-              South America. Our unwavering commitment to excellence and
-              inclusivity sets us apart as your trusted partner in the world of
-              football.
-            </P>
-          </TextDetail>
-        </ContentDetail>
-        <ContentDetail>
-          <TextDetail>
-            <P>
-              <strong>Global Expertise, Local Insight</strong>
-            </P>
-            <P>
-              Our team of seasoned consultants offers the best football
-              education, knowledge, and a global reach that provides
-              unparalleled exposure to student-athletes and coaches. We
-              understand that the football landscape is as diverse as the
-              continents it spans. Our consultants combine international
-              expertise with local insight to guide you towards success.
-            </P>
-          </TextDetail>
-          <VideoContent>
-            <YoutubeEmbed embedId="" />
-          </VideoContent>
-        </ContentDetail>
-        <ContentDetail>
-          <VideoContent>
-            <YoutubeEmbed embedId="" />
-          </VideoContent>
-          <TextDetail>
-            <P>
-              <strong>Unlocking Potential, Maximizing Strengths </strong>
-            </P>
-            <P>
-              At Toloba Sports Consult, we believe in analyzing the unique
-              football performance of student-athletes. Our goal is to help them
-              understand and play to their strengths, unlocking their full
-              potential on the field. Our consulting services are designed to
-              empower student-athletes to excel in their football journeys.
-            </P>
-          </TextDetail>
-        </ContentDetail>
-        <ContentDetail>
-          <TextDetail>
-            <P>
-              <strong>Tailored Solutions for Aspirations </strong>
-            </P>
-            <P>
-              We recognize that every student-athlete, coach, and football
-              entity has distinct needs and aspirations. That&apos;s why we go
-              the extra mile to find the best possible solutions. Whether
-              it&apos;s assisting individual players or student-athletes,
-              schools, universities, football associations, club representation,
-              scouting activities, or player investments, we tailor our
-              consulting services to match your goals.
-            </P>
-          </TextDetail>
-          <VideoContent>
-            <YoutubeEmbed embedId="" />
-          </VideoContent>
-        </ContentDetail>
-        <ContentDetail>
-          <VideoContent>
-            <YoutubeEmbed embedId="" />
-          </VideoContent>
-          <TextDetail>
-            <P>
-              <strong>Your Path to Success Begins </strong>
-            </P>
-            <P>
-              Here Toloba Sports Consult is your passport to success in the
-              world of football. Our consulting services are designed to pave
-              the way for aspiring talents, guide experienced coaches, and
-              support football entities in achieving their objectives. Join us
-              on this remarkable journey as we offer unparalleled consulting
-              expertise to shape the future of football.
-            </P>
-          </TextDetail>
-        </ContentDetail>
-      </Section>
+      <Header images="mentor" title={pageTitle} flush />
+      <Page>
+        {rows.map((section, index) => {
+          const flip = index % 2 === 1
+          const hasMedia = Boolean(section.embedId || section.image)
+          return (
+            <Row key={section.heading} aria-labelledby={`consult-${index}`}>
+              <Container>
+                <RowGrid $hasMedia={hasMedia}>
+                  <Text $flip={flip}>
+                    <Accent aria-hidden="true" />
+                    <RowTitle id={`consult-${index}`}>
+                      {section.heading}
+                    </RowTitle>
+                    {section.paragraphs.map((text) => (
+                      <Paragraph key={text.slice(0, 30)}>{text}</Paragraph>
+                    ))}
+                  </Text>
+                  <ConsultMedia section={section} flip={flip} />
+                </RowGrid>
+              </Container>
+            </Row>
+          )
+        })}
+      </Page>
+      <Closing aria-labelledby="consult-closing">
+        <Container>
+          <LimeAccent aria-hidden="true" />
+          <ClosingTitle id="consult-closing">{closing.heading}</ClosingTitle>
+          {closing.paragraphs.map((text) => (
+            <ClosingText key={text.slice(0, 30)}>{text}</ClosingText>
+          ))}
+          <div style={{ marginTop: 'var(--space-8)' }}>
+            <ButtonLink to={cta.to}>{cta.label}</ButtonLink>
+          </div>
+        </Container>
+      </Closing>
     </>
   )
 }
