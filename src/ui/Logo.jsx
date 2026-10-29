@@ -37,6 +37,7 @@ const Img = styled(LazyLoadImage)`
       height: 15rem;
       @media ${devicesMax.md} {
         height: 10rem;
+      }
     `}
 `
 

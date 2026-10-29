@@ -41,10 +41,10 @@ const RighContainer = styled.div`
   padding: 0 2rem;
   box-shadow: var(--shadow-sm);
 
-  @media ${devicesMax.dm} {
+  @media ${devicesMax.lg} {
     right: 10rem;
   }
-  @media ${devicesMax.dm} {
+  @media ${devicesMax.md} {
     right: 5rem;
   }
   @media ${devicesMax.sm} {

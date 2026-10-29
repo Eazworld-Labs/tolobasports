@@ -36,7 +36,7 @@ const TextBox = styled.div`
   width: 70%;
   margin: 0 auto;
 
-  @media ${devicesMax.dm} {
+  @media ${devicesMax.md} {
     width: 100%;
   }
 `

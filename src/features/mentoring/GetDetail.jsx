@@ -20,7 +20,7 @@ const StyledGetDetail = styled.div`
   display: flex;
   gap: 15px;
 
-  @media ${devicesMax.dm} {
+  @media ${devicesMax.md} {
     flex-direction: column;
   }
 `

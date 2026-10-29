@@ -50,7 +50,6 @@ margin-bottom: 8rem;
             background-color: var(--color-white-900);
             margin: 0 4rem;
             display: flex;
-            background-color: ;
           `}
 `
 function Section({ children, type }) {
