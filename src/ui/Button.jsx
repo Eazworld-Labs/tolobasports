@@ -4,7 +4,7 @@ const Button = styled.button`
   font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: 0.02em;
-  background-color: var(--color-signal);
+  background-color: var(--color-signal-600);
   color: var(--color-white);
   border: none;
   padding: var(--space-2) var(--space-5);
@@ -15,7 +15,7 @@ const Button = styled.button`
     transform 0.2s;
 
   &:hover {
-    background-color: var(--color-signal-600);
+    background-color: var(--color-signal-700);
   }
   &:active {
     transform: translateY(1px);

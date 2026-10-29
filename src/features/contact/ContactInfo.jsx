@@ -67,6 +67,8 @@ const Icons = styled(HiOutlineIdentification)`
   font-size: 4rem;
 `
 const H3 = styled.h3`
+  font-family: var(--font-body);
+  font-weight: 600;
   margin-bottom: 3rem;
   font-size: 2rem;
 `

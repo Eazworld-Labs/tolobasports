@@ -37,6 +37,7 @@ const TextDetail = styled.div`
   padding: 2rem;
 `
 const H2 = styled.h2`
+  font-family: var(--font-body);
   font-size: 1.6rem;
   font-weight: 400;
 `

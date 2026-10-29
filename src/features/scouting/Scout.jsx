@@ -70,6 +70,8 @@ const StyledCheck = styled.div`
   }
 `
 const H4 = styled.h4`
+  font-family: var(--font-body);
+  font-weight: 600;
   color: var(--color-white);
   font-size: 2rem;
 `

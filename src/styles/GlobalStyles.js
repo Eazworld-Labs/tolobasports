@@ -8,7 +8,8 @@ const GlobalStyles = createGlobalStyle`
   --color-ink-900: #141a26;
   --color-ink-700: #2c3343;
   --color-signal: #ea2642;
-  --color-signal-600: #c91d37;
+  --color-signal-600: #c91d37; /* white text on this passes AA (5.7:1) */
+  --color-signal-700: #a5152d;
   --color-lime: #b5d334;
   --color-white: #fff;
 
@@ -114,11 +115,24 @@ body {
 h1,
 h2,
 h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+}
+
+h5,
+h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  line-height: 1.1;
   text-wrap: balance;
 }
 

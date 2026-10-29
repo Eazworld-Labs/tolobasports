@@ -96,6 +96,8 @@ const StyledBox = styled.div`
 `
 
 const H2 = styled.h2`
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 1.6rem;
   color: var(--color-signal);
   position: absolute;

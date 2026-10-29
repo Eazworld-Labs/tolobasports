@@ -54,9 +54,10 @@ const BlogBox = styled.div`
 `
 
 const H2 = styled.h2`
+  font-family: var(--font-body);
   color: var(--color-white);
   font-size: 1.6rem;
-  font-weight: 100;
+  font-weight: 600;
 `
 const StyledLi = styled.li`
   border-radius: 10px;
