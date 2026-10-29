@@ -8,11 +8,10 @@ export const PRIMARY_LINKS = [
   { to: '/partners', label: 'Partners' },
 ]
 
+// /testimonial and /faq still work but are left out until they have real content.
 export const MORE_LINKS = [
   { to: '/image-gallery', label: 'Gallery' },
-  { to: '/testimonial', label: 'Testimonials' },
   { to: '/blog', label: 'Media & Blog' },
-  { to: '/faq', label: 'FAQ' },
 ]
 
 export const CONTACT_LINK = {
@@ -21,5 +20,5 @@ export const CONTACT_LINK = {
   drawerLabel: 'Contact Us',
 }
 
-// Same order as the old sidebar: all 11 destinations.
+// All destinations shown in the drawer and footer.
 export const ALL_LINKS = [...PRIMARY_LINKS, ...MORE_LINKS, CONTACT_LINK]

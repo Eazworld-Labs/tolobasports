@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ButtonLink from './ButtonLink'
+import { useNoIndex } from './useNoIndex'
 
 const Wrap = styled.section`
   position: relative;
@@ -70,7 +71,9 @@ const BackLink = styled(Link)`
   }
 `
 
-function ComingSoon({ title }) {
+// `noindex` keeps pages that have no real content yet out of search results.
+function ComingSoon({ title, noindex }) {
+  useNoIndex(Boolean(noindex))
   return (
     <Wrap aria-labelledby="coming-soon-title">
       <Inner>
