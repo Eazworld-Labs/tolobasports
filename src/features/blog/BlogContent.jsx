@@ -40,7 +40,7 @@ function BlogContent() {
   return (
     <Box>
       <BoxHeader>
-        <Img src="../../musah11.jpeg" alt="musah 11" loading="lazy" />
+        <Img src="/musah11.jpeg" alt="musah 11" loading="lazy" />
         <BoxHeading>
           <Heading as="h4">
             A Pivotal Meeting in Abu Dhabi: The Tale of Musah Toloba and Daniel

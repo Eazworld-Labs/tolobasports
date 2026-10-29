@@ -53,7 +53,7 @@ const StyledP = styled.p`
 
 const StyledCheck = styled.div`
   padding: 4rem;
-  background-image: url('../../../pc37.jpg');
+  background-image: url('/pc37.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,7 +100,7 @@ function Scout() {
         </Row>
         <ScoutContent>
           <ScoutDetail>
-            <Img src="../../../pc30.jpg" alt="pc30" loading="lazy" />
+            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
           </ScoutDetail>
           <ScoutText>
             <StyledP>
@@ -130,12 +130,12 @@ function Scout() {
             </StyledP>
           </ScoutText>
           <ScoutDetail>
-            <Img src="../../../pc30.jpg" alt="pc30" loading="lazy" />
+            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
           </ScoutDetail>
         </ScoutContent>
         <ScoutContent>
           <ScoutDetail>
-            <Img src="../../../pc30.jpg" alt="pc30" loading="lazy" />
+            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
           </ScoutDetail>
           <ScoutText>
             <StyledP>
@@ -159,7 +159,7 @@ function Scout() {
             </StyledP>
           </ScoutText>
           <ScoutDetail>
-            <Img src="../../../pc30.jpg" alt="pc30" loading="lazy" />
+            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
           </ScoutDetail>
         </ScoutContent>
       </Section>

@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
 function Header() {
   return (
     <StyledHeader>
-      <Logo img="../../../mloogo.png" type="big" position="header" />
+      <Logo img="/mloogo.png" type="big" position="header" />
       <SocialIcon />
       <NavBar />
     </StyledHeader>

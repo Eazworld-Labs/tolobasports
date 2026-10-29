@@ -1,7 +1,7 @@
 export const getOptions = [
 	{
 		heading: "POSITION SPECIFIC",
-		image: "../../../pc16.jpg",
+		image: "/pc16.jpg",
 		msg: "Master the unique skills needed at different positions on the field,including",
 		acts: [
 			"Making runs",
@@ -13,7 +13,7 @@ export const getOptions = [
 	},
 	{
 		heading: "COMPETION",
-		image: "../../../pc3.jpg",
+		image: "/pc3.jpg",
 		msg: "Master the unique skills needed at different positions on the field,including",
 		acts: [
 			"Speed of play",
@@ -25,7 +25,7 @@ export const getOptions = [
 	},
 	{
 		heading: "TACTICAL",
-		image: "../../../pc14.jpg",
+		image: "/pc14.jpg",
 		acts: [
 			"Understand the dynamics of play through numbers.",
 			"1 vs 1, 2 vs 2 and up to 11 vs 11 drills focusing on attacking, defending and ball movement.",
@@ -33,7 +33,7 @@ export const getOptions = [
 	},
 	{
 		heading: "TECHNICAL",
-		image: "../../../public/pc34.jpg",
+		image: "/pc34.jpg",
 		acts: [
 			"Dribbling/ball control",
 			"Passing",
@@ -44,7 +44,7 @@ export const getOptions = [
 	},
 	{
 		heading: "PERFORMANCE",
-		image: "../../../pc37.jpg",
+		image: "/pc37.jpg",
 		acts: [
 			"Maximise speed and agility",
 			"Build power",
@@ -54,7 +54,7 @@ export const getOptions = [
 	},
 	{
 		heading: "MINDSET",
-		image: "../../../pc35.jpg",
+		image: "/pc35.jpg",
 		acts: [
 			"Pre-match routines",
 			"Preparation",

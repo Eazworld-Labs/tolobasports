@@ -172,10 +172,10 @@ function AboutDetail() {
         <AboutContent>
           <ImgBox>
             <Image>
-              <Img src="../../../2.png" alt="pc8" />
+              <Img src="/2.png" alt="pc8" />
             </Image>
             <Image>
-              <Img src="../../../musah4.jpeg" loading="lazy" />
+              <Img src="/musah4.jpeg" loading="lazy" />
             </Image>
           </ImgBox>
           <ContentDetail>
@@ -241,7 +241,7 @@ function AboutDetail() {
         <Team>
           <StyledBox>
             <StyledPer>
-              <Img src="../../../staff9.jpeg" alt="pc21" />
+              <Img src="/staff9.jpeg" alt="pc21" />
             </StyledPer>
             <TextBox>
               <StyledSpan>Mr.Musah Toloba </StyledSpan>
@@ -250,7 +250,7 @@ function AboutDetail() {
           </StyledBox>
           <StyledBox>
             <StyledPer>
-              <Img src="../../../staff1.jpeg" alt="pc17" />
+              <Img src="/staff1.jpeg" alt="pc17" />
             </StyledPer>
             <TextBox>
               <StyledSpan>Mr. Mohamed Abib Tchabagna </StyledSpan>
@@ -259,7 +259,7 @@ function AboutDetail() {
           </StyledBox>
           <StyledBox>
             <StyledPer>
-              <Img src="../../../staff2.jpeg" alt="pc18" />
+              <Img src="/staff2.jpeg" alt="pc18" />
             </StyledPer>
             <TextBox>
               <StyledSpan>Mr Bismark Arjani</StyledSpan>
@@ -269,7 +269,7 @@ function AboutDetail() {
 
           <StyledBox>
             <StyledPer>
-              <Img src="../../../staff8.jpeg" alt="pc21" />
+              <Img src="/staff8.jpeg" alt="pc21" />
             </StyledPer>
             <TextBox>
               <StyledSpan>binti MD Deni/ismaliah </StyledSpan>

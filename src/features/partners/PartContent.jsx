@@ -101,7 +101,7 @@ function PartContent() {
         </Row>
         <StyledPart>
           <ContentBox>
-            <Img src="../../../pc31.jpg" alt="pc31" loading="lazy" />
+            <Img src="/pc31.jpg" alt="pc31" loading="lazy" />
           </ContentBox>
           <ContentBox type="border">
             <P>
@@ -170,30 +170,30 @@ function PartContent() {
         <StyledTran>
           <ImgList>
             <ImgItem>
-              <ImgScroll src="../../../com1.png" alt="com1" loading="lazy" />
+              <ImgScroll src="/com1.png" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com2.jpeg" alt="com1" loading="lazy" />
+              <ImgScroll src="/com2.jpeg" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com3.jpeg" alt="com1" loading="lazy" />
+              <ImgScroll src="/com3.jpeg" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com4.png" alt="com1" loading="lazy" />
+              <ImgScroll src="/com4.png" alt="com1" loading="lazy" />
             </ImgItem>
           </ImgList>
           <ImgList>
             <ImgItem>
-              <ImgScroll src="../../../com1.png" alt="com1" loading="lazy" />
+              <ImgScroll src="/com1.png" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com2.jpeg" alt="com1" loading="lazy" />
+              <ImgScroll src="/com2.jpeg" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com3.jpeg" alt="com1" loading="lazy" />
+              <ImgScroll src="/com3.jpeg" alt="com1" loading="lazy" />
             </ImgItem>
             <ImgItem>
-              <ImgScroll src="../../../com4.png" alt="com1" loading="lazy" />
+              <ImgScroll src="/com4.png" alt="com1" loading="lazy" />
             </ImgItem>
           </ImgList>
         </StyledTran>

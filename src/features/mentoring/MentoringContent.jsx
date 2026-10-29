@@ -68,13 +68,13 @@ function MentoringContent() {
             </P>
           </StyledText>
           <ImgBox>
-            <Img src="../../../pc15.jpg" alt="pc15" loading="lazy" />
+            <Img src="/pc15.jpg" alt="pc15" loading="lazy" />
           </ImgBox>
         </StyledContent>
 
         <StyledContent>
           <ImgBox>
-            <Img src="../../../pc16.jpg" alt="pc16" loading="lazy" />
+            <Img src="/pc16.jpg" alt="pc16" loading="lazy" />
           </ImgBox>
           <StyledText>
             <P>

@@ -33,7 +33,7 @@ const BoxSide = styled.div`
 
 const BlogBox = styled.div`
   padding: 1rem;
-  background-image: url('../../musah11.jpeg');
+  background-image: url('/musah11.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -37,7 +37,7 @@ margin-bottom: 8rem;
               rgba(0, 0, 0, 0.7),
               rgba(0, 0, 0, 0.7)
             ),
-            url('../../public/pc38.jpg');
+            url('/pc38.jpg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;

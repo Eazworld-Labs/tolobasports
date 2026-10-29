@@ -59,28 +59,28 @@ const StyledCard = styled.figure`
   ${(props) =>
     props.pics === 'aboutus' &&
     css`
-      background-image: url('../../../musah.jpeg');
+      background-image: url('/musah.jpeg');
       /* @media ${devicesMax.md} {
-        background-image: url('../../../musah-small.jpg');
+        background-image: url('/musah-small.jpg');
       } */
     `}
   ${(props) =>
     props.pics === 'residential' &&
     css`
-      background-image: url('../../../musah2.jpeg');
+      background-image: url('/musah2.jpeg');
       /* @media ${devicesMax.md} {
-        background-image: url('../../../musah2-small.jpg');
+        background-image: url('/musah2-small.jpg');
       } */
     `}
   ${(props) =>
     props.pics === 'euro' &&
     css`
-      background-image: url('../../../images/pc20.jpeg');
+      background-image: url('/images/pc20.jpeg');
     `}
   ${(props) =>
     props.pics === 'coach' &&
     css`
-      background-image: url('../../../musah3.jpeg');
+      background-image: url('/musah3.jpeg');
     `}
 
 `
