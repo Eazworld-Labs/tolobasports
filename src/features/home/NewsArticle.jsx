@@ -1,99 +1,103 @@
 import styled from 'styled-components'
-import Heading from '../../ui/Heading'
-import Underline from '../../ui/UnderLine'
-import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { devicesMax } from '../../styles/BreakPoint'
-import { Link } from 'react-router-dom'
+import YoutubeEmbed from '../../ui/YoutubeEmbed'
+import { news } from './homeContent'
 
-const StyledArticle = styled.div`
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
+const Wrap = styled.section`
+  background-color: var(--color-grey-50);
+  border-top: 1px solid var(--color-grey-200);
 `
-const StyledNews = styled.div`
-  padding: 2rem;
-`
-const StyledVideo = styled.div`
-  width: 50%;
+
+const Inner = styled.article`
+  width: 100%;
+  max-width: 90rem;
   margin: 0 auto;
-  height: 25rem;
+  padding: var(--space-11) var(--container-pad);
 
   @media ${devicesMax.md} {
-    width: 95%;
+    padding-block: var(--space-9);
   }
 `
-const StyledP = styled.p`
-  hyphens: none;
-  text-align: justify;
+
+const Accent = styled.span`
+  display: block;
+  width: 7.2rem;
+  height: 0.6rem;
+  margin-bottom: var(--space-5);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-signal);
 `
-const StyledLink = styled(Link)`
-  color: blue;
-  text-decoration: underline;
+
+const Headline = styled.h2`
+  font-size: var(--heading-2);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink-900);
+`
+
+const Text = styled.div`
+  max-width: 65ch;
+  margin-top: var(--space-7);
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--color-grey-700);
+
+  & p {
+    hyphens: manual;
+  }
+  & p + p {
+    margin-top: var(--space-5);
+  }
+`
+
+const Video = styled.div`
+  margin-top: var(--space-9);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
+`
+
+const Source = styled.p`
+  margin-top: var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-grey-600);
+
+  & a {
+    font-weight: 600;
+    color: var(--color-signal-600);
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
+  & a:hover {
+    color: var(--color-signal-700);
+  }
 `
 
 function NewsArticle() {
   return (
-    <StyledArticle>
-      <Heading as="h4">
-        Ghanaian Entrepreneur Musah Toloba Recognized for Sports Initiatives and
-        Receives Collaboration Offer from Turcaf President
-      </Heading>
-      <Underline />
-      <StyledNews>
-        <StyledP>
-          Ghanaian Entrepreneur Musah Toloba Recognized for Sports Initiatives
-          and Receives Collaboration Offer from Turcaf President In a
-          significant development, Mr. Musah Toloba, the Founder and CEO of the
-          rapidly growing Ghanaian-owned enterprise, Toloba Sports Consult, has
-          received commendation and a collaboration proposal from Mr. Mohammet
-          Ali Aras, the President of Turcaf, a prominent company. Mr. Muhammet
-          Ali Aras lauded Mr. Toloba for his remarkable initiatives in the
-          sports industry, particularly for his efforts in identifying and
-          nurturing talents with the aim of helping aspiring athletes achieve
-          their dreams of becoming professional footballers. This recognition
-          underlines the importance of Mr. Toloba&apos;s work and the positive
-          impact it&apos;s making in the sports community. One of the notable
-          aspects of Toloba Sports Consult&apos;s multifaceted approach to
-          sports development is its involvement in the construction of Astro
-          Turfs, state-of-the-art synthetic playing fields that offer a
-          high-quality surface for various sports. These Astro Turfs have not
-          only provided local communities with access to world-class sports
-          facilities but have also created opportunities for young talents to
-          hone their skills and compete on top-notch grounds. Over the years,
-          Toloba Sports Consult has gained a reputation for its dedication to
-          unearthing hidden talents, creating pathways for young athletes to
-          develop their skills, and providing them with opportunities to compete
-          at a professional level. Musah Toloba&apos;s unwavering commitment to
-          the growth and development of sports in Ghana has garnered both
-          national and international attention. In response to the praise and
-          collaboration offer from Mr. Ali Aras, Mr. Musah Toloba expressed his
-          deep gratitude and acknowledged the significance of this visit. He
-          assured Mr. Ali Aras that he is committed to making this collaboration
-          count. The meeting represents a potential milestone in the sports
-          industry, with the promise of combining the strengths and resources of
-          both companies to further promote sports and provide even more
-          opportunities for talented athletes. The collaboration between Toloba
-          Sports Consult and Turcaf holds the potential to bring about exciting
-          developments, not only within the Ghanaian sports landscape but also
-          on a broader scale. This partnership signals a bright future for
-          aspiring athletes and underscores the power of collaboration in
-          achieving common goals within the sports fraternity. It&apos;s a story
-          worth following as it unfolds, with expectations of positive and
-          transformative impacts on the world of sports.
-        </StyledP>
-      </StyledNews>
-      <StyledVideo>
-        <YoutubeEmbed embedId="R4WnMNK6zQ0" />
-      </StyledVideo>
-      <div>
-        <span>news Article:</span>
-        <StyledLink to="https://ghanaweb.mobi/ghanaian-entrepreneur-musah-toloba-recognized-for-sports-initiatives-and-receives-collaboration-offer-from-turcaf-president/">
-          Collaboration Offer from Turcaf President
-        </StyledLink>
-      </div>
-    </StyledArticle>
+    <Wrap aria-labelledby="news-title">
+      <Inner>
+        <Accent aria-hidden="true" />
+        <Headline id="news-title">{news.headline}</Headline>
+        <Text>
+          {news.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+          ))}
+        </Text>
+        <Video>
+          <YoutubeEmbed embedId={news.videoId} title={news.videoTitle} />
+        </Video>
+        <Source>
+          <span>{news.sourceLabel}</span>{' '}
+          <a href={news.sourceUrl} target="_blank" rel="noopener noreferrer">
+            {news.sourceText}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </Source>
+      </Inner>
+    </Wrap>
   )
 }
 

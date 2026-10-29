@@ -7,7 +7,7 @@ const StyleVideoRes = styled.div`
   height: 100%;
 `
 
-const YoutubeEmbed = ({ embedId }) => (
+const YoutubeEmbed = ({ embedId, title = 'Embedded youtube' }) => (
   <StyleVideoRes>
     <iframe
       width="100%"
@@ -16,7 +16,7 @@ const YoutubeEmbed = ({ embedId }) => (
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      title="Embedded youtube"
+      title={title}
       loading="lazy"
     />
   </StyleVideoRes>
