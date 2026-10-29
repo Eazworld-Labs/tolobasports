@@ -1,105 +1,96 @@
 import styled from 'styled-components'
-import Heading from '../../ui/Heading'
-import Section from '../../ui/Section'
-import { HiOutlineIdentification } from 'react-icons/hi'
-import Button from '../../ui/Button'
-import Row from '../../ui/Row'
-import UnderLine from '../../ui/UnderLine'
+import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
-import { NavLink } from 'react-router-dom'
+import ButtonLink from '../../ui/ButtonLink'
+import { SITE } from '../../ui/siteInfo'
+import { infoHeading } from './contactCopy'
 
-const ContactBox = styled.div`
-  display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  gap: 20px;
-  padding: 4rem 12rem;
-  @media ${devicesMax.lg} {
-    padding: 2rem 8rem;
-  }
+const Card = styled.aside`
+  align-self: start;
+  padding: var(--space-9);
+  border-top: 0.6rem solid var(--color-lime);
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-ink-900) 0%,
+    var(--color-ink-700) 100%
+  );
+  color: var(--color-grey-200);
+  box-shadow: var(--shadow-md);
+
   @media ${devicesMax.md} {
-    grid-template-columns: 1fr;
-  }
-  @media ${devicesMax.sm} {
-    padding: 2rem 2rem;
+    padding: var(--space-7) var(--space-6);
   }
 `
-const ContactCard = styled.div`
-  border: 1px solid var(--color-grey-300);
-  box-shadow: var(--shadow-sm);
-`
-const ContentBox = styled.div`
-  width: 50%;
-  margin: 0 auto;
-  padding: 2rem;
 
+const Title = styled.h2`
+  font-size: var(--heading-3);
+  font-weight: 700;
+  color: var(--color-white);
+`
+
+const List = styled.address`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  &:not(:last-child) {
-    margin-bottom: 4rem;
-  }
-  @media ${devicesMax.lg} {
-    width: 70%;
-    padding: 1rem;
-  }
-  @media ${devicesMax.md} {
-    width: 80%;
-  }
-  @media ${devicesMax.sm} {
-    width: 90%;
-  }
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  font-style: normal;
 `
-const IconBox = styled.div`
-  border-radius: 100%;
-  height: 7rem;
-  width: 7rem;
-  background-color: var(--color-ink-700);
-  margin-bottom: 3rem;
 
+const Row = styled.p`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-lg);
+
+  & svg {
+    flex: none;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-top: 0.3rem;
+    color: var(--color-lime);
+  }
 `
-const Icons = styled(HiOutlineIdentification)`
-  color: var(--color-signal);
-  font-size: 4rem;
+
+const Mail = styled.a`
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--color-lime);
+  }
 `
-const H3 = styled.h3`
-  font-family: var(--font-body);
-  font-weight: 600;
-  margin-bottom: 3rem;
-  font-size: 2rem;
-`
-const P = styled.p`
-  margin-bottom: 3rem;
-  text-align: center;
-  font-size: 1.8rem;
-`
+
 function ContactInfo() {
   return (
-    <Section type="contact">
-      <Row>
-        <Heading as="h1">Contact Information</Heading>
-        <UnderLine />
-      </Row>
-
-      <ContactBox>
-        <ContactCard>
-          <ContentBox>
-            <IconBox>
-              <Icons />
-            </IconBox>
-            <H3>M TOLOBA SPORTS - Ghana</H3>
-            <P>Osabu st, abelempke GA-16A-9330</P>
-            <NavLink to="https://www.google.com/maps/@5.6120895,-0.2290935,17z?hl=en-GH&entry=ttu">
-              <Button pros="contact">Show Map</Button>
-            </NavLink>
-          </ContentBox>
-        </ContactCard>
-      </ContactBox>
-    </Section>
+    <Card aria-labelledby="contact-info">
+      <Title id="contact-info">{infoHeading}</Title>
+      <List>
+        <Row>
+          <HiOutlineMapPin aria-hidden="true" />
+          <span>{SITE.address}</span>
+        </Row>
+        <Row>
+          <HiOutlineEnvelope aria-hidden="true" />
+          <Mail href={`mailto:${SITE.email}`}>{SITE.email}</Mail>
+        </Row>
+      </List>
+      <div style={{ marginTop: 'var(--space-7)' }}>
+        <ButtonLink
+          as="a"
+          href={SITE.mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          $variant="secondary"
+        >
+          Show Map
+          <span className="sr-only"> (opens in a new tab)</span>
+        </ButtonLink>
+      </div>
+    </Card>
   )
 }
 
