@@ -1,155 +1,177 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { HiArrowRight } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
-import { NavLink } from 'react-router-dom'
-import Button from '../../ui/Button'
-import Underline from '../../ui/UnderLine'
 import Heading from '../../ui/Heading'
+import Underline from '../../ui/UnderLine'
+import { interests, interestsHeading } from './homeContent'
 
-const Container = styled.div`
-  padding: 4rem;
+const Wrap = styled.section`
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-11) var(--container-pad);
 
   @media ${devicesMax.md} {
-    padding: 3rem;
-  }
-  @media ${devicesMax.sm} {
-    padding: 1rem;
+    padding-block: var(--space-9);
   }
 `
 
-const StyledHeader = styled.div`
-  padding-bottom: 4rem;
+const Header = styled.div`
+  margin-bottom: var(--space-8);
   text-align: center;
 `
 
-const StyledBody = styled.div`
+const Grid = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
 
+  @media ${devicesMax.lg} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   @media ${devicesMax.sm} {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 `
 
-const StyledCard = styled.figure`
-  height: 25rem;
+const Photo = styled.img`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+`
 
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 110%;
+const Card = styled(Link)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  transition: all 1s;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-white);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+
+  /* dark gradient so the title stays readable on any photo */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(20, 26, 38, 0.95) 0%,
+      rgba(20, 26, 38, 0.6) 40%,
+      rgba(20, 26, 38, 0) 75%
+    );
+  }
+
+  /* red accent edge that grows on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 2;
+    height: 0.4rem;
+    background-color: var(--color-signal-600);
+    transform: scaleX(0.25);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
 
   &:hover {
-    background-size: 110%;
-    backdrop-filter: 100%;
-    border: 2px solid var(--color-ink-700);
-    filter: 100%;
+    transform: translateY(-0.4rem);
+    box-shadow: var(--shadow-md);
   }
-  &:hover H2 {
-    bottom: 50px;
+  &:hover ${Photo} {
+    transform: scale(1.05);
   }
-  &:hover Button {
-    bottom: 10px;
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
   }
+
   @media ${devicesMax.sm} {
-    background-size: 100% 100%;
+    aspect-ratio: 4 / 3;
   }
-  ${(props) =>
-    props.pics === 'aboutus' &&
-    css`
-      background-image: url('/musah.jpeg');
-      /* @media ${devicesMax.md} {
-        background-image: url('/musah-small.jpg');
-      } */
-    `}
-  ${(props) =>
-    props.pics === 'residential' &&
-    css`
-      background-image: url('/musah2.jpeg');
-      /* @media ${devicesMax.md} {
-        background-image: url('/musah2-small.jpg');
-      } */
-    `}
-  ${(props) =>
-    props.pics === 'euro' &&
-    css`
-      background-image: url('/images/pc20.jpeg');
-    `}
-  ${(props) =>
-    props.pics === 'coach' &&
-    css`
-      background-image: url('/musah3.jpeg');
-    `}
-
 `
 
-const StyledBox = styled.div`
-  width: 50%;
-  height: 100%;
-
+const Body = styled.div`
   position: relative;
-  @media ${devicesMax.md} {
-    width: 90%;
-  }
+  z-index: 2;
+  padding: var(--space-5);
 `
 
-const H2 = styled.h2`
+const Title = styled.h3`
   font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+`
+
+const Explore = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
   font-weight: 600;
-  font-size: 1.6rem;
-  color: var(--color-signal);
-  position: absolute;
-  bottom: 1px;
-  left: 5px;
-  transition: all 0.3s;
-  @media ${devicesMax.md} {
+  letter-spacing: 0.04em;
+  color: var(--color-lime);
+
+  & svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: transform 0.2s;
+  }
+  ${Card}:hover & svg {
+    transform: translateX(0.4rem);
   }
 `
 
 function Interest() {
   return (
-    <Container>
-      <StyledHeader>
-        <Heading as="h1">CHOOSE YOUR INTEREST</Heading>
+    <Wrap aria-labelledby="interest-title">
+      <Header>
+        <Heading as="h2" id="interest-title">
+          {interestsHeading}
+        </Heading>
         <Underline />
-      </StyledHeader>
-      <StyledBody>
-        <StyledCard pics="aboutus">
-          <StyledBox>
-            <H2>About MTLO</H2>
-            <Button pros="interest">
-              <NavLink to="/aboutus">VIEW MORE</NavLink>
-            </Button>
-          </StyledBox>
-        </StyledCard>
-        <StyledCard pics="residential">
-          <StyledBox>
-            <H2>RESIDENTIAL FOOTBALL SCHOOL</H2>
-            <Button pros="interest">
-              <NavLink to="/consult">VIEW MORE</NavLink>
-            </Button>
-          </StyledBox>
-        </StyledCard>
-        <StyledCard pics="euro">
-          <StyledBox>
-            <H2>EUROPEAN PROGRAMMES</H2>
-            <Button pros="interest">
-              <NavLink to="/programmes">VIEW MORE</NavLink>
-            </Button>
-          </StyledBox>
-        </StyledCard>
-        <StyledCard pics="coach">
-          <StyledBox>
-            <H2>COACH EDUCATION</H2>
-            <Button pros="interest">
-              <NavLink to="/trainer">VIEW MORE</NavLink>
-            </Button>
-          </StyledBox>
-        </StyledCard>
-      </StyledBody>
-    </Container>
+      </Header>
+      <Grid>
+        {interests.map((item) => (
+          <li key={item.id}>
+            <Card to={item.to}>
+              <Photo
+                src={`/optimized/${item.image}-480.webp`}
+                srcSet={`/optimized/${item.image}-480.webp 480w, /optimized/${item.image}-800.webp ${item.imageWidth}w`}
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 24vw"
+                width={item.imageWidth}
+                height={item.imageHeight}
+                alt={item.imageAlt}
+                loading="lazy"
+                decoding="async"
+                style={{ objectPosition: item.position }}
+              />
+              <Body>
+                <Title>{item.title}</Title>
+                <Explore>
+                  Explore <HiArrowRight aria-hidden="true" />
+                </Explore>
+              </Body>
+            </Card>
+          </li>
+        ))}
+      </Grid>
+    </Wrap>
   )
 }
 
