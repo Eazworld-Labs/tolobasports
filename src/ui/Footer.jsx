@@ -1,53 +1,201 @@
 import styled from 'styled-components'
-import SocialIcon from './SocialIcon'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
+import { devicesMax } from '../styles/BreakPoint'
+import Logo from './Logo'
+import SocialLinks from './SocialLinks'
+import { SITE } from './siteInfo'
+import { ALL_LINKS } from './navLinks'
 
 const StyledFooter = styled.footer`
-  /* height: 16rem; */
-  padding: 2rem;
-  font-size: 1.2rem;
-  border-top: 1px solid var(--color-ink-700);
+  background-color: var(--color-ink-900);
+  color: var(--color-grey-300);
+  font-size: var(--text-sm);
 `
-const Img = styled.img`
-  height: 12rem;
+
+const Container = styled.div`
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--container-pad);
 `
-const StyledTop = styled.div`
+
+const Grid = styled(Container)`
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 1.3fr;
+  gap: var(--space-9);
+  padding-block: var(--space-10) var(--space-9);
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+  @media ${devicesMax.sm} {
+    grid-template-columns: 1fr;
+  }
+`
+
+const Brand = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  @media ${devicesMax.lg} {
+    grid-column: 1 / -1;
+  }
 `
-const Powered = styled.div`
-  background-color: var(--color-signal);
+
+const Tagline = styled.p`
+  max-width: 34rem;
+  font-size: var(--text-base);
+  color: var(--color-grey-200);
+`
+
+const ColTitle = styled.h2`
+  margin-bottom: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-lime);
+`
+
+const LinkList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-5);
+`
+
+const FooterLink = styled(NavLink)`
+  display: inline-block;
+  padding-block: var(--space-1);
+  color: var(--color-grey-300);
+
+  &:hover,
+  &.active {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
+`
+
+const ContactList = styled.address`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-style: normal;
+`
+
+const ContactRow = styled.p`
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  & svg {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.2rem;
+    color: var(--color-lime);
+  }
+`
+
+const InlineLink = styled.a`
   color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--color-lime);
+  }
+`
+
+const Bottom = styled.div`
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: var(--text-xs);
+`
+
+const BottomInner = styled(Container)`
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  padding-block: var(--space-4);
+
+  @media ${devicesMax.sm} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
-const SpanLink = styled.span`
-  color: blue;
-`
+
 function Footer() {
   return (
     <StyledFooter>
-      <StyledTop>
+      <Grid>
+        <Brand>
+          <Logo size="lg" />
+          <Tagline>{SITE.tagline}</Tagline>
+          <SocialLinks size="lg" />
+        </Brand>
+
+        <nav aria-label="Footer">
+          <ColTitle>Quick links</ColTitle>
+          <LinkList>
+            {ALL_LINKS.map((link) => (
+              <li key={link.to}>
+                <FooterLink to={link.to} end={link.end}>
+                  {link.drawerLabel || link.label}
+                </FooterLink>
+              </li>
+            ))}
+          </LinkList>
+        </nav>
+
         <div>
-          <Img src="/mloogo.png" alt="logo2" />
+          <ColTitle>Contact</ColTitle>
+          <ContactList>
+            <ContactRow>
+              <HiOutlineMapPin aria-hidden="true" />
+              <span>
+                {SITE.address}
+                <br />
+                <InlineLink
+                  href={SITE.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Show Map
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </InlineLink>
+              </span>
+            </ContactRow>
+            <ContactRow>
+              <HiOutlineEnvelope aria-hidden="true" />
+              <InlineLink href={`mailto:${SITE.email}`}>{SITE.email}</InlineLink>
+            </ContactRow>
+          </ContactList>
         </div>
-        <div>
+      </Grid>
+
+      <Bottom>
+        <BottomInner>
+          <p>©Copyright 2019 Toloba sports consult. All rights reserved.</p>
           <p>
-            &#169;Copyright 2019 Toloba sports consult. All rights reserved.
+            Powered by eazword solutions.{'  '}
+            <InlineLink
+              href="https://eazworld.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              eazworld.com
+            </InlineLink>
           </p>
-          <SocialIcon />
-        </div>
-      </StyledTop>
-      <Powered>
-        <p>
-          Powered by eazword solutions.{'  '}
-          <Link to="https://eazworld.com">
-            <SpanLink>eazworld.com</SpanLink>
-          </Link>
-        </p>
-      </Powered>
+        </BottomInner>
+      </Bottom>
     </StyledFooter>
   )
 }
