@@ -1,3 +1,6 @@
+// Not routed. These testimonials were copied from another organisation and must not be
+// shown. It imports react-lazy-load-image-component, which is no longer a dependency:
+// `npm install react-lazy-load-image-component` before reviving this file.
 import Section from '../../../ui/Section'
 import Header from '../../../ui/Header'
 import Row from '../../../ui/Row'
