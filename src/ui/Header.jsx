@@ -8,7 +8,8 @@ import { BANNERS } from './bannerImages'
 // Compact inner-page banner: dark ink, the page photo under a gradient, a lime
 // accent bar, an optional h1 and a short breadcrumb. The photo is decorative.
 // Pass `title` to render the page's single h1; pages that already have their own
-// h1 leave it out and get a slim photo strip. `flush` removes the bottom gap.
+// h1 leave it out and get a slim photo strip. `crumb` is a shorter breadcrumb label
+// when the title is long. `flush` removes the bottom gap.
 const Banner = styled.div`
   position: relative;
   isolation: isolate;
@@ -95,7 +96,7 @@ const Title = styled.h1`
   color: var(--color-white);
 `
 
-function Header({ images, title, flush, children }) {
+function Header({ images, title, crumb, flush, children }) {
   const banner = BANNERS[images]
 
   return (
@@ -117,7 +118,7 @@ function Header({ images, title, flush, children }) {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li aria-current="page">{title}</li>
+              <li aria-current="page">{crumb || title}</li>
             </Crumbs>
           </nav>
         )}
