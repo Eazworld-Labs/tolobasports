@@ -1,18 +1,12 @@
 import GalleryContent from '../features/Gallery/GalleryContent'
-import Heading from '../ui/Heading'
-import Row from '../ui/Row'
-import Section from '../ui/Section'
-import Underline from '../ui/UnderLine'
+import Header from '../ui/Header'
 
 function Gallery() {
   return (
-    <Section type="gallery">
-      <Row>
-        <Heading as="h2">Images Gallery</Heading>
-        <Underline />
-      </Row>
+    <>
+      <Header images="mentor" title="Images Gallery" crumb="Gallery" flush />
       <GalleryContent />
-    </Section>
+    </>
   )
 }
 

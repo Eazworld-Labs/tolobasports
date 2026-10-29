@@ -1,83 +1,121 @@
+import { useCallback, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import Container from '../../ui/Container'
 import { images } from './gallery'
-import { useState } from 'react'
 import GalleryModel from './GalleryModel'
 
-const Images = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-
-  gap: 20px;
+const Wrap = styled.section`
+  padding-block: var(--space-10) var(--space-11);
 
   @media ${devicesMax.md} {
-    grid-template-columns: 1fr 1fr;
+    padding-block: var(--space-8) var(--space-9);
+  }
+`
+
+// CSS columns give a masonry layout; each tile keeps its photo's own proportions.
+const Grid = styled.ul`
+  column-count: 4;
+  column-gap: var(--space-4);
+
+  @media ${devicesMax.lg} {
+    column-count: 3;
   }
   @media ${devicesMax.sm} {
-    grid-template-columns: 1fr;
+    column-count: 2;
+    column-gap: var(--space-3);
   }
 `
 
-const Img = styled(LazyLoadImage)`
-  border: 2px solid var(--color-ink-700);
+const Item = styled.li`
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+
+  @media ${devicesMax.sm} {
+    margin-bottom: var(--space-3);
+  }
+`
+
+const Tile = styled.button`
+  display: block;
   width: 100%;
-  height: 254px;
-  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-grey-100);
+  box-shadow: var(--shadow-sm);
+  cursor: zoom-in;
+  line-height: 0;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 
-  transition: all 0.3s;
   &:hover {
-    border: 5px solid var(--color-ink-700);
+    transform: translateY(-0.3rem);
+    box-shadow: var(--shadow-md);
   }
 `
+
+const Thumb = styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+`
+
 function GalleryContent() {
-  const [clickImage, setClickImage] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(null)
+  const triggerIndex = useRef(null)
 
-  function handleClick(image, index) {
-    setCurrentIndex(index)
-    setClickImage(image.src)
-  }
-  function handleRotationRight() {
-    const totalLength = images.length
+  const open = useCallback((index) => {
+    triggerIndex.current = index
+    setOpenIndex(index)
+  }, [])
 
-    if (currentIndex + 1 >= totalLength) {
-      setCurrentIndex(0)
-      const newUrl = images[0].src
-      setClickImage(newUrl)
-      return
-    }
-    const newIndex = currentIndex + 1
-
-    const newUrl = images.filter((item) => {
-      return images.indexOf(item === newIndex)
+  // Closing returns focus to the tile that opened the viewer.
+  const close = useCallback(() => {
+    setOpenIndex(null)
+    requestAnimationFrame(() => {
+      document
+        .querySelector(`[data-gallery-index="${triggerIndex.current}"]`)
+        ?.focus()
     })
+  }, [])
 
-    const newItem = newUrl[newIndex].src
-    setClickImage(newItem)
-    setCurrentIndex(newIndex)
-  }
   return (
-    <>
-      <Images>
-        {images.map((image, index) => (
-          <Img
-            key={image.alt}
-            src={image.src}
-            loading="lazy"
-            onClick={() => handleClick(image, index)}
-          />
-        ))}
-      </Images>
-      {clickImage && (
+    <Wrap aria-label="Photo gallery">
+      <Container>
+        <Grid>
+          {images.map((image, index) => (
+            <Item key={image.src}>
+              <Tile
+                type="button"
+                data-gallery-index={index}
+                aria-haspopup="dialog"
+                onClick={() => open(index)}
+              >
+                <Thumb
+                  src={image.thumb}
+                  width={image.thumbWidth}
+                  height={image.thumbHeight}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </Tile>
+            </Item>
+          ))}
+        </Grid>
+      </Container>
+      {openIndex !== null && (
         <GalleryModel
-          clickImage={clickImage}
-          handleRotationRight={handleRotationRight}
-          setClickImage={setClickImage}
+          images={images}
+          index={openIndex}
+          onClose={close}
+          onNavigate={setOpenIndex}
         />
       )}
-    </>
+    </Wrap>
   )
 }
 
