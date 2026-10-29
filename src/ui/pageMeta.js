@@ -62,9 +62,14 @@ const PAGES = {
   '/testimonial': { title: 'Testimonials', description: COMING_SOON },
 }
 
+const NOT_FOUND = {
+  title: 'Page not found',
+  description: 'We could not find the page you were looking for.',
+}
+
 export function metaFor(pathname) {
   const key = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
-  const page = PAGES[key] || PAGES['/']
+  const page = PAGES[key] || NOT_FOUND
   return {
     title: page.title === SITE_NAME ? SITE_NAME : `${page.title} | ${SITE_NAME}`,
     description: page.description,

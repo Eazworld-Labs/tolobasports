@@ -17,6 +17,7 @@ import Partners from './pages/Partners'
 import Blog from './pages/Blog'
 import Programmes from './pages/Programmes'
 import Trainer from './pages/Trainer'
+import NotFound from './pages/NotFound'
 import BlogContent from './features/blog/BlogContent'
 import ScrollToTop from './ui/ScrollToTop'
 import RouteMeta from './ui/RouteMeta'
@@ -47,6 +48,7 @@ function App() {
             <Route path="image-gallery" element={<Gallery />} />
             <Route path="programmes" element={<Programmes />} />
             <Route path="trainer" element={<Trainer />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
