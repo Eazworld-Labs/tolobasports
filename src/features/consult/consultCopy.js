@@ -13,7 +13,7 @@ export const sections = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc30',
+      base: 'stadium-sunset',
       small: 640,
       large: 1000,
       width: 1000,
@@ -30,7 +30,7 @@ export const sections = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc16',
+      base: 'fans-filming',
       small: 640,
       large: 1000,
       width: 1000,
@@ -47,7 +47,7 @@ export const sections = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc15',
+      base: 'player-juggling',
       small: 640,
       large: 1000,
       width: 1000,
@@ -64,7 +64,7 @@ export const sections = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc31',
+      base: 'youth-match',
       small: 640,
       large: 1000,
       width: 1000,

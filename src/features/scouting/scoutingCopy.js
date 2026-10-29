@@ -11,7 +11,7 @@ export const rows = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc30',
+      base: 'stadium-sunset',
       small: 640,
       large: 1000,
       width: 1000,
@@ -28,7 +28,7 @@ export const rows = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc25',
+      base: 'match-challenge',
       small: 640,
       large: 1000,
       width: 1000,
@@ -45,7 +45,7 @@ export const rows = [
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
     image: {
-      base: 'pc6',
+      base: 'stadium-interior',
       small: 640,
       large: 1000,
       width: 1000,

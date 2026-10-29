@@ -6,7 +6,7 @@ export const intro = [
     label: 'At Toloba Sports Consult:',
     text: "We understand the transformative power of the right mentoring programs for young student-athletes. The journey of growth extends beyond the physical realm, and it's our mission to guide them towards maturity in both their mental and physical aspects.",
     image: {
-      base: 'pc15',
+      base: 'player-juggling',
       small: 640,
       large: 1000,
       width: 1000,
@@ -19,7 +19,7 @@ export const intro = [
     label: 'Mentoring for Holistic Development:',
     text: 'Our mentoring programs at Toloba Sports Consult go beyond teaching football techniques; they instill qualities that shape student-athletes into well-rounded individuals. We believe that true excellence involves not only excelling on the field but also adopting the right attitude, work ethic, and mannerisms in life.',
     image: {
-      base: 'pc20jpg',
+      base: 'kids-watching-match',
       small: 640,
       large: 1000,
       width: 1000,
@@ -37,7 +37,7 @@ export const options = [
   {
     heading: 'Position Specific',
     image: {
-      base: 'pc16',
+      base: 'fans-filming',
       width: 800,
       height: 534,
       alt: 'A crowd of fans in a stadium holding up phones to film the match',
@@ -54,7 +54,7 @@ export const options = [
   {
     heading: 'Competition',
     image: {
-      base: 'pc3',
+      base: 'three-footballs',
       width: 800,
       height: 533,
       alt: 'Three footballs resting on a grass pitch',
@@ -71,7 +71,7 @@ export const options = [
   {
     heading: 'Tactical',
     image: {
-      base: 'pc14',
+      base: 'autumn-match',
       width: 800,
       height: 533,
       alt: 'Players in a match on a grass pitch with autumn trees behind',
@@ -84,7 +84,7 @@ export const options = [
   {
     heading: 'Technical',
     image: {
-      base: 'pc34',
+      base: 'stadium-night-lights',
       width: 800,
       height: 536,
       alt: 'A football stadium lit up at night',
@@ -100,7 +100,7 @@ export const options = [
   {
     heading: 'Performance',
     image: {
-      base: 'pc37',
+      base: 'ball-on-turf',
       width: 800,
       height: 533,
       alt: 'A football on artificial turf next to the white pitch markings',
@@ -115,7 +115,7 @@ export const options = [
   {
     heading: 'Mindset',
     image: {
-      base: 'pc35',
+      base: 'floodlit-stadium',
       width: 800,
       height: 409,
       alt: 'A floodlit stadium at night with the pitch in the foreground',

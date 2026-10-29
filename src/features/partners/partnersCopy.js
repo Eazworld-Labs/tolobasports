@@ -5,7 +5,7 @@ export const intro = {
   label: 'Toloba Sports Consult:',
   text: 'We are on a mission to transform the landscape of football through our multifaceted approach that encompasses Consulting, Scouting, and Mentoring. Our vision is to create a new generation of educated and skilled footballers while nurturing careers around the sport.',
   image: {
-    base: 'pc31',
+    base: 'youth-match',
     small: 640,
     large: 1000,
     width: 1000,
@@ -43,10 +43,10 @@ export const items = [
 // Stock placeholder logos (com4 is the Apple logo), not shown on the page.
 // PartnerLogos.jsx can render them again once real partner logos exist.
 export const logos = [
-  { base: 'logo-com1', width: 225, height: 225, alt: 'Partner logo' },
-  { base: 'logo-com2', width: 400, height: 400, alt: 'Partner logo' },
-  { base: 'logo-com3', width: 400, height: 300, alt: 'Partner logo' },
-  { base: 'logo-com4', width: 400, height: 400, alt: 'Partner logo' },
+  { base: 'partner-logo-1', width: 225, height: 225, alt: 'Partner logo' },
+  { base: 'partner-logo-2', width: 400, height: 400, alt: 'Partner logo' },
+  { base: 'partner-logo-3', width: 400, height: 300, alt: 'Partner logo' },
+  { base: 'partner-logo-4', width: 400, height: 400, alt: 'Partner logo' },
 ]
 
 export const cta = { label: 'Contact us', to: '/contact' }

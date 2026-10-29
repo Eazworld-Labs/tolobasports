@@ -17,7 +17,7 @@ export const posts = [
       'The story of their collaboration was merely the first chapter in a narrative of ambition, dedication, and the unifying power of sport.',
     ],
     image: {
-      base: 'musah11',
+      base: 'blog-abu-dhabi-meeting',
       small: 480,
       large: 768,
       width: 768,

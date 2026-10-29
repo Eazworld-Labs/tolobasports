@@ -68,7 +68,7 @@ export const team = [
   {
     name: 'Mr.Musah Toloba',
     title: 'CEO',
-    image: 'staff9',
+    image: 'team-musah-toloba',
     small: 400,
     large: 600,
     width: 600,
@@ -78,7 +78,7 @@ export const team = [
   {
     name: 'Mr. Mohamed Abib Tchabagna',
     title: 'international scout',
-    image: 'staff1',
+    image: 'team-mohamed-abib-tchabagna',
     small: 400,
     large: 640,
     width: 640,
@@ -88,7 +88,7 @@ export const team = [
   {
     name: 'Mr Bismark Arjani',
     title: 'Vice President',
-    image: 'staff2',
+    image: 'team-bismark-arjani',
     small: 400,
     large: 640,
     width: 640,
@@ -98,7 +98,7 @@ export const team = [
   {
     name: 'binti MD Deni/ismaliah',
     title: 'International public relations',
-    image: 'staff8',
+    image: 'team-binti-md-deni',
     small: 400,
     large: 640,
     width: 640,
