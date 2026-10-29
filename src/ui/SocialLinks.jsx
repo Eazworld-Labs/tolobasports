@@ -14,7 +14,7 @@ const IconLink = styled.a`
   justify-content: center;
   width: 3.2rem;
   height: 3.2rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   color: var(--color-grey-300);
   transition:
     color 0.2s,

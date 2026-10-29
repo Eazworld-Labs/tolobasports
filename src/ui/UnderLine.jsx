@@ -7,7 +7,7 @@ const Underline = styled.div`
   margin-top: 0;
   margin-right: auto;
   margin-left: auto;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
 
   ${(props) =>
     props.cols === 'col' &&

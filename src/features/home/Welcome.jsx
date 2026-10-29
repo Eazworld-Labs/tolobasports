@@ -201,7 +201,7 @@ const Eyebrow = styled.p`
     content: '';
     width: 36px;
     height: 3px;
-    border-radius: var(--radius-xs);
+    border-radius: var(--radius);
     background-color: var(--color-lime);
   }
 
@@ -354,7 +354,7 @@ const Stats = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--color-grey-700);
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius);
   background-color: var(--color-ink-900);
 `
 
@@ -395,7 +395,7 @@ const Cue = styled.a`
   align-items: center;
   gap: 6px;
   padding: 6px 12px 6px 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;

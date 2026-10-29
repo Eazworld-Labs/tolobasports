@@ -57,8 +57,8 @@ const Photo = styled(Picture)`
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-grey-200);
 
   @media ${devicesMax.lg} {
     max-width: 46rem;

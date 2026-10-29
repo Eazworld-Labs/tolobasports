@@ -53,13 +53,10 @@ const Card = styled(Link)`
   justify-content: flex-end;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-sm);
   color: var(--color-white);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s;
 
   /* dark gradient so the title stays readable on any photo */
   &::before {
@@ -90,7 +87,6 @@ const Card = styled(Link)`
 
   &:hover {
     transform: translateY(-0.4rem);
-    box-shadow: var(--shadow-md);
   }
   &:hover ${Photo} {
     transform: scale(1.05);

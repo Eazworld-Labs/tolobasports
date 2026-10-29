@@ -25,7 +25,7 @@ const SkipLink = styled.a`
   left: var(--space-4);
   top: calc(var(--utility-h) + var(--space-2));
   padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background-color: var(--color-white);
   color: var(--color-ink-900);
   font-weight: 600;
@@ -75,13 +75,13 @@ const EmailLink = styled.a`
 
 const MainBar = styled.div`
   background-color: var(--color-ink-700);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--color-grey-700);
 
   & > div {
-    min-height: 7.2rem;
+    min-height: calc(7.2rem - 1px);
 
     @media ${devicesMax.md} {
-      min-height: 6.4rem;
+      min-height: calc(6.4rem - 1px);
     }
   }
 `
@@ -105,9 +105,10 @@ const navItem = css`
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-2) var(--space-3);
-  border: none;
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3) calc(var(--space-2) - 3px);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: var(--radius);
   background: none;
   font-size: 1.5rem;
   font-weight: 600;
@@ -125,8 +126,8 @@ const navItem = css`
 
 const activeMark = css`
   color: var(--color-white);
-  box-shadow: inset 0 -3px 0 var(--color-lime);
-  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  border-bottom-color: var(--color-lime);
+  border-radius: var(--radius) var(--radius) 0 0;
 `
 
 const NavItem = styled(NavLink)`
@@ -161,15 +162,17 @@ const MoreList = styled.ul`
   right: 0;
   min-width: 20rem;
   padding: var(--space-2);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-grey-700);
+  border-radius: var(--radius);
   background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
 `
 
 const MoreLink = styled(NavLink)`
   display: block;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3) var(--space-2)
+    calc(var(--space-3) - 3px);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-grey-200);
@@ -180,7 +183,7 @@ const MoreLink = styled(NavLink)`
   }
   &.active {
     color: var(--color-white);
-    box-shadow: inset 3px 0 0 var(--color-lime);
+    border-left-color: var(--color-lime);
   }
 `
 
@@ -189,7 +192,7 @@ const CtaLink = styled(NavLink)`
   align-items: center;
   margin-left: var(--space-2);
   padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background-color: var(--color-signal-600);
   color: var(--color-white);
   font-size: 1.5rem;
@@ -211,7 +214,7 @@ const MenuButton = styled.button`
   height: 4.4rem;
   margin-left: auto;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background: none;
   color: var(--color-white);
 

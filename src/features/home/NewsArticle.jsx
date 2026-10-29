@@ -25,7 +25,7 @@ const Accent = styled.span`
   width: 7.2rem;
   height: 0.6rem;
   margin-bottom: var(--space-5);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   background-color: var(--color-signal);
 `
 
@@ -55,9 +55,8 @@ const Video = styled.div`
   margin-top: var(--space-9);
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
 `
 
 const Source = styled.p`

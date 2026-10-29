@@ -84,7 +84,7 @@ const Accent = styled.span`
   width: 6.4rem;
   height: 0.5rem;
   margin-bottom: var(--space-4);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   background-color: var(--color-lime);
 `
 

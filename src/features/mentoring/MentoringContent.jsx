@@ -54,9 +54,8 @@ const Card = styled.li`
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   background-color: var(--color-white);
-  box-shadow: var(--shadow-sm);
 `
 
 const Photo = styled(Picture)`
@@ -103,7 +102,7 @@ const Act = styled.li`
     left: 0;
     width: 1rem;
     height: 0.4rem;
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius);
     background-color: var(--color-signal-600);
   }
 `

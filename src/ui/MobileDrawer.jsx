@@ -41,7 +41,7 @@ const Panel = styled.div`
   overflow-y: auto;
   overscroll-behavior: contain;
   background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-lg);
+  border-left: 1px solid var(--color-grey-700);
   transform: translateX(${(props) => (props.$open ? '0' : '100%')});
   transition: transform 0.3s ease;
 `
@@ -71,7 +71,7 @@ const CloseButton = styled.button`
   height: 4.4rem;
   background: none;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   color: var(--color-white);
 
   & svg {
@@ -113,7 +113,7 @@ const ContactItem = styled.li`
 const ContactLink = styled(NavLink)`
   display: block;
   padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background-color: var(--color-signal-600);
   color: var(--color-white);
   font-size: 1.8rem;

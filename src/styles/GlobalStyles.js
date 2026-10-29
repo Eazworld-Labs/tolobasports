@@ -66,17 +66,8 @@ const GlobalStyles = createGlobalStyle`
   --container-max: 128rem;
   --container-pad: clamp(1.6rem, 4vw, 4rem);
 
-  /* Radii */
-  --radius-xs: 3px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-pill: 999px;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(20, 26, 38, 0.35);
-  --shadow-md: 0 0.6rem 2.4rem rgba(20, 26, 38, 0.25);
-  --shadow-lg: 0 2.4rem 3.2rem rgba(20, 26, 38, 0.35);
+  /* Radius: one value for every corner */
+  --radius: 4px;
 
   /* Reveal on scroll */
   --reveal-duration: 640ms;
@@ -221,6 +212,13 @@ img {
 }
 
 /* Slide-in variants start outside their column; clip so they cannot add a scrollbar. */
+/* react-toastify ships its own radius and shadow */
+.Toastify__toast {
+  border: 1px solid var(--color-grey-300);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
 main {
   overflow-x: clip;
 }

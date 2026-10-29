@@ -42,19 +42,15 @@ const Tile = styled.button`
   width: 100%;
   padding: 0;
   overflow: hidden;
-  border: none;
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius);
   background-color: var(--color-grey-100);
-  box-shadow: var(--shadow-sm);
   cursor: zoom-in;
   line-height: 0;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
+  transition: transform 0.25s;
 
   &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: var(--shadow-md);
   }
 `
 
