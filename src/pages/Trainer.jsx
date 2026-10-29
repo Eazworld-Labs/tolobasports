@@ -1,12 +1,7 @@
-import Heading from '../ui/Heading'
+import ComingSoon from '../ui/ComingSoon'
 
 function Trainer() {
-  return (
-    <div>
-      <Heading as="h1">Trainer</Heading>
-      <p>coming soon</p>
-    </div>
-  )
+  return <ComingSoon title="Coach Education" />
 }
 
 export default Trainer

@@ -1,12 +1,7 @@
-import Heading from '../ui/Heading'
+import ComingSoon from '../ui/ComingSoon'
 
 function Programmes() {
-  return (
-    <div>
-      <Heading as="h1">Programes</Heading>
-      <p>coming soon</p>
-    </div>
-  )
+  return <ComingSoon title="European Programmes" />
 }
 
 export default Programmes
