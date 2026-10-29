@@ -224,6 +224,7 @@ const Person = styled.li`
 const PersonPhoto = styled(Picture)`
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   background-color: var(--color-grey-100);
