@@ -3,7 +3,8 @@
 // gallery pages have no prose, so theirs only restate facts shown on the page.
 const SITE_NAME = 'Toloba Sports Consult'
 
-const COMING_SOON = 'We are still preparing this page. Get in touch and we will be happy to talk.'
+const COMING_SOON =
+  'We are still preparing this page. Get in touch and we will be happy to talk.'
 
 const PAGES = {
   '/': {
@@ -71,7 +72,8 @@ export function metaFor(pathname) {
   const key = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
   const page = PAGES[key] || NOT_FOUND
   return {
-    title: page.title === SITE_NAME ? SITE_NAME : `${page.title} | ${SITE_NAME}`,
+    title:
+      page.title === SITE_NAME ? SITE_NAME : `${page.title} | ${SITE_NAME}`,
     description: page.description,
   }
 }

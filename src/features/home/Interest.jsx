@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { HiArrowRight } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
 import Heading from '../../ui/Heading'
+import Reveal from '../../ui/Reveal'
+import { stagger } from '../../ui/stagger'
 import Underline from '../../ui/UnderLine'
 import { interests, interestsHeading } from './homeContent'
 
@@ -140,15 +142,15 @@ const Explore = styled.span`
 function Interest() {
   return (
     <Wrap id="interests" aria-labelledby="interest-title">
-      <Header>
+      <Reveal as={Header}>
         <Heading as="h2" id="interest-title">
           {interestsHeading}
         </Heading>
         <Underline />
-      </Header>
+      </Reveal>
       <Grid>
-        {interests.map((item) => (
-          <li key={item.id}>
+        {interests.map((item, index) => (
+          <Reveal as="li" key={item.id} delay={stagger(index)}>
             <Card to={item.to}>
               <Photo
                 src={`/optimized/${item.image}-480.webp`}
@@ -168,7 +170,7 @@ function Interest() {
                 </Explore>
               </Body>
             </Card>
-          </li>
+          </Reveal>
         ))}
       </Grid>
     </Wrap>

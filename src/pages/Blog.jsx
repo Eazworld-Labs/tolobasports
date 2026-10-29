@@ -4,6 +4,7 @@ import { devicesMax } from '../styles/BreakPoint'
 import Container from '../ui/Container'
 import Header from '../ui/Header'
 import Picture from '../ui/Picture'
+import Reveal from '../ui/Reveal'
 import { blogTitle, posts } from '../features/blog/blogPosts'
 
 const Wrap = styled.section`
@@ -104,11 +105,8 @@ function Blog() {
         <Container>
           <List>
             {posts.map((post) => (
-              <Card key={post.slug}>
-                <Photo
-                  {...post.image}
-                  sizes="(max-width: 768px) 92vw, 38vw"
-                />
+              <Reveal as={Card} key={post.slug}>
+                <Photo {...post.image} sizes="(max-width: 768px) 92vw, 38vw" />
                 <Body>
                   <Title>{post.title}</Title>
                   <Excerpt>{post.excerpt}</Excerpt>
@@ -117,7 +115,7 @@ function Blog() {
                     <span className="sr-only">: {post.title}</span>
                   </More>
                 </Body>
-              </Card>
+              </Reveal>
             ))}
           </List>
         </Container>

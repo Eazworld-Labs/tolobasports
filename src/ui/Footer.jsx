@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
 import { devicesMax } from '../styles/BreakPoint'
 import Logo from './Logo'
+import Reveal from './Reveal'
+import { stagger } from './stagger'
 import SocialLinks from './SocialLinks'
 import { SITE } from './siteInfo'
 import { ALL_LINKS } from './navLinks'
@@ -137,13 +139,13 @@ function Footer() {
   return (
     <StyledFooter>
       <Grid>
-        <Brand>
+        <Reveal as={Brand}>
           <Logo size="lg" />
           <Tagline>{SITE.tagline}</Tagline>
           <SocialLinks size="lg" />
-        </Brand>
+        </Reveal>
 
-        <nav aria-label="Footer">
+        <Reveal as="nav" aria-label="Footer" delay={stagger(1)}>
           <ColTitle>Quick links</ColTitle>
           <LinkList>
             {ALL_LINKS.map((link) => (
@@ -154,9 +156,9 @@ function Footer() {
               </li>
             ))}
           </LinkList>
-        </nav>
+        </Reveal>
 
-        <div>
+        <Reveal delay={stagger(2)}>
           <ColTitle>Contact</ColTitle>
           <ContactList>
             <ContactRow>
@@ -176,14 +178,16 @@ function Footer() {
             </ContactRow>
             <ContactRow>
               <HiOutlineEnvelope aria-hidden="true" />
-              <InlineLink href={`mailto:${SITE.email}`}>{SITE.email}</InlineLink>
+              <InlineLink href={`mailto:${SITE.email}`}>
+                {SITE.email}
+              </InlineLink>
             </ContactRow>
           </ContactList>
-        </div>
+        </Reveal>
       </Grid>
 
       <Bottom>
-        <BottomInner>
+        <Reveal as={BottomInner} variant="fade-in">
           <p>©Copyright 2019 Toloba sports consult. All rights reserved.</p>
           <p>
             Powered by eazword solutions.{'  '}
@@ -195,7 +199,7 @@ function Footer() {
               eazworld.com
             </InlineLink>
           </p>
-        </BottomInner>
+        </Reveal>
       </Bottom>
     </StyledFooter>
   )

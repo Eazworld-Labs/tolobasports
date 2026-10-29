@@ -6,7 +6,8 @@ export const pageTitle = 'CONSULT WITH US'
 
 export const sections = [
   {
-    heading: 'Toloba Sports Consult: Your Trusted Partner in Football Consulting',
+    heading:
+      'Toloba Sports Consult: Your Trusted Partner in Football Consulting',
     paragraphs: [
       'At Toloba Sports Consult, we are dedicated to providing professional and comprehensive football consultancy services tailored to student-athletes, coaches, and football entities across the continents of Europe, Asia, Australia, and North & South America. Our unwavering commitment to excellence and inclusivity sets us apart as your trusted partner in the world of football.',
     ],

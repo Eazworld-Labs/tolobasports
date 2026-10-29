@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
 import ButtonLink from '../../ui/ButtonLink'
+import Reveal from '../../ui/Reveal'
 import { SITE } from '../../ui/siteInfo'
 import { infoHeading } from './contactCopy'
 
@@ -66,7 +67,7 @@ const Mail = styled.a`
 
 function ContactInfo() {
   return (
-    <Card aria-labelledby="contact-info">
+    <Reveal as={Card} variant="slide-left" aria-labelledby="contact-info">
       <Title id="contact-info">{infoHeading}</Title>
       <List>
         <Row>
@@ -90,7 +91,7 @@ function ContactInfo() {
           <span className="sr-only"> (opens in a new tab)</span>
         </ButtonLink>
       </div>
-    </Card>
+    </Reveal>
   )
 }
 

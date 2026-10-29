@@ -6,6 +6,8 @@ import EditorialRow from '../../ui/EditorialRow'
 import Header from '../../ui/Header'
 import Heading from '../../ui/Heading'
 import Picture from '../../ui/Picture'
+import Reveal from '../../ui/Reveal'
+import { stagger } from '../../ui/stagger'
 import Underline from '../../ui/UnderLine'
 import {
   breadcrumb,
@@ -109,12 +111,7 @@ const Act = styled.li`
 function MentoringContent() {
   return (
     <>
-      <Header
-        images="mentor"
-        title={pageTitle}
-        crumb={breadcrumb}
-        flush
-      />
+      <Header images="mentor" title={pageTitle} crumb={breadcrumb} flush />
       <Page>
         {intro.map((row, index) => (
           <EditorialRow
@@ -135,15 +132,19 @@ function MentoringContent() {
 
       <Options aria-labelledby="mentor-options">
         <Container>
-          <OptionsHeader>
+          <Reveal as={OptionsHeader}>
             <Heading as="h2" id="mentor-options">
               {optionsHeading}
             </Heading>
             <Underline />
-          </OptionsHeader>
+          </Reveal>
           <Grid>
-            {options.map((option) => (
-              <Card key={option.heading}>
+            {options.map((option, index) => (
+              <Reveal
+                as={Card}
+                key={option.heading}
+                delay={stagger(index % 3, { step: 100 })}
+              >
                 <Photo
                   base={option.image.base}
                   small={480}
@@ -162,7 +163,7 @@ function MentoringContent() {
                     ))}
                   </Acts>
                 </Body>
-              </Card>
+              </Reveal>
             ))}
           </Grid>
         </Container>

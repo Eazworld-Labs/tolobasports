@@ -6,6 +6,7 @@ import Container from '../../ui/Container'
 import CtaBand from '../../ui/CtaBand'
 import Header from '../../ui/Header'
 import Picture from '../../ui/Picture'
+import Reveal from '../../ui/Reveal'
 import { blogTitle, posts } from './blogPosts'
 
 // The only article so far; the route is /blog/<slug>.
@@ -87,33 +88,35 @@ const Back = styled(Link)`
 function BlogContent() {
   return (
     <>
-      <Header
-        images="test"
-        title={post.title}
-        crumb={blogTitle}
-        flush
-      />
+      <Header images="test" title={post.title} crumb={blogTitle} flush />
       <Wrap>
         <Container>
           <Grid>
             <div>
-              <Text>
+              <Reveal as={Text}>
                 {post.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 30)}>{paragraph}</p>
                 ))}
-              </Text>
+              </Reveal>
               <Back to="/blog">
                 <HiArrowLeft aria-hidden="true" />
                 Back to {blogTitle}
               </Back>
             </div>
-            <Figure>
-              <Photo {...post.image} sizes="(max-width: 1024px) 92vw, 38rem" eager />
-            </Figure>
+            <Reveal as={Figure} variant="slide-right" delay={120}>
+              <Photo
+                {...post.image}
+                sizes="(max-width: 1024px) 92vw, 38rem"
+                eager
+              />
+            </Reveal>
           </Grid>
         </Container>
       </Wrap>
-      <CtaBand label="Contact us" cta={{ label: 'Contact us', to: '/contact' }} />
+      <CtaBand
+        label="Contact us"
+        cta={{ label: 'Contact us', to: '/contact' }}
+      />
     </>
   )
 }

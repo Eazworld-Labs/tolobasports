@@ -1,11 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import styled, { css } from 'styled-components'
-import {
-  HiBars3,
-  HiChevronDown,
-  HiOutlineEnvelope,
-} from 'react-icons/hi2'
+import { HiBars3, HiChevronDown, HiOutlineEnvelope } from 'react-icons/hi2'
 import { devicesMax } from '../styles/BreakPoint'
 import Logo from './Logo'
 import SocialLinks from './SocialLinks'

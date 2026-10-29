@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { NavLink } from 'react-router-dom'

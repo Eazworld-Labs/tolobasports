@@ -20,11 +20,26 @@ export const intro = {
 export const whyHeading = 'WHY PARTNER WITH US'
 
 export const items = [
-  { label: 'Unlocking Opportunities Through Consulting:', text: 'Our consulting services are designed to guide and empower individuals, schools, universities, football associations, and football clubs to achieve their football-related goals. With a wealth of experience and expertise, we provide tailored solutions to address your unique aspirations in the world of football.' },
-  { label: 'Scouting for Talent Across Continents:', text: 'Toloba Sports Consult is not bound by borders; our scouting network spans across continents, seeking out promising football talent. Our dedicated scouts and experts tirelessly identify potential football stars and offer them the opportunity of a lifetime to showcase their skills and embark on a journey towards excellence.' },
-  { label: 'Mentoring for Holistic Growth:', text: 'Mentorship is at the core of what we do. We believe that true success in football is not just about physical prowess but also about mental and emotional maturity. Our mentors guide student-athletes towards growth at both mental and physical levels, ensuring they approach their work, attitude, and life with excellence.' },
-  { label: 'Building the Biggest Football:', text: 'Academy Partner Network As we envision the future of football, we are constructing the largest football academy Partner Network. We welcome individuals, proprietors, and organizations who share our passion for sports and bring prior experience in the corporate environment. Join us in this journey to transform the football landscape and create opportunities for aspiring talents.' },
-  { label: "Join Us in Shaping Football's Future:", text: 'Toloba Sports Consult is your partner in shaping the future of football. Whether you are a passionate individual, a proprietor, or an organization, together we can build a brighter future for football and empower the next generation of footballers and careers around the sport.' },
+  {
+    label: 'Unlocking Opportunities Through Consulting:',
+    text: 'Our consulting services are designed to guide and empower individuals, schools, universities, football associations, and football clubs to achieve their football-related goals. With a wealth of experience and expertise, we provide tailored solutions to address your unique aspirations in the world of football.',
+  },
+  {
+    label: 'Scouting for Talent Across Continents:',
+    text: 'Toloba Sports Consult is not bound by borders; our scouting network spans across continents, seeking out promising football talent. Our dedicated scouts and experts tirelessly identify potential football stars and offer them the opportunity of a lifetime to showcase their skills and embark on a journey towards excellence.',
+  },
+  {
+    label: 'Mentoring for Holistic Growth:',
+    text: 'Mentorship is at the core of what we do. We believe that true success in football is not just about physical prowess but also about mental and emotional maturity. Our mentors guide student-athletes towards growth at both mental and physical levels, ensuring they approach their work, attitude, and life with excellence.',
+  },
+  {
+    label: 'Building the Biggest Football:',
+    text: 'Academy Partner Network As we envision the future of football, we are constructing the largest football academy Partner Network. We welcome individuals, proprietors, and organizations who share our passion for sports and bring prior experience in the corporate environment. Join us in this journey to transform the football landscape and create opportunities for aspiring talents.',
+  },
+  {
+    label: "Join Us in Shaping Football's Future:",
+    text: 'Toloba Sports Consult is your partner in shaping the future of football. Whether you are a passionate individual, a proprietor, or an organization, together we can build a brighter future for football and empower the next generation of footballers and careers around the sport.',
+  },
 ]
 
 // Placeholder artwork (stock logos; com4 is the Apple logo), not shown on the page.

@@ -39,7 +39,12 @@ export const optionsHeading = 'GET MENTORED'
 export const options = [
   {
     heading: 'POSITION SPECIFIC',
-    image: { base: 'pc16', width: 800, height: 534, alt: 'A crowd of fans in a stadium holding up phones to film the match' },
+    image: {
+      base: 'pc16',
+      width: 800,
+      height: 534,
+      alt: 'A crowd of fans in a stadium holding up phones to film the match',
+    },
     msg: 'Master the unique skills needed at different positions on the field, including',
     acts: [
       'Making runs',
@@ -51,7 +56,12 @@ export const options = [
   },
   {
     heading: 'COMPETITION',
-    image: { base: 'pc3', width: 800, height: 533, alt: 'Three footballs resting on a grass pitch' },
+    image: {
+      base: 'pc3',
+      width: 800,
+      height: 533,
+      alt: 'Three footballs resting on a grass pitch',
+    },
     msg: 'Master the unique skills needed at different positions on the field, including',
     acts: [
       'Speed of play',
@@ -63,7 +73,12 @@ export const options = [
   },
   {
     heading: 'TACTICAL',
-    image: { base: 'pc14', width: 800, height: 533, alt: 'Players in a match on a grass pitch with autumn trees behind' },
+    image: {
+      base: 'pc14',
+      width: 800,
+      height: 533,
+      alt: 'Players in a match on a grass pitch with autumn trees behind',
+    },
     acts: [
       'Understand the dynamics of play through numbers.',
       '1 vs 1, 2 vs 2 and up to 11 vs 11 drills focusing on attacking, defending and ball movement.',
@@ -71,7 +86,12 @@ export const options = [
   },
   {
     heading: 'TECHNICAL',
-    image: { base: 'pc34', width: 800, height: 536, alt: 'A football stadium lit up at night' },
+    image: {
+      base: 'pc34',
+      width: 800,
+      height: 536,
+      alt: 'A football stadium lit up at night',
+    },
     acts: [
       'Dribbling/ball control',
       'Passing',
@@ -82,7 +102,12 @@ export const options = [
   },
   {
     heading: 'PERFORMANCE',
-    image: { base: 'pc37', width: 800, height: 533, alt: 'A football on artificial turf next to the white pitch markings' },
+    image: {
+      base: 'pc37',
+      width: 800,
+      height: 533,
+      alt: 'A football on artificial turf next to the white pitch markings',
+    },
     acts: [
       'Maximise speed and agility',
       'Build power',
@@ -92,7 +117,12 @@ export const options = [
   },
   {
     heading: 'MINDSET',
-    image: { base: 'pc35', width: 800, height: 409, alt: 'A floodlit stadium at night with the pitch in the foreground' },
+    image: {
+      base: 'pc35',
+      width: 800,
+      height: 409,
+      alt: 'A floodlit stadium at night with the pitch in the foreground',
+    },
     acts: [
       'Pre-match routines',
       'Preparation',

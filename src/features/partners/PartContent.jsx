@@ -4,6 +4,8 @@ import Container from '../../ui/Container'
 import CtaBand from '../../ui/CtaBand'
 import Heading from '../../ui/Heading'
 import Picture from '../../ui/Picture'
+import Reveal from '../../ui/Reveal'
+import { stagger } from '../../ui/stagger'
 import Underline from '../../ui/UnderLine'
 import { cta, intro, items, whyHeading } from './partnersCopy'
 
@@ -13,8 +15,8 @@ const Band = styled.section`
     props.$tone === 'ink'
       ? 'var(--color-ink-900)'
       : props.$tone === 'grey'
-        ? 'var(--color-grey-50)'
-        : 'var(--color-white)'};
+      ? 'var(--color-grey-50)'
+      : 'var(--color-white)'};
 
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
@@ -148,38 +150,44 @@ function PartContent() {
       <Band aria-label="Partner with us">
         <Container>
           <IntroGrid>
-            <Photo
+            <Reveal
+              as={Photo}
+              variant="slide-left"
               {...intro.image}
               sizes="(max-width: 1024px) 92vw, 46vw"
               eager
             />
-            <div>
+            <Reveal variant="slide-right" delay={120}>
               <Accent aria-hidden="true" />
               <Lead>
                 <strong>{intro.label}</strong> {intro.text}
               </Lead>
-            </div>
+            </Reveal>
           </IntroGrid>
         </Container>
       </Band>
 
       <Band $tone="ink" aria-labelledby="why-partner">
         <Container>
-          <SectionHeader>
+          <Reveal as={SectionHeader}>
             <LightHeading as="h2" id="why-partner">
               {whyHeading}
             </LightHeading>
             <LimeUnderline />
-          </SectionHeader>
+          </Reveal>
           <Cards>
             {items.map((item, index) => (
-              <Card key={item.label}>
+              <Reveal
+                as={Card}
+                key={item.label}
+                delay={stagger(index % 3, { step: 100 })}
+              >
                 <Number aria-hidden="true">
                   {String(index + 1).padStart(2, '0')}
                 </Number>
                 <CardTitle>{item.label}</CardTitle>
                 <CardText>{item.text}</CardText>
-              </Card>
+              </Reveal>
             ))}
           </Cards>
         </Container>

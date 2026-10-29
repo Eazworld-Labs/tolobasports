@@ -134,11 +134,17 @@ function PartnerLogos() {
           type="button"
           aria-pressed={paused}
           aria-label={
-            paused ? 'Play partner logo animation' : 'Pause partner logo animation'
+            paused
+              ? 'Play partner logo animation'
+              : 'Pause partner logo animation'
           }
           onClick={() => setPaused((p) => !p)}
         >
-          {paused ? <HiPlay aria-hidden="true" /> : <HiPause aria-hidden="true" />}
+          {paused ? (
+            <HiPlay aria-hidden="true" />
+          ) : (
+            <HiPause aria-hidden="true" />
+          )}
         </Toggle>
       </Controls>
     </>

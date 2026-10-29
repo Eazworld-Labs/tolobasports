@@ -18,7 +18,9 @@ const StyledTest = styled.div`
   font-size: 50px;
   padding: 5rem;
   color: var(--color-ink-700);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
   @media ${devicesMax.md} {
     padding: 3rem;
     font-size: 40px;
@@ -43,7 +45,9 @@ const ImgBox = styled.div`
   z-index: -2;
 `
 const Img = styled(LazyLoadImage)`
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
 `
 const TextBox = styled.div`
   flex: 4;

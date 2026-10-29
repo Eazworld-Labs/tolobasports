@@ -1,8 +1,8 @@
-/* eslint react/prop-types: 0 */
 import styled from 'styled-components'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from './Container'
 import ButtonLink from './ButtonLink'
+import Reveal from './Reveal'
 
 // Dark closing call-to-action. With a heading it is a panel; without one it is a
 // slim band holding just the button.
@@ -58,18 +58,20 @@ function CtaBand({ id, heading, paragraphs = [], cta, label }) {
       aria-label={heading ? undefined : label}
     >
       <Container>
-        {heading && (
-          <>
-            <Accent aria-hidden="true" />
-            <Title id={id}>{heading}</Title>
-          </>
-        )}
-        {paragraphs.map((text) => (
-          <Text key={text.slice(0, 30)}>{text}</Text>
-        ))}
-        <div style={{ marginTop: slim ? 0 : 'var(--space-8)' }}>
-          <ButtonLink to={cta.to}>{cta.label}</ButtonLink>
-        </div>
+        <Reveal>
+          {heading && (
+            <>
+              <Accent aria-hidden="true" />
+              <Title id={id}>{heading}</Title>
+            </>
+          )}
+          {paragraphs.map((text) => (
+            <Text key={text.slice(0, 30)}>{text}</Text>
+          ))}
+          <div style={{ marginTop: slim ? 0 : 'var(--space-8)' }}>
+            <ButtonLink to={cta.to}>{cta.label}</ButtonLink>
+          </div>
+        </Reveal>
       </Container>
     </Band>
   )

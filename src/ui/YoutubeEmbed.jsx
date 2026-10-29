@@ -1,5 +1,3 @@
-/* eslint react/prop-types: 0*/
-
 import styled from 'styled-components'
 
 const StyleVideoRes = styled.div`

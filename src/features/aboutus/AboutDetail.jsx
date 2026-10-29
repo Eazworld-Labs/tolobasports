@@ -5,6 +5,8 @@ import Heading from '../../ui/Heading'
 import Underline from '../../ui/UnderLine'
 import ButtonLink from '../../ui/ButtonLink'
 import Picture from '../../ui/Picture'
+import Reveal from '../../ui/Reveal'
+import { stagger } from '../../ui/stagger'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import {
   career,
@@ -23,8 +25,8 @@ const Band = styled.section`
     props.$tone === 'ink'
       ? 'var(--color-ink-900)'
       : props.$tone === 'grey'
-        ? 'var(--color-grey-50)'
-        : 'var(--color-white)'};
+      ? 'var(--color-grey-50)'
+      : 'var(--color-white)'};
 
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
@@ -344,14 +346,17 @@ function AboutDetail() {
       <Band aria-labelledby="about-intro">
         <Container>
           <IntroGrid>
-            <div>
+            <Reveal variant="slide-left">
               <Accent aria-hidden="true" />
               <SectionTitle id="about-intro">{intro.heading}</SectionTitle>
               <Lead>
                 <strong>{intro.leadLabel}</strong> {intro.leadText}
               </Lead>
-            </div>
-            <Photo
+            </Reveal>
+            <Reveal
+              as={Photo}
+              variant="slide-right"
+              delay={120}
               {...photos.signing}
               sizes="(max-width: 1024px) 92vw, 46vw"
               eager
@@ -363,11 +368,11 @@ function AboutDetail() {
       <Band $tone="ink" aria-label="Key facts">
         <Container>
           <FactList>
-            {highlights.map((fact) => (
-              <Fact key={fact.value}>
+            {highlights.map((fact, index) => (
+              <Reveal as={Fact} key={fact.value} delay={stagger(index)}>
                 <FactValue>{fact.value}</FactValue>
                 <FactCaption>{fact.caption}</FactCaption>
-              </Fact>
+              </Reveal>
             ))}
           </FactList>
         </Container>
@@ -376,18 +381,20 @@ function AboutDetail() {
       <Band $tone="grey" aria-label="Our scouting">
         <Container>
           <ProcessGrid>
-            <ProcessPhoto
+            <Reveal
+              as={ProcessPhoto}
+              variant="slide-left"
               {...photos.pitch}
               sizes="(max-width: 1024px) 92vw, 40vw"
             />
             <Cards>
-              {process.map((item) => (
-                <Card key={item.label}>
+              {process.map((item, index) => (
+                <Reveal as={Card} key={item.label} delay={stagger(index)}>
                   <CardTitle>{item.label}</CardTitle>
                   {item.paragraphs.map((text) => (
                     <p key={text.slice(0, 30)}>{text}</p>
                   ))}
-                </Card>
+                </Reveal>
               ))}
             </Cards>
           </ProcessGrid>
@@ -397,28 +404,32 @@ function AboutDetail() {
       {embeds.length > 0 && (
         <Band aria-label="Video">
           <Container>
-            <Videos $count={embeds.length}>
+            <Reveal as={Videos} $count={embeds.length} variant="scale-in">
               {embeds.map((video) => (
                 <Video key={video.embedId}>
                   <YoutubeEmbed embedId={video.embedId} title={video.title} />
                 </Video>
               ))}
-            </Videos>
+            </Reveal>
           </Container>
         </Band>
       )}
 
       <Band $tone={embeds.length > 0 ? 'grey' : 'white'} aria-labelledby="team">
         <Container>
-          <Header>
+          <Reveal as={Header}>
             <Heading as="h2" id="team">
               {teamHeading}
             </Heading>
             <Underline />
-          </Header>
+          </Reveal>
           <Team>
-            {team.map((person) => (
-              <Person key={person.image}>
+            {team.map((person, index) => (
+              <Reveal
+                as={Person}
+                key={person.image}
+                delay={stagger(index, { step: 100 })}
+              >
                 <PersonPhoto
                   base={person.image}
                   small={person.small}
@@ -433,7 +444,7 @@ function AboutDetail() {
                   <PersonName>{person.name}</PersonName>
                   <PersonTitle>{person.title}</PersonTitle>
                 </PersonText>
-              </Person>
+              </Reveal>
             ))}
           </Team>
         </Container>
@@ -441,7 +452,7 @@ function AboutDetail() {
 
       <Band aria-labelledby="career">
         <Container>
-          <Panel>
+          <Reveal as={Panel} variant="scale-in">
             <Eyebrow>{career.eyebrow}</Eyebrow>
             <PanelTitle id="career">{career.heading}</PanelTitle>
             <PanelText>
@@ -453,7 +464,7 @@ function AboutDetail() {
               <ButtonLink to={career.cta.to}>{career.cta.label}</ButtonLink>
               <Mail href={`mailto:${career.email}`}>{career.email}</Mail>
             </Actions>
-          </Panel>
+          </Reveal>
         </Container>
       </Band>
     </>

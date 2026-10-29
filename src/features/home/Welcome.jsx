@@ -89,14 +89,13 @@ const Wash = styled.div`
   position: absolute;
   inset: 0;
   z-index: -5;
-  background:
-    linear-gradient(
-      100deg,
-      rgba(13, 18, 27, 0.97) 0%,
-      rgba(20, 26, 38, 0.9) 38%,
-      rgba(36, 44, 66, 0.72) 68%,
-      rgba(201, 29, 55, 0.4) 100%
-    );
+  background: linear-gradient(
+    100deg,
+    rgba(13, 18, 27, 0.97) 0%,
+    rgba(20, 26, 38, 0.9) 38%,
+    rgba(36, 44, 66, 0.72) 68%,
+    rgba(201, 29, 55, 0.4) 100%
+  );
 
   @media ${devicesMax.lg} {
     background: linear-gradient(
@@ -331,12 +330,10 @@ const Figure = styled.div`
   height: 112%;
   aspect-ratio: 780 / 973;
   max-width: 100%;
-  -webkit-mask-image:
-    linear-gradient(to bottom, #000 58%, transparent 97%),
+  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 97%),
     linear-gradient(to left, transparent 0%, #000 17%);
   -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, #000 58%, transparent 97%),
+  mask-image: linear-gradient(to bottom, #000 58%, transparent 97%),
     linear-gradient(to left, transparent 0%, #000 17%);
   mask-composite: intersect;
   filter: drop-shadow(0 0 28px rgba(0, 0, 0, 0.55)) saturate(0.92)
@@ -415,7 +412,10 @@ const StatLabel = styled.p`
 
 const Cue = styled.a`
   position: absolute;
-  left: max(var(--container-pad), calc((100% - var(--container-max)) / 2 + var(--container-pad)));
+  left: max(
+    var(--container-pad),
+    calc((100% - var(--container-max)) / 2 + var(--container-pad))
+  );
   bottom: 10px;
   z-index: 6;
   display: inline-flex;
@@ -489,7 +489,9 @@ function Welcome() {
     let frame = 0
     function update() {
       frame = 0
-      el.style.transform = `translate3d(0, ${Math.min(window.scrollY, 900) * 0.16}px, 0)`
+      el.style.transform = `translate3d(0, ${
+        Math.min(window.scrollY, 900) * 0.16
+      }px, 0)`
     }
     function onScroll() {
       if (!frame) frame = requestAnimationFrame(update)

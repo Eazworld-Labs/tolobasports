@@ -78,6 +78,13 @@ const GlobalStyles = createGlobalStyle`
   --shadow-md: 0 0.6rem 2.4rem rgba(20, 26, 38, 0.25);
   --shadow-lg: 0 2.4rem 3.2rem rgba(20, 26, 38, 0.35);
 
+  /* Reveal on scroll */
+  --reveal-duration: 640ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 28px;
+  --reveal-slide: 40px;
+  --reveal-scale: 0.95;
+
   /* Z-index */
   --z-header: 50;
   --z-drawer: 60;
@@ -213,6 +220,40 @@ img {
   }
 }
 
+/* Slide-in variants start outside their column; clip so they cannot add a scrollbar. */
+main {
+  overflow-x: clip;
+}
+
+[data-reveal='armed'][data-variant] {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+[data-reveal='armed'][data-variant='fade-up'] {
+  transform: translate3d(0, var(--reveal-distance), 0);
+}
+
+[data-reveal='armed'][data-variant='slide-left'] {
+  transform: translate3d(calc(var(--reveal-slide) * -1), 0, 0);
+}
+
+[data-reveal='armed'][data-variant='slide-right'] {
+  transform: translate3d(var(--reveal-slide), 0, 0);
+}
+
+[data-reveal='armed'][data-variant='scale-in'] {
+  transform: scale(var(--reveal-scale));
+}
+
+[data-reveal='shown'][data-variant] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease) var(--reveal-delay, 0ms),
+    transform var(--reveal-duration) var(--reveal-ease) var(--reveal-delay, 0ms);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -221,6 +262,11 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  [data-reveal][data-variant] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 `

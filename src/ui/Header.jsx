@@ -1,4 +1,3 @@
-/* eslint react/prop-types :0*/
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { devicesMax } from '../styles/BreakPoint'

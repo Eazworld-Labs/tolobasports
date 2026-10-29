@@ -1,8 +1,8 @@
-/* eslint react/prop-types: 0 */
 import styled from 'styled-components'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from './Container'
 import Picture from './Picture'
+import Reveal from './Reveal'
 import YoutubeEmbed from './YoutubeEmbed'
 
 // A text block with optional media beside it; media alternates sides with `flip`.
@@ -116,7 +116,11 @@ function EditorialRow({
     >
       <Container>
         <Grid $hasMedia={hasMedia}>
-          <Text $flip={flip}>
+          <Reveal
+            as={Text}
+            $flip={flip}
+            variant={flip ? 'slide-right' : 'slide-left'}
+          >
             <Accent aria-hidden="true" />
             {heading && <Title id={id}>{heading}</Title>}
             {paragraphs.map((p) =>
@@ -128,17 +132,27 @@ function EditorialRow({
                 </Paragraph>
               ),
             )}
-          </Text>
+          </Reveal>
           {embedId ? (
-            <Media $flip={flip}>
+            <Reveal
+              as={Media}
+              $flip={flip}
+              variant={flip ? 'slide-left' : 'slide-right'}
+              delay={120}
+            >
               <Video>
                 <YoutubeEmbed embedId={embedId} title={videoTitle} />
               </Video>
-            </Media>
+            </Reveal>
           ) : image ? (
-            <Media $flip={flip}>
+            <Reveal
+              as={Media}
+              $flip={flip}
+              variant={flip ? 'slide-left' : 'slide-right'}
+              delay={120}
+            >
               <Photo {...image} sizes="(max-width: 1024px) 92vw, 46vw" />
-            </Media>
+            </Reveal>
           ) : null}
         </Grid>
       </Container>

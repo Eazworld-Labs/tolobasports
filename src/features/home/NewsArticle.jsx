@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
+import Reveal from '../../ui/Reveal'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { news } from './homeContent'
 
@@ -79,23 +80,25 @@ function NewsArticle() {
   return (
     <Wrap aria-labelledby="news-title">
       <Inner>
-        <Accent aria-hidden="true" />
-        <Headline id="news-title">{news.headline}</Headline>
-        <Text>
+        <Reveal>
+          <Accent aria-hidden="true" />
+          <Headline id="news-title">{news.headline}</Headline>
+        </Reveal>
+        <Reveal as={Text} delay={80}>
           {news.paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
-        </Text>
-        <Video>
+        </Reveal>
+        <Reveal as={Video} variant="scale-in">
           <YoutubeEmbed embedId={news.videoId} title={news.videoTitle} />
-        </Video>
-        <Source>
+        </Reveal>
+        <Reveal as={Source}>
           <span>{news.sourceLabel}</span>{' '}
           <a href={news.sourceUrl} target="_blank" rel="noopener noreferrer">
             {news.sourceText}
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
-        </Source>
+        </Reveal>
       </Inner>
     </Wrap>
   )

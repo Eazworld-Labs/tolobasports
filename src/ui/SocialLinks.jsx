@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import styled, { css } from 'styled-components'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 import { SITE } from './siteInfo'

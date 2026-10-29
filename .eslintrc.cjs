@@ -11,5 +11,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    // Components here take plain props from local data; no PropTypes.
+    'react/prop-types': 'off',
   },
 }

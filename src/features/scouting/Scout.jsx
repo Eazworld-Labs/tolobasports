@@ -5,6 +5,7 @@ import Container from '../../ui/Container'
 import CtaBand from '../../ui/CtaBand'
 import EditorialRow from '../../ui/EditorialRow'
 import Heading from '../../ui/Heading'
+import Reveal from '../../ui/Reveal'
 import Underline from '../../ui/UnderLine'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { announcement, closing, rising, rows } from './scoutingCopy'
@@ -88,32 +89,32 @@ function Scout() {
       </Page>
 
       <Notice aria-label="Announcements">
-        <NoticeInner>
+        <Reveal as={NoticeInner}>
           <NoticeText>{announcement.text}</NoticeText>
           {announcement.action && (
             <ButtonLink to={announcement.action.href} $variant="outline">
               {announcement.action.label}
             </ButtonLink>
           )}
-        </NoticeInner>
+        </Reveal>
       </Notice>
 
       {embeds.length > 0 && (
         <Stars aria-labelledby="rising-stars">
           <Container>
-            <StarsHeader>
+            <Reveal as={StarsHeader}>
               <Heading as="h2" id="rising-stars">
                 {rising.heading}
               </Heading>
               <Underline />
-            </StarsHeader>
-            <Videos $count={embeds.length}>
+            </Reveal>
+            <Reveal as={Videos} $count={embeds.length} variant="scale-in">
               {embeds.map((video) => (
                 <Video key={video.embedId}>
                   <YoutubeEmbed embedId={video.embedId} title={video.title} />
                 </Video>
               ))}
-            </Videos>
+            </Reveal>
           </Container>
         </Stars>
       )}

@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
+import Reveal from '../../ui/Reveal'
 import { images } from './gallery'
 import GalleryModel from './GalleryModel'
 
@@ -87,7 +88,12 @@ function GalleryContent() {
       <Container>
         <Grid>
           {images.map((image, index) => (
-            <Item key={image.thumb}>
+            <Reveal
+              as={Item}
+              key={image.thumb}
+              variant="scale-in"
+              delay={(index % 4) * 70}
+            >
               <Tile
                 type="button"
                 data-gallery-index={index}
@@ -103,7 +109,7 @@ function GalleryContent() {
                   decoding="async"
                 />
               </Tile>
-            </Item>
+            </Reveal>
           ))}
         </Grid>
       </Container>

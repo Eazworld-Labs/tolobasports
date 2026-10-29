@@ -6,8 +6,14 @@ import { toast } from 'react-toastify'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { devicesMax } from '../../styles/BreakPoint'
 import Button from '../../ui/Button'
+import Reveal from '../../ui/Reveal'
 import { SITE } from '../../ui/siteInfo'
-import { fields, interestPlaceholder, interests, submitLabel } from './contactCopy'
+import {
+  fields,
+  interestPlaceholder,
+  interests,
+  submitLabel,
+} from './contactCopy'
 
 // EmailJS settings are baked into the bundle at build time (see .env.example).
 const SERVICE_ID = import.meta.env.VITE_YOUR_SERVICE_ID
@@ -203,7 +209,12 @@ function ContactForm() {
   }
 
   return (
-    <Card aria-label="Contact form">
+    <Reveal
+      as={Card}
+      variant="slide-right"
+      delay={100}
+      aria-label="Contact form"
+    >
       <Note>
         Fields marked with <span aria-hidden="true">*</span>
         <span className="sr-only">an asterisk</span> are required.
@@ -263,7 +274,8 @@ function ContactForm() {
                 required: 'Your email address is required',
                 pattern: {
                   value: EMAIL_PATTERN,
-                  message: 'Enter a valid email address, for example name@example.com',
+                  message:
+                    'Enter a valid email address, for example name@example.com',
                 },
               })}
             />
@@ -356,8 +368,7 @@ function ContactForm() {
           {status === 'error' && (
             <Status $kind="error" role="alert">
               Sorry, your message could not be sent. Your details are still
-              here, so you can try again, or email us directly at{' '}
-              <MailLink />.
+              here, so you can try again, or email us directly at <MailLink />.
             </Status>
           )}
           {status === 'unconfigured' && (
@@ -368,7 +379,7 @@ function ContactForm() {
           )}
         </div>
       </form>
-    </Card>
+    </Reveal>
   )
 }
 
