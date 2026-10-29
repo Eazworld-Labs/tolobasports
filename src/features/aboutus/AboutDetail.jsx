@@ -1,312 +1,460 @@
 import styled from 'styled-components'
-import Heading from '../../ui/Heading'
-import Row from '../../ui/Row'
-import Section from '../../ui/Section'
-import Underline from '../../ui/UnderLine'
-import Button from '../../ui/Button'
 import { devicesMax } from '../../styles/BreakPoint'
-import { NavLink } from 'react-router-dom'
+import Container from '../../ui/Container'
+import Heading from '../../ui/Heading'
+import Underline from '../../ui/UnderLine'
+import ButtonLink from '../../ui/ButtonLink'
+import Picture from '../../ui/Picture'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
-import Img from '../../ui/Img'
+import {
+  career,
+  highlights,
+  intro,
+  photos,
+  process,
+  team,
+  teamHeading,
+  videos,
+} from './aboutContent'
 
-const AboutContent = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  padding: 3rem;
+const Band = styled.section`
+  padding-block: var(--space-11);
+  background-color: ${(props) =>
+    props.$tone === 'ink'
+      ? 'var(--color-ink-900)'
+      : props.$tone === 'grey'
+        ? 'var(--color-grey-50)'
+        : 'var(--color-white)'};
 
   @media ${devicesMax.md} {
-    padding: 2rem;
-  }
-  @media ${devicesMax.sm} {
-    padding: 1rem;
+    padding-block: var(--space-9);
   }
 `
-const ImgBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 6rem;
 
-  @media ${devicesMax.md} {
-    flex-direction: column;
-  }
+const Accent = styled.span`
+  display: block;
+  width: 7.2rem;
+  height: 0.6rem;
+  margin-bottom: var(--space-5);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-signal);
 `
-const VideoContent = styled.div`
-  width: 100%;
 
-  padding: 4rem;
-  display: flex;
-  justify-content: space-evenly;
+const SectionTitle = styled.h2`
+  font-size: var(--heading-2);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink-900);
+`
+
+/* ---------- intro ---------- */
+
+const IntroGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--space-10);
   align-items: center;
-
-  @media ${devicesMax.md} {
-    flex-direction: column;
-    gap: 20px;
-  }
-`
-const Image = styled.div`
-  flex-basis: 40%;
-  border: 2px solid var(--color-ink-700);
-  height: 25rem;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-
-  @media ${devicesMax.md} {
-    width: 90%;
-    height: 50rem;
-  }
-`
-
-const ContentDetail = styled.div`
-  width: 65%;
-  margin: 0 auto;
-  height: 100%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
   @media ${devicesMax.lg} {
-    width: 100%;
-  }
-`
-const Detail = styled.div`
-  border: 1px solid var(--color-grey-400);
-  border-top: 5px solid var(--color-ink-700);
-  width: 100%;
-  background-color: var(--color-white);
-  margin: 0 auto;
-  padding: 6rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media ${devicesMax.md} {
-    padding: 4rem;
-  }
-  @media ${devicesMax.sm} {
-    padding: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
   }
 `
 
-const Team = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 2rem;
-`
-const StyledPer = styled.div`
-  height: 20rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-
-  @media ${devicesMax.sm} {
-    height: 30rem;
-    width: 90%;
-  }
-`
-const CareerDetail = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  padding: 4rem;
-  border: 1px solid var(--color-ink-700);
-  border-top: 5px solid var(--color-ink-900);
+const Lead = styled.p`
+  max-width: 60ch;
+  margin-top: var(--space-6);
+  font-size: var(--text-xl);
+  line-height: 1.6;
   color: var(--color-grey-700);
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16),
-    0px 3px 6px 0px rgba(0, 0, 0, 0.23);
+  hyphens: manual;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media ${devicesMax.md} {
-    padding: 1rem;
-    width: 90%;
+  & strong {
+    color: var(--color-signal-600);
   }
 `
-const StyledP = styled.p`
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+
+const Photo = styled(Picture)`
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 `
-const CareerP = styled.p`
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+
+/* ---------- highlights ---------- */
+
+const FactList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+
+  @media ${devicesMax.md} {
+    grid-template-columns: minmax(0, 1fr);
+  }
 `
-const StyledBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+const Fact = styled.li`
+  padding: var(--space-7);
+  border-top: 0.4rem solid var(--color-lime);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-ink-700);
 `
-const StyledSpan = styled.span`
+
+const FactValue = styled.p`
+  font-family: var(--font-heading);
+  font-size: var(--heading-3);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-lime);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+`
+
+const FactCaption = styled.p`
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-grey-300);
+`
+
+/* ---------- scouting process ---------- */
+
+const ProcessGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-9);
+  align-items: start;
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-7);
+  }
+`
+
+const ProcessPhoto = styled(Picture)`
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
+  /* stays in view beside the tall list of cards (below the sticky header) */
+  @media (min-width: 1025px) {
+    position: sticky;
+    top: 12rem;
+  }
+`
+
+const Cards = styled.ul`
+  display: grid;
+  gap: var(--space-5);
+`
+
+const Card = styled.li`
+  padding: var(--space-7);
+  border: 1px solid var(--color-grey-200);
+  border-left: 0.5rem solid var(--color-signal);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+
+  & p {
+    margin-top: var(--space-3);
+    hyphens: manual;
+  }
+`
+
+const CardTitle = styled.h3`
+  font-size: var(--heading-3);
+  font-weight: 700;
+  color: var(--color-ink-900);
+`
+
+/* ---------- videos ---------- */
+
+const Videos = styled.div`
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.$count}, minmax(0, 1fr));
+  gap: var(--space-6);
+  max-width: ${(props) => (props.$count === 1 ? '90rem' : 'none')};
+  margin-inline: auto;
+
+  @media ${devicesMax.md} {
+    grid-template-columns: minmax(0, 1fr);
+  }
+`
+
+const Video = styled.div`
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
+`
+
+/* ---------- team ---------- */
+
+const Header = styled.div`
+  margin-bottom: var(--space-9);
+  text-align: center;
+`
+
+const Team = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+`
+
+const Person = styled.li`
+  overflow: hidden;
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+`
+
+const PersonPhoto = styled(Picture)`
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background-color: var(--color-grey-100);
+`
+
+const PersonText = styled.div`
+  padding: var(--space-5);
+  text-align: center;
+`
+
+const PersonName = styled.h3`
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-ink-900);
+  text-transform: capitalize;
+  text-wrap: balance;
+`
+
+const PersonTitle = styled.p`
+  margin-top: var(--space-1);
+  font-size: var(--text-base);
+  color: var(--color-signal-600);
+  font-weight: 600;
   text-transform: capitalize;
 `
-const TextBox = styled.div`
-  margin: 2rem;
+
+/* ---------- career ---------- */
+
+const Panel = styled.div`
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-10) var(--space-10);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-ink-900);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-ink-900) 0%,
+    var(--color-ink-700) 100%
+  );
+  color: var(--color-white);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0.8rem;
+    background: linear-gradient(
+      to bottom,
+      var(--color-lime) 0 50%,
+      var(--color-signal-600) 50% 100%
+    );
+  }
+
+  @media ${devicesMax.md} {
+    padding: var(--space-8) var(--space-6);
+  }
+`
+
+const Eyebrow = styled.p`
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-lime);
+`
+
+const PanelTitle = styled.h2`
+  max-width: 20ch;
+  margin-top: var(--space-3);
+  font-size: var(--heading-2);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-white);
+`
+
+const PanelText = styled.div`
+  max-width: 62ch;
+  margin-top: var(--space-6);
+  font-size: var(--text-lg);
+  color: var(--color-grey-200);
+
+  & p {
+    hyphens: manual;
+  }
+  & p + p {
+    margin-top: var(--space-4);
+  }
+`
+
+const Actions = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  gap: var(--space-5) var(--space-7);
+  margin-top: var(--space-8);
 `
-const Strong = styled.strong`
-  color: var(--color-signal);
+
+const Mail = styled.a`
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--color-lime);
+  }
 `
+
 function AboutDetail() {
+  const embeds = videos.filter((v) => v.embedId)
+
   return (
     <>
-      <Section type="about">
-        <Row>
-          <Heading as="h1">About Us</Heading>
-          <Underline />
-        </Row>
-        <AboutContent>
-          <ImgBox>
-            <Image>
-              <Img src="/2.png" alt="pc8" />
-            </Image>
-            <Image>
-              <Img src="/musah4.jpeg" loading="lazy" />
-            </Image>
-          </ImgBox>
-          <ContentDetail>
-            <Detail>
-              <Heading as="h1">About Toloba Sports Consult</Heading>
-              <StyledP>
-                <Strong>Toloba Sports Consult: </Strong> is a beacon of
-                opportunity for aspiring foo tball talents across the globe. Our
-                unwavering commitment to nurturing the stars of tomorrow is
-                matched only by our passion for the beautiful game.
-              </StyledP>
+      <Band aria-labelledby="about-intro">
+        <Container>
+          <IntroGrid>
+            <div>
+              <Accent aria-hidden="true" />
+              <SectionTitle id="about-intro">{intro.heading}</SectionTitle>
+              <Lead>
+                <strong>{intro.leadLabel}</strong> {intro.leadText}
+              </Lead>
+            </div>
+            <Photo
+              {...photos.signing}
+              sizes="(max-width: 1024px) 92vw, 46vw"
+              eager
+            />
+          </IntroGrid>
+        </Container>
+      </Band>
 
-              <StyledP>
-                <Strong>Our Scouting Process: </Strong> At Toloba Sports
-                Consult, we believe in a holistic approach to scouting and
-                nurturing football talent. Our annual scouting process is
-                executed by UEFA Certified coaches, ensuring that the selection
-                of promising football talents is carried out with the highest
-                standards of expertise.
-              </StyledP>
+      <Band $tone="ink" aria-label="Key facts">
+        <Container>
+          <FactList>
+            {highlights.map((fact) => (
+              <Fact key={fact.value}>
+                <FactValue>{fact.value}</FactValue>
+                <FactCaption>{fact.caption}</FactCaption>
+              </Fact>
+            ))}
+          </FactList>
+        </Container>
+      </Band>
 
-              <StyledP>
-                This year, we&apos;ve taken our scouting process to new heights
-                by forming strategic partnerships with professional scouts
-                hailing from Portugal, Spain, and Turkey. These scouts bring a
-                wealth of experience and possess vital connections with top
-                European clubs. Their expertise and networks are invaluable,
-                significantly expanding the horizons for young talents who
-                aspire to make a mark in the world of football.
-              </StyledP>
-              <StyledP>
-                <Strong>Twice a Year Scouting: </Strong> We are proud to
-                announce that these scouts from Portugal, Spain, and Turkey will
-                visit twice a year. This means that aspiring football talents
-                have not just one but two opportunities to showcase their skills
-                and take a step closer to their dreams.
-              </StyledP>
-              <StyledP>
-                <Strong>A World of Opportunity: </Strong> Toloba Sports
-                Consult&apos;s global perspective ensures that talent knows no
-                borders. With scouts from Portugal, Spain, and Turkey on board,
-                we are committed to reaching talent across diverse geographies.
-                Our mission is to unearth hidden gems worldwide, offering them
-                the opportunity of a lifetime.
-              </StyledP>
-            </Detail>
-          </ContentDetail>
-        </AboutContent>
-        <VideoContent>
-          <Image>
-            <YoutubeEmbed embedId="R4WnMNK6zQ0" />
-          </Image>
-          <Image>
-            <YoutubeEmbed embedId="" />
-          </Image>
-        </VideoContent>
-      </Section>
-      <Section>
-        <Row>
-          <Heading as="h2">OUR TEAM</Heading>
-          <Underline />
-        </Row>
-        <Team>
-          <StyledBox>
-            <StyledPer>
-              <Img src="/staff9.jpeg" alt="pc21" />
-            </StyledPer>
-            <TextBox>
-              <StyledSpan>Mr.Musah Toloba </StyledSpan>
-              <StyledSpan>CEO</StyledSpan>
-            </TextBox>
-          </StyledBox>
-          <StyledBox>
-            <StyledPer>
-              <Img src="/staff1.jpeg" alt="pc17" />
-            </StyledPer>
-            <TextBox>
-              <StyledSpan>Mr. Mohamed Abib Tchabagna </StyledSpan>
-              <StyledSpan>international scout</StyledSpan>
-            </TextBox>
-          </StyledBox>
-          <StyledBox>
-            <StyledPer>
-              <Img src="/staff2.jpeg" alt="pc18" />
-            </StyledPer>
-            <TextBox>
-              <StyledSpan>Mr Bismark Arjani</StyledSpan>
-              <StyledSpan>Vice President</StyledSpan>
-            </TextBox>
-          </StyledBox>
+      <Band $tone="grey" aria-label="Our scouting">
+        <Container>
+          <ProcessGrid>
+            <ProcessPhoto
+              {...photos.pitch}
+              sizes="(max-width: 1024px) 92vw, 40vw"
+            />
+            <Cards>
+              {process.map((item) => (
+                <Card key={item.label}>
+                  <CardTitle>{item.label}</CardTitle>
+                  {item.paragraphs.map((text) => (
+                    <p key={text.slice(0, 30)}>{text}</p>
+                  ))}
+                </Card>
+              ))}
+            </Cards>
+          </ProcessGrid>
+        </Container>
+      </Band>
 
-          <StyledBox>
-            <StyledPer>
-              <Img src="/staff8.jpeg" alt="pc21" />
-            </StyledPer>
-            <TextBox>
-              <StyledSpan>binti MD Deni/ismaliah </StyledSpan>
-              <StyledSpan>International public relations</StyledSpan>
-            </TextBox>
-          </StyledBox>
-        </Team>
-      </Section>
-      <Section>
-        <Row>
-          <Heading as="h2">CAREER</Heading>
-          <Underline />
-        </Row>
-        <CareerDetail>
-          <Row>
-            <Heading as="h2"> Join Us in the Pursuit of Excellence</Heading>
-          </Row>
-          <CareerP>
-            The measure of our success is reflected in the achievements of the
-            players we have nurtured. These young talents, once hidden gems,
-            have not only represented Ghana&apos;s junior national teams but
-            have also achieved the extraordinary by securing coveted contracts
-            with esteemed European clubs. Their journeys inspire us and stand as
-            testaments to our commitment to nurturing the stars of tomorrow
-          </CareerP>
-          <CareerP>
-            If you&apos;re passionate about football and aspire to be a part of
-            the next generation of football stars, Toloba Sports Consult is your
-            platform for growth and opportunity. Join us as we explore, train,
-            and mentor the future football legends.
-          </CareerP>
-          <CareerP>Mtoloba@tolobasports.com</CareerP>
-          <NavLink to="/contact">
-            <Button>CONTACT US</Button>
-          </NavLink>
-        </CareerDetail>
-      </Section>
+      {embeds.length > 0 && (
+        <Band aria-label="Video">
+          <Container>
+            <Videos $count={embeds.length}>
+              {embeds.map((video) => (
+                <Video key={video.embedId}>
+                  <YoutubeEmbed embedId={video.embedId} title={video.title} />
+                </Video>
+              ))}
+            </Videos>
+          </Container>
+        </Band>
+      )}
+
+      <Band $tone={embeds.length > 0 ? 'grey' : 'white'} aria-labelledby="team">
+        <Container>
+          <Header>
+            <Heading as="h2" id="team">
+              {teamHeading}
+            </Heading>
+            <Underline />
+          </Header>
+          <Team>
+            {team.map((person) => (
+              <Person key={person.image}>
+                <PersonPhoto
+                  base={person.image}
+                  small={person.small}
+                  large={person.large}
+                  width={person.width}
+                  height={person.height}
+                  alt={person.name}
+                  position={person.position}
+                  sizes="(max-width: 1024px) 46vw, 22vw"
+                />
+                <PersonText>
+                  <PersonName>{person.name}</PersonName>
+                  <PersonTitle>{person.title}</PersonTitle>
+                </PersonText>
+              </Person>
+            ))}
+          </Team>
+        </Container>
+      </Band>
+
+      <Band aria-labelledby="career">
+        <Container>
+          <Panel>
+            <Eyebrow>{career.eyebrow}</Eyebrow>
+            <PanelTitle id="career">{career.heading}</PanelTitle>
+            <PanelText>
+              {career.paragraphs.map((text) => (
+                <p key={text.slice(0, 30)}>{text}</p>
+              ))}
+            </PanelText>
+            <Actions>
+              <ButtonLink to={career.cta.to}>{career.cta.label}</ButtonLink>
+              <Mail href={`mailto:${career.email}`}>{career.email}</Mail>
+            </Actions>
+          </Panel>
+        </Container>
+      </Band>
     </>
   )
 }
