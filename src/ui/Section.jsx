@@ -3,36 +3,36 @@ import styled, { css } from 'styled-components'
 import { devicesMax } from '../styles/BreakPoint'
 
 const StyledSection = styled.section`
-margin-bottom: 8rem;
+margin-bottom: var(--space-11);
 
 
 @media ${devicesMax.md}{
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-8);
 }
   ${(props) => props.type === 'welcome' && css``}
 
  ${(props) =>
    props.type === 'padd' &&
    css`
-     padding: 8rem;
+     padding: var(--space-11);
      @media ${devicesMax.md} {
-       padding: 2rem;
+       padding: var(--space-5);
      }
    `}
   ${(props) =>
     props.type === 'touch' &&
     css`
-      padding: 2rem;
+      padding: var(--space-5);
     `}
     ${(props) =>
       props.type === 'gallery' &&
       css`
-        padding: 4rem;
+        padding: var(--space-8);
       `}
       ${(props) =>
         props.type === 'part' &&
         css`
-          padding: 4rem;
+          padding: var(--space-8);
           background-image: linear-gradient(
               rgba(0, 0, 0, 0.7),
               rgba(0, 0, 0, 0.7)

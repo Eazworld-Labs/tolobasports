@@ -1,14 +1,25 @@
 import styled, { css } from 'styled-components'
 
 const Button = styled.button`
-  font-size: 1.6rem;
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.02em;
   background-color: var(--color-signal);
-  color: var(--color-ink-700);
+  color: var(--color-white);
   border: none;
-  padding: 0.8rem 1rem;
+  padding: var(--space-2) var(--space-5);
   box-shadow: var(--shadow-sm);
   border-radius: var(--radius-sm);
-  transition: all 0.3s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    background-color: var(--color-signal-600);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
 
   ${(props) =>
     props.pros === 'interest' &&
@@ -21,8 +32,7 @@ const Button = styled.button`
     props.pros === 'contact' &&
     css`
       &:hover {
-        background-color: var(--color-signal);
-        color: var(--color-ink-700);
+        background-color: var(--color-ink-700);
       }
     `}
 `
