@@ -87,7 +87,7 @@ function GalleryContent() {
       <Container>
         <Grid>
           {images.map((image, index) => (
-            <Item key={image.src}>
+            <Item key={image.thumb}>
               <Tile
                 type="button"
                 data-gallery-index={index}

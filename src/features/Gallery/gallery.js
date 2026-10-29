@@ -1,11 +1,12 @@
-// Gallery images. `src` is the original file in public/images (kept, not shown);
-// the grid uses the ~600px thumbnail and the lightbox the resized full image, both
+// Gallery images. `original` is the full-size source file (kept in source-assets, not
+// served); regenerate the optimized copies from it if needed.
+// The grid uses the ~600px thumbnail and the lightbox the resized full image, both
 // in public/optimized/gallery. pc25.jpeg was listed before but does not exist, so it
 // was removed. Alt text is neutral on purpose.
 
 export const images = [
   {
-    src: '/images/pc1.jpeg',
+    original: 'source-assets/images/pc1.jpeg',
     thumb: '/optimized/gallery/pc1-600.webp',
     thumbWidth: 600,
     thumbHeight: 1067,
@@ -15,7 +16,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 1 of 53',
   },
   {
-    src: '/images/pc2.jpeg',
+    original: 'source-assets/images/pc2.jpeg',
     thumb: '/optimized/gallery/pc2-600.webp',
     thumbWidth: 600,
     thumbHeight: 562,
@@ -25,7 +26,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 2 of 53',
   },
   {
-    src: '/images/pc3.jpeg',
+    original: 'source-assets/images/pc3.jpeg',
     thumb: '/optimized/gallery/pc3-600.webp',
     thumbWidth: 600,
     thumbHeight: 450,
@@ -35,7 +36,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 3 of 53',
   },
   {
-    src: '/images/pc4.jpeg',
+    original: 'source-assets/images/pc4.jpeg',
     thumb: '/optimized/gallery/pc4-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -45,7 +46,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 4 of 53',
   },
   {
-    src: '/images/pc5.jpeg',
+    original: 'source-assets/images/pc5.jpeg',
     thumb: '/optimized/gallery/pc5-600.webp',
     thumbWidth: 600,
     thumbHeight: 969,
@@ -55,7 +56,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 5 of 53',
   },
   {
-    src: '/images/pc6.jpeg',
+    original: 'source-assets/images/pc6.jpeg',
     thumb: '/optimized/gallery/pc6-600.webp',
     thumbWidth: 600,
     thumbHeight: 579,
@@ -65,7 +66,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 6 of 53',
   },
   {
-    src: '/images/pc7.jpeg',
+    original: 'source-assets/images/pc7.jpeg',
     thumb: '/optimized/gallery/pc7-600.webp',
     thumbWidth: 600,
     thumbHeight: 712,
@@ -75,7 +76,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 7 of 53',
   },
   {
-    src: '/images/pc8.jpeg',
+    original: 'source-assets/images/pc8.jpeg',
     thumb: '/optimized/gallery/pc8-600.webp',
     thumbWidth: 600,
     thumbHeight: 449,
@@ -85,7 +86,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 8 of 53',
   },
   {
-    src: '/images/pc9.jpeg',
+    original: 'source-assets/images/pc9.jpeg',
     thumb: '/optimized/gallery/pc9-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -95,7 +96,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 9 of 53',
   },
   {
-    src: '/images/pc10.jpeg',
+    original: 'source-assets/images/pc10.jpeg',
     thumb: '/optimized/gallery/pc10-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -105,7 +106,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 10 of 53',
   },
   {
-    src: '/images/pc11.jpeg',
+    original: 'source-assets/images/pc11.jpeg',
     thumb: '/optimized/gallery/pc11-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -115,7 +116,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 11 of 53',
   },
   {
-    src: '/images/pc12.jpeg',
+    original: 'source-assets/images/pc12.jpeg',
     thumb: '/optimized/gallery/pc12-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -125,7 +126,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 12 of 53',
   },
   {
-    src: '/images/pc13.jpeg',
+    original: 'source-assets/images/pc13.jpeg',
     thumb: '/optimized/gallery/pc13-600.webp',
     thumbWidth: 600,
     thumbHeight: 869,
@@ -135,7 +136,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 13 of 53',
   },
   {
-    src: '/images/pc14.jpeg',
+    original: 'source-assets/images/pc14.jpeg',
     thumb: '/optimized/gallery/pc14-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -145,7 +146,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 14 of 53',
   },
   {
-    src: '/images/pc15.jpeg',
+    original: 'source-assets/images/pc15.jpeg',
     thumb: '/optimized/gallery/pc15-600.webp',
     thumbWidth: 600,
     thumbHeight: 900,
@@ -155,7 +156,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 15 of 53',
   },
   {
-    src: '/images/pc16.jpeg',
+    original: 'source-assets/images/pc16.jpeg',
     thumb: '/optimized/gallery/pc16-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -165,7 +166,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 16 of 53',
   },
   {
-    src: '/images/pc17.jpeg',
+    original: 'source-assets/images/pc17.jpeg',
     thumb: '/optimized/gallery/pc17-600.webp',
     thumbWidth: 600,
     thumbHeight: 600,
@@ -175,7 +176,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 17 of 53',
   },
   {
-    src: '/images/pc18.jpeg',
+    original: 'source-assets/images/pc18.jpeg',
     thumb: '/optimized/gallery/pc18-600.webp',
     thumbWidth: 600,
     thumbHeight: 600,
@@ -185,7 +186,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 18 of 53',
   },
   {
-    src: '/images/pc19.jpeg',
+    original: 'source-assets/images/pc19.jpeg',
     thumb: '/optimized/gallery/pc19-600.webp',
     thumbWidth: 600,
     thumbHeight: 400,
@@ -195,7 +196,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 19 of 53',
   },
   {
-    src: '/images/pc20.jpeg',
+    original: 'source-assets/images/pc20.jpeg',
     thumb: '/optimized/gallery/pc20-600.webp',
     thumbWidth: 600,
     thumbHeight: 449,
@@ -205,7 +206,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 20 of 53',
   },
   {
-    src: '/images/pc21.jpeg',
+    original: 'source-assets/images/pc21.jpeg',
     thumb: '/optimized/gallery/pc21-600.webp',
     thumbWidth: 600,
     thumbHeight: 801,
@@ -215,7 +216,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 21 of 53',
   },
   {
-    src: '/images/pc22.jpeg',
+    original: 'source-assets/images/pc22.jpeg',
     thumb: '/optimized/gallery/pc22-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -225,7 +226,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 22 of 53',
   },
   {
-    src: '/images/pc23.jpeg',
+    original: 'source-assets/images/pc23.jpeg',
     thumb: '/optimized/gallery/pc23-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -235,7 +236,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 23 of 53',
   },
   {
-    src: '/images/pc24.jpeg',
+    original: 'source-assets/images/pc24.jpeg',
     thumb: '/optimized/gallery/pc24-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -245,7 +246,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 24 of 53',
   },
   {
-    src: '/images/pc26.jpeg',
+    original: 'source-assets/images/pc26.jpeg',
     thumb: '/optimized/gallery/pc26-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -255,7 +256,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 25 of 53',
   },
   {
-    src: '/images/pc27.jpeg',
+    original: 'source-assets/images/pc27.jpeg',
     thumb: '/optimized/gallery/pc27-600.webp',
     thumbWidth: 600,
     thumbHeight: 900,
@@ -265,7 +266,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 26 of 53',
   },
   {
-    src: '/images/pc28.jpeg',
+    original: 'source-assets/images/pc28.jpeg',
     thumb: '/optimized/gallery/pc28-600.webp',
     thumbWidth: 600,
     thumbHeight: 400,
@@ -275,7 +276,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 27 of 53',
   },
   {
-    src: '/images/pc29.jpeg',
+    original: 'source-assets/images/pc29.jpeg',
     thumb: '/optimized/gallery/pc29-600.webp',
     thumbWidth: 600,
     thumbHeight: 400,
@@ -285,7 +286,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 28 of 53',
   },
   {
-    src: '/images/pc30.jpeg',
+    original: 'source-assets/images/pc30.jpeg',
     thumb: '/optimized/gallery/pc30-600.webp',
     thumbWidth: 600,
     thumbHeight: 871,
@@ -295,7 +296,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 29 of 53',
   },
   {
-    src: '/images/pc31.jpeg',
+    original: 'source-assets/images/pc31.jpeg',
     thumb: '/optimized/gallery/pc31-600.webp',
     thumbWidth: 600,
     thumbHeight: 855,
@@ -305,7 +306,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 30 of 53',
   },
   {
-    src: '/images/pc32.jpeg',
+    original: 'source-assets/images/pc32.jpeg',
     thumb: '/optimized/gallery/pc32-600.webp',
     thumbWidth: 600,
     thumbHeight: 675,
@@ -315,7 +316,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 31 of 53',
   },
   {
-    src: '/images/pc33.jpeg',
+    original: 'source-assets/images/pc33.jpeg',
     thumb: '/optimized/gallery/pc33-600.webp',
     thumbWidth: 600,
     thumbHeight: 449,
@@ -325,7 +326,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 32 of 53',
   },
   {
-    src: '/images/pc34.jpeg',
+    original: 'source-assets/images/pc34.jpeg',
     thumb: '/optimized/gallery/pc34-600.webp',
     thumbWidth: 600,
     thumbHeight: 334,
@@ -335,7 +336,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 33 of 53',
   },
   {
-    src: '/images/pc35.jpeg',
+    original: 'source-assets/images/pc35.jpeg',
     thumb: '/optimized/gallery/pc35-600.webp',
     thumbWidth: 600,
     thumbHeight: 606,
@@ -345,7 +346,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 34 of 53',
   },
   {
-    src: '/images/pc36.jpeg',
+    original: 'source-assets/images/pc36.jpeg',
     thumb: '/optimized/gallery/pc36-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -355,7 +356,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 35 of 53',
   },
   {
-    src: '/images/pc37.jpeg',
+    original: 'source-assets/images/pc37.jpeg',
     thumb: '/optimized/gallery/pc37-600.webp',
     thumbWidth: 600,
     thumbHeight: 750,
@@ -365,7 +366,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 36 of 53',
   },
   {
-    src: '/images/pc38.jpeg',
+    original: 'source-assets/images/pc38.jpeg',
     thumb: '/optimized/gallery/pc38-600.webp',
     thumbWidth: 600,
     thumbHeight: 770,
@@ -375,7 +376,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 37 of 53',
   },
   {
-    src: '/images/pc39.jpeg',
+    original: 'source-assets/images/pc39.jpeg',
     thumb: '/optimized/gallery/pc39-600.webp',
     thumbWidth: 600,
     thumbHeight: 703,
@@ -385,7 +386,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 38 of 53',
   },
   {
-    src: '/images/pc40.jpeg',
+    original: 'source-assets/images/pc40.jpeg',
     thumb: '/optimized/gallery/pc40-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -395,7 +396,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 39 of 53',
   },
   {
-    src: '/images/pc41.jpeg',
+    original: 'source-assets/images/pc41.jpeg',
     thumb: '/optimized/gallery/pc41-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -405,7 +406,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 40 of 53',
   },
   {
-    src: '/images/pc42.jpeg',
+    original: 'source-assets/images/pc42.jpeg',
     thumb: '/optimized/gallery/pc42-600.webp',
     thumbWidth: 600,
     thumbHeight: 808,
@@ -415,7 +416,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 41 of 53',
   },
   {
-    src: '/images/pc43.jpeg',
+    original: 'source-assets/images/pc43.jpeg',
     thumb: '/optimized/gallery/pc43-600.webp',
     thumbWidth: 600,
     thumbHeight: 837,
@@ -425,7 +426,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 42 of 53',
   },
   {
-    src: '/images/pc44.jpeg',
+    original: 'source-assets/images/pc44.jpeg',
     thumb: '/optimized/gallery/pc44-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -435,7 +436,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 43 of 53',
   },
   {
-    src: '/images/pc45.jpeg',
+    original: 'source-assets/images/pc45.jpeg',
     thumb: '/optimized/gallery/pc45-600.webp',
     thumbWidth: 600,
     thumbHeight: 575,
@@ -445,7 +446,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 44 of 53',
   },
   {
-    src: '/images/pc46.jpeg',
+    original: 'source-assets/images/pc46.jpeg',
     thumb: '/optimized/gallery/pc46-600.webp',
     thumbWidth: 600,
     thumbHeight: 751,
@@ -455,7 +456,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 45 of 53',
   },
   {
-    src: '/images/pc47.jpeg',
+    original: 'source-assets/images/pc47.jpeg',
     thumb: '/optimized/gallery/pc47-600.webp',
     thumbWidth: 600,
     thumbHeight: 712,
@@ -465,7 +466,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 46 of 53',
   },
   {
-    src: '/images/pc48.jpeg',
+    original: 'source-assets/images/pc48.jpeg',
     thumb: '/optimized/gallery/pc48-600.webp',
     thumbWidth: 600,
     thumbHeight: 802,
@@ -475,7 +476,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 47 of 53',
   },
   {
-    src: '/images/pc49.jpeg',
+    original: 'source-assets/images/pc49.jpeg',
     thumb: '/optimized/gallery/pc49-600.webp',
     thumbWidth: 600,
     thumbHeight: 361,
@@ -485,7 +486,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 48 of 53',
   },
   {
-    src: '/images/pc50.jpeg',
+    original: 'source-assets/images/pc50.jpeg',
     thumb: '/optimized/gallery/pc50-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -495,7 +496,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 49 of 53',
   },
   {
-    src: '/images/pc51.jpeg',
+    original: 'source-assets/images/pc51.jpeg',
     thumb: '/optimized/gallery/pc51-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -505,7 +506,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 50 of 53',
   },
   {
-    src: '/images/pc52.jpeg',
+    original: 'source-assets/images/pc52.jpeg',
     thumb: '/optimized/gallery/pc52-600.webp',
     thumbWidth: 600,
     thumbHeight: 600,
@@ -515,7 +516,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 51 of 53',
   },
   {
-    src: '/images/pc53.jpeg',
+    original: 'source-assets/images/pc53.jpeg',
     thumb: '/optimized/gallery/pc53-600.webp',
     thumbWidth: 600,
     thumbHeight: 800,
@@ -525,7 +526,7 @@ export const images = [
     alt: 'Toloba Sports Consult gallery photo 52 of 53',
   },
   {
-    src: '/images/pc54.jpeg',
+    original: 'source-assets/images/pc54.jpeg',
     thumb: '/optimized/gallery/pc54-600.webp',
     thumbWidth: 600,
     thumbHeight: 408,
