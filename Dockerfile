@@ -7,7 +7,7 @@ RUN npm ci
 
 COPY . .
 
-# EmailJS keys are read at build time by Vite; Supabase keys come from .env
+# EmailJS keys are read at build time by Vite; only these three VITE_ build args are needed
 ARG VITE_YOUR_SERVICE_ID
 ARG VITE_YOUR_TEMPLATE_ID
 ARG VITE_YOUR_PUBLIC_KEY
