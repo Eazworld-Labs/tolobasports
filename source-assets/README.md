@@ -263,6 +263,5 @@ The folder layout mirrors `public/`, so `source-assets/images/pc1.jpeg` used to 
         5 KB  test-4.jpeg
         4 KB  pc19.jpeg
         2 KB  favicon-32x32.png
-        1 KB  vite.svg
         1 KB  favicon-16x16.png
 ```
