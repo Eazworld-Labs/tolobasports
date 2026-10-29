@@ -20,15 +20,6 @@ const Inner = styled.article`
   }
 `
 
-const Accent = styled.span`
-  display: block;
-  width: 7.2rem;
-  height: 0.6rem;
-  margin-bottom: var(--space-5);
-  border-radius: var(--radius);
-  background-color: var(--color-signal);
-`
-
 const Headline = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
@@ -80,7 +71,6 @@ function NewsArticle() {
     <Wrap aria-labelledby="news-title">
       <Inner>
         <Reveal>
-          <Accent aria-hidden="true" />
           <Headline id="news-title">{news.headline}</Headline>
         </Reveal>
         <Reveal as={Text} delay={80}>

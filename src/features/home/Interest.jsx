@@ -5,7 +5,6 @@ import { devicesMax } from '../../styles/BreakPoint'
 import Heading from '../../ui/Heading'
 import Reveal from '../../ui/Reveal'
 import { stagger } from '../../ui/stagger'
-import Underline from '../../ui/UnderLine'
 import { interests, interestsHeading } from './homeContent'
 
 const Wrap = styled.section`
@@ -72,28 +71,11 @@ const Card = styled(Link)`
     );
   }
 
-  /* red accent edge that grows on hover */
-  &::after {
-    content: '';
-    position: absolute;
-    inset: auto 0 0 0;
-    z-index: 2;
-    height: 0.4rem;
-    background-color: var(--color-signal-600);
-    transform: scaleX(0.25);
-    transform-origin: left;
-    transition: transform 0.3s;
-  }
-
   &:hover {
     transform: translateY(-0.4rem);
   }
   &:hover ${Photo} {
     transform: scale(1.05);
-  }
-  &:hover::after,
-  &:focus-visible::after {
-    transform: scaleX(1);
   }
 
   @media ${devicesMax.sm} {
@@ -142,7 +124,6 @@ function Interest() {
         <Heading as="h2" id="interest-title">
           {interestsHeading}
         </Heading>
-        <Underline />
       </Reveal>
       <Grid>
         {interests.map((item, index) => (

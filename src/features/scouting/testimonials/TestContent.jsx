@@ -5,7 +5,6 @@ import Section from '../../../ui/Section'
 import Header from '../../../ui/Header'
 import Row from '../../../ui/Row'
 import Heading from '../../../ui/Heading'
-import UnderLine from '../../../ui/UnderLine'
 import styled from 'styled-components'
 import { devicesMax } from '../../../styles/BreakPoint'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -89,7 +88,6 @@ function TestContent() {
       <Section type="padd">
         <Row>
           <Heading as="h2">TESTIMONIALS</Heading>
-          <UnderLine />
         </Row>
 
         <TestDetail>

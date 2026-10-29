@@ -61,7 +61,7 @@ const Crumbs = styled.ol`
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
   font-size: var(--text-sm);
   color: var(--color-grey-300);
 
@@ -77,15 +77,6 @@ const Crumbs = styled.ol`
   & a:hover {
     color: var(--color-white);
   }
-`
-
-const Accent = styled.span`
-  display: block;
-  width: 6.4rem;
-  height: 0.5rem;
-  margin-bottom: var(--space-4);
-  border-radius: var(--radius);
-  background-color: var(--color-lime);
 `
 
 const Title = styled.h1`
@@ -121,7 +112,6 @@ function Header({ images, title, crumb, flush, children }) {
             </Crumbs>
           </nav>
         )}
-        <Accent aria-hidden="true" />
         {title && <Title>{title}</Title>}
         {children}
       </Inner>

@@ -40,15 +40,6 @@ const Text = styled.div`
   }
 `
 
-const Accent = styled.span`
-  display: block;
-  width: 7.2rem;
-  height: 0.6rem;
-  margin-bottom: var(--space-5);
-  border-radius: var(--radius);
-  background-color: var(--color-signal);
-`
-
 const Title = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
@@ -120,7 +111,6 @@ function EditorialRow({
             $flip={flip}
             variant={flip ? 'slide-right' : 'slide-left'}
           >
-            <Accent aria-hidden="true" />
             {heading && <Title id={id}>{heading}</Title>}
             {paragraphs.map((p) =>
               typeof p === 'string' ? (

@@ -23,15 +23,6 @@ const Band = styled.section`
   }
 `
 
-const Accent = styled.span`
-  display: block;
-  width: 7.2rem;
-  height: 0.6rem;
-  margin-bottom: var(--space-5);
-  border-radius: var(--radius);
-  background-color: var(--color-lime);
-`
-
 const Title = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
@@ -61,7 +52,6 @@ function CtaBand({ id, heading, paragraphs = [], cta, label }) {
         <Reveal>
           {heading && (
             <>
-              <Accent aria-hidden="true" />
               <Title id={id}>{heading}</Title>
             </>
           )}

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
 import Heading from '../../ui/Heading'
-import Underline from '../../ui/UnderLine'
 import ButtonLink from '../../ui/ButtonLink'
 import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
@@ -31,15 +30,6 @@ const Band = styled.section`
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
   }
-`
-
-const Accent = styled.span`
-  display: block;
-  width: 7.2rem;
-  height: 0.6rem;
-  margin-bottom: var(--space-5);
-  border-radius: var(--radius);
-  background-color: var(--color-signal);
 `
 
 const SectionTitle = styled.h2`
@@ -333,7 +323,6 @@ function AboutDetail() {
         <Container>
           <IntroGrid>
             <Reveal variant="slide-left">
-              <Accent aria-hidden="true" />
               <SectionTitle id="about-intro">{intro.heading}</SectionTitle>
               <Lead>
                 <strong>{intro.leadLabel}</strong> {intro.leadText}
@@ -407,7 +396,6 @@ function AboutDetail() {
             <Heading as="h2" id="team">
               {teamHeading}
             </Heading>
-            <Underline />
           </Reveal>
           <Team>
             {team.map((person, index) => (

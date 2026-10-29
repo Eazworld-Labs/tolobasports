@@ -188,7 +188,6 @@ const Eyebrow = styled.p`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
   margin-bottom: 22px;
   font-size: clamp(12px, 0.25vw + 11px, 14px);
   font-weight: 700;
@@ -197,15 +196,8 @@ const Eyebrow = styled.p`
   color: var(--color-lime);
   ${enter(0.05)}
 
-  &::before {
-    content: '';
-    width: 36px;
-    height: 3px;
-    border-radius: var(--radius);
-    background-color: var(--color-lime);
-  }
-
   & .dot {
+    margin: 0 0.8em;
     color: var(--color-signal);
   }
 `
@@ -501,7 +493,7 @@ function Welcome() {
               <span key={item}>
                 {i > 0 && (
                   <span className="dot" aria-hidden="true">
-                    •{' '}
+                    •
                   </span>
                 )}
                 {item}

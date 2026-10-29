@@ -8,7 +8,6 @@ import Heading from '../../ui/Heading'
 import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
 import { stagger } from '../../ui/stagger'
-import Underline from '../../ui/UnderLine'
 import {
   breadcrumb,
   cta,
@@ -91,20 +90,7 @@ const Acts = styled.ul`
 `
 
 const Act = styled.li`
-  position: relative;
-  padding-left: var(--space-6);
   color: var(--color-grey-700);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0.7em;
-    left: 0;
-    width: 1rem;
-    height: 0.4rem;
-    border-radius: var(--radius);
-    background-color: var(--color-signal-600);
-  }
 `
 
 function MentoringContent() {
@@ -135,7 +121,6 @@ function MentoringContent() {
             <Heading as="h2" id="mentor-options">
               {optionsHeading}
             </Heading>
-            <Underline />
           </Reveal>
           <Grid>
             {options.map((option, index) => (

@@ -6,7 +6,6 @@ import Heading from '../../ui/Heading'
 import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
 import { stagger } from '../../ui/stagger'
-import Underline from '../../ui/UnderLine'
 import { cta, intro, items, whyHeading } from './partnersCopy'
 
 const Band = styled.section`
@@ -45,15 +44,6 @@ const Photo = styled(Picture)`
   border: 1px solid var(--color-grey-200);
 `
 
-const Accent = styled.span`
-  display: block;
-  width: 7.2rem;
-  height: 0.6rem;
-  margin-bottom: var(--space-5);
-  border-radius: var(--radius);
-  background-color: var(--color-signal);
-`
-
 const Lead = styled.p`
   max-width: 60ch;
   font-size: var(--text-xl);
@@ -73,10 +63,6 @@ const SectionHeader = styled.div`
 
 const LightHeading = styled(Heading)`
   color: var(--color-white);
-`
-
-const LimeUnderline = styled(Underline)`
-  background-color: var(--color-lime);
 `
 
 const Cards = styled.ol`
@@ -158,7 +144,6 @@ function PartContent() {
               eager
             />
             <Reveal variant="slide-right" delay={120}>
-              <Accent aria-hidden="true" />
               <Lead>
                 <strong>{intro.label}</strong> {intro.text}
               </Lead>
@@ -173,7 +158,6 @@ function PartContent() {
             <LightHeading as="h2" id="why-partner">
               {whyHeading}
             </LightHeading>
-            <LimeUnderline />
           </Reveal>
           <Cards>
             {items.map((item, index) => (

@@ -6,7 +6,6 @@ import CtaBand from '../../ui/CtaBand'
 import EditorialRow from '../../ui/EditorialRow'
 import Heading from '../../ui/Heading'
 import Reveal from '../../ui/Reveal'
-import Underline from '../../ui/UnderLine'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { announcement, closing, rising, rows } from './scoutingCopy'
 
@@ -105,7 +104,6 @@ function Scout() {
               <Heading as="h2" id="rising-stars">
                 {rising.heading}
               </Heading>
-              <Underline />
             </Reveal>
             <Reveal as={Videos} $count={embeds.length} variant="scale-in">
               {embeds.map((video) => (
