@@ -21,6 +21,7 @@ import Programmes from './pages/Programmes'
 import Trainer from './pages/Trainer'
 import BlogContent from './features/blog/BlogContent'
 import ScrollToTop from './ui/ScrollToTop'
+import RouteMeta from './ui/RouteMeta'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,6 +37,7 @@ function App() {
       <GlobalStyles />
       <BrowserRouter>
         <ScrollToTop />
+        <RouteMeta />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<HomePage />} />
