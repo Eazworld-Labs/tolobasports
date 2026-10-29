@@ -1,5 +1,3 @@
-import { QueryClient, QueryClientProvider } from 'react-query'
-
 import GlobalStyles from './styles/GlobalStyles'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
@@ -23,17 +21,9 @@ import BlogContent from './features/blog/BlogContent'
 import ScrollToTop from './ui/ScrollToTop'
 import RouteMeta from './ui/RouteMeta'
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 0,
-    },
-  },
-})
-
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <GlobalStyles />
       <BrowserRouter>
         <ScrollToTop />
@@ -61,7 +51,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <ToastContainer />
-    </QueryClientProvider>
+    </>
   )
 }
 
