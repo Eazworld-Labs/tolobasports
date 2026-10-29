@@ -11,7 +11,7 @@ const StyledModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
@@ -26,9 +26,9 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--backdrop-color);
+  background-color: var(--color-backdrop);
   backdrop-filter: blur(4px);
-  z-index: 1000;
+  z-index: var(--z-modal);
   transition: all 0.5s;
 `
 
@@ -36,7 +36,7 @@ const Button = styled.button`
   background: none;
   border: none;
   padding: 0.4rem;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--radius-sm);
   transform: translateX(0.8rem);
   transition: all 0.2s;
   position: absolute;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ButtonIcon = styled.button`
   background: none;
   padding: 0.6rem;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--radius-sm);
   transition: all 0.2s;
 
   &:hover {
@@ -13,7 +13,7 @@ const ButtonIcon = styled.button`
   & svg {
     width: 2.2rem;
     height: 2.2rem;
-    color: var(--color-secoundary);
+    color: var(--color-signal);
   }
 `
 

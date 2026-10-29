@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   background-color: transparent;
-  z-index: 5000;
+  z-index: var(--z-header);
 `
 
 function Header() {

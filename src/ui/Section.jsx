@@ -47,7 +47,7 @@ margin-bottom: 8rem;
         ${(props) =>
           props.type === 'parts' &&
           css`
-            background-color: var(--color-white-900);
+            background-color: var(--color-white);
             margin: 0 4rem;
             display: flex;
           `}

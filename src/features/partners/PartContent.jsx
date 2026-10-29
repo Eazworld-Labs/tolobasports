@@ -26,8 +26,8 @@ const ContentBox = styled.div`
   ${(props) =>
     props.type === 'border' &&
     css`
-      border: 1px solid var(--color-primary-0);
-      border-top: 5px solid var(--color-black-900);
+      border: 1px solid var(--color-ink-700);
+      border-top: 5px solid var(--color-ink-900);
       padding: 1rem;
     `}
 `
@@ -88,7 +88,7 @@ const ImgScroll = styled(LazyLoadImage)`
 `
 const P = styled.p``
 const Strong = styled.strong`
-  color: var(--color-secoundary);
+  color: var(--color-signal);
 `
 
 function PartContent() {

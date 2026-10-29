@@ -21,14 +21,14 @@ const Images = styled.div`
 `
 
 const Img = styled(LazyLoadImage)`
-  border: 2px solid var(--color-primary-0);
+  border: 2px solid var(--color-ink-700);
   width: 100%;
   height: 254px;
   cursor: pointer;
 
   transition: all 0.3s;
   &:hover {
-    border: 5px solid var(--color-primary-0);
+    border: 5px solid var(--color-ink-700);
   }
 `
 function GalleryContent() {

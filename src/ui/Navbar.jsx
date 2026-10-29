@@ -11,7 +11,7 @@ import { devicesMax } from '../styles/BreakPoint'
 import Sidebar from './SideBar'
 
 const StyledNav = styled.nav`
-  background-color: var(--color-primary-0);
+  background-color: var(--color-ink-700);
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -36,8 +36,8 @@ const StyledLi = styled.li`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-right: 1px solid var(--color-secoundary);
-  color: var(--color-secoundary);
+  border-right: 1px solid var(--color-signal);
+  color: var(--color-signal);
 
   & svg {
     width: 2.4rem;
@@ -46,12 +46,12 @@ const StyledLi = styled.li`
   }
 
   &:hover {
-    background-color: var(--color-secoundary);
-    color: var(--color-white-900);
+    background-color: var(--color-signal);
+    color: var(--color-white);
   }
 
   &:nth-child(1) {
-    border-left: 1px solid var(--color-secoundary);
+    border-left: 1px solid var(--color-signal);
   }
   @media ${devicesMax.md} {
     font-size: 1.2rem;

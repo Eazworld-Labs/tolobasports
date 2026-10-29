@@ -44,7 +44,7 @@ const StyledCard = styled.figure`
   &:hover {
     background-size: 110%;
     backdrop-filter: 100%;
-    border: 2px solid var(--color-primary-0);
+    border: 2px solid var(--color-ink-700);
     filter: 100%;
   }
   &:hover H2 {
@@ -97,7 +97,7 @@ const StyledBox = styled.div`
 
 const H2 = styled.h2`
   font-size: 1.6rem;
-  color: var(--color-secoundary);
+  color: var(--color-signal);
   position: absolute;
   bottom: 1px;
   left: 5px;

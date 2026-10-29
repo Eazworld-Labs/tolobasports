@@ -19,8 +19,8 @@ const ContentDetail = styled.div`
   }
 `
 const TextDetail = styled.div`
-  border: 1px solid var(--color-primary-0);
-  border-top: 5px solid var(--color-black-900);
+  border: 1px solid var(--color-ink-700);
+  border-top: 5px solid var(--color-ink-900);
   padding: 2rem;
   flex: 1;
 `

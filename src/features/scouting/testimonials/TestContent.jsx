@@ -14,7 +14,7 @@ const StyledTest = styled.div`
   right: 50px;
   font-size: 50px;
   padding: 5rem;
-  color: var(--color-primary-0);
+  color: var(--color-ink-700);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   @media ${devicesMax.md} {
     padding: 3rem;
@@ -33,7 +33,7 @@ const TestDetail = styled.div`
 `
 
 const ImgBox = styled.div`
-  border: 2px solid var(--color-primary-0);
+  border: 2px solid var(--color-ink-700);
   height: 50rem;
   flex: 1;
   padding: 3rem;

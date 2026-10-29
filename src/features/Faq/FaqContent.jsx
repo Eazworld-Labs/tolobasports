@@ -12,11 +12,11 @@ const FaqDetail = styled.div`
 `
 const ContentBox = styled.div`
   padding: 4rem;
-  border: 1px solid var(--color-primary-0);
-  border-top: 5px solid var(--color-secoundary);
+  border: 1px solid var(--color-ink-700);
+  border-top: 5px solid var(--color-signal);
 `
 const StyleQues = styled.div`
-  background-color: var(--color-primary-0);
+  background-color: var(--color-ink-700);
   padding: 1rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
@@ -24,7 +24,7 @@ const StyleQues = styled.div`
 `
 const AnsBox = styled.div`
   padding: 2rem;
-  border: 1px solid var(--color-primary-0);
+  border: 1px solid var(--color-ink-700);
   display: none;
 
   ${(props) =>
@@ -40,7 +40,7 @@ const StyledP = styled.p`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: var(--color-secoundary);
+  color: var(--color-signal);
 `
 
 function FaqContent() {

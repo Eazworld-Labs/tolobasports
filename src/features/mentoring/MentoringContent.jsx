@@ -26,8 +26,8 @@ const StyledText = styled.div`
   padding: 2rem;
   flex: 1;
 
-  border: 1px solid var(--color-primary-0);
-  border-top: 5px solid var(--color-secoundary);
+  border: 1px solid var(--color-ink-700);
+  border-top: 5px solid var(--color-signal);
 `
 const P = styled.p`
   text-align: justify;
@@ -45,7 +45,7 @@ const Img = styled(LazyLoadImage)`
   height: 100%;
 `
 const Strong = styled.strong`
-  color: var(--color-secoundary);
+  color: var(--color-signal);
 `
 
 function MentoringContent() {

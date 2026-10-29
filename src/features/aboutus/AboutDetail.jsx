@@ -47,7 +47,7 @@ const VideoContent = styled.div`
 `
 const Image = styled.div`
   flex-basis: 40%;
-  border: 2px solid var(--color-primary-0);
+  border: 2px solid var(--color-ink-700);
   height: 25rem;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -72,9 +72,9 @@ const ContentDetail = styled.div`
 `
 const Detail = styled.div`
   border: 1px solid var(--color-grey-400);
-  border-top: 5px solid var(--color-primary-0);
+  border-top: 5px solid var(--color-ink-700);
   width: 100%;
-  background-color: var(--color-white-900);
+  background-color: var(--color-white);
   margin: 0 auto;
   padding: 6rem;
 
@@ -99,7 +99,7 @@ const Team = styled.div`
 `
 const StyledPer = styled.div`
   height: 20rem;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -119,8 +119,8 @@ const CareerDetail = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 4rem;
-  border: 1px solid var(--color-primary-0);
-  border-top: 5px solid var(--color-black-900);
+  border: 1px solid var(--color-ink-700);
+  border-top: 5px solid var(--color-ink-900);
   color: var(--color-grey-700);
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16),
     0px 3px 6px 0px rgba(0, 0, 0, 0.23);
@@ -159,7 +159,7 @@ const TextBox = styled.div`
   align-items: center;
 `
 const Strong = styled.strong`
-  color: var(--color-secoundary);
+  color: var(--color-signal);
 `
 function AboutDetail() {
   return (

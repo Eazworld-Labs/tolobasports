@@ -7,12 +7,12 @@ import { devicesMax } from '../../styles/BreakPoint'
 const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: var(--backdrop-color);
+  background-color: var(--color-backdrop);
   backdrop-filter: blur(4px);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20000;
+  z-index: var(--z-modal);
 
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@ const RighContainer = styled.div`
   top: 50%;
   right: 20rem;
   transform: transale(0, -50%);
-  background-color: var(--color-secoundary);
+  background-color: var(--color-signal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +73,7 @@ const StyledSpan = styled.span`
   padding: 0.5rem;
   right: 100px;
   top: 100px;
-  background-color: var(--color-secoundary);
+  background-color: var(--color-signal);
   z-index: 50000000;
   box-shadow: var(--shadow-sm);
 

@@ -4,8 +4,8 @@ import { devicesMax } from '../../styles/BreakPoint'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const StyledWel = styled.div`
-  color: var(--color-white-900);
-  width: 100vw;
+  color: var(--color-white);
+  width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0, 0.7)),
     url('/pc10.jpg');

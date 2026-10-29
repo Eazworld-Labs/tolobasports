@@ -26,8 +26,8 @@ const ScoutDetail = styled.div`
 `
 const ScoutText = styled.div`
   flex: 1;
-  border: 1px solid var(--color-primary-0);
-  border-top: 5px solid var(--color-secoundary);
+  border: 1px solid var(--color-ink-700);
+  border-top: 5px solid var(--color-signal);
   padding: 4rem;
   color: var(--color-grey-500);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -70,7 +70,7 @@ const StyledCheck = styled.div`
   }
 `
 const H4 = styled.h4`
-  color: var(--color-white-900);
+  color: var(--color-white);
   font-size: 2rem;
 `
 const VideoContent = styled.div`
@@ -88,7 +88,7 @@ const VideoContent = styled.div`
   }
 `
 const Strong = styled.strong`
-  color: var(--color-secoundary);
+  color: var(--color-signal);
 `
 function Scout() {
   return (

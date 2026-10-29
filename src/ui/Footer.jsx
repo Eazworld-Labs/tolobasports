@@ -6,7 +6,7 @@ const StyledFooter = styled.footer`
   /* height: 16rem; */
   padding: 2rem;
   font-size: 1.2rem;
-  border-top: 1px solid var(--color-primary-0);
+  border-top: 1px solid var(--color-ink-700);
 `
 const Img = styled.img`
   height: 12rem;
@@ -17,7 +17,7 @@ const StyledTop = styled.div`
   align-items: center;
 `
 const Powered = styled.div`
-  background-color: var(--color-secoundary);
+  background-color: var(--color-signal);
   color: var(--color-white);
   display: flex;
   justify-content: center;

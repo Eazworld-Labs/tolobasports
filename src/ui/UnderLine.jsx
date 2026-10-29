@@ -12,7 +12,7 @@ const Underline = styled.div`
   ${(props) =>
     props.cols === 'col' &&
     css`
-      background-color: var(--color-white-900);
+      background-color: var(--color-white);
       margin-bottom: 2rem;
     `}
 `

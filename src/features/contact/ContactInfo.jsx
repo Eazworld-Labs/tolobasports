@@ -55,7 +55,7 @@ const IconBox = styled.div`
   border-radius: 100%;
   height: 7rem;
   width: 7rem;
-  background-color: var(--color-primary-0);
+  background-color: var(--color-ink-700);
   margin-bottom: 3rem;
 
   display: flex;
@@ -63,7 +63,7 @@ const IconBox = styled.div`
   align-items: center;
 `
 const Icons = styled(HiOutlineIdentification)`
-  color: var(--color-secoundary);
+  color: var(--color-signal);
   font-size: 4rem;
 `
 const H3 = styled.h3`

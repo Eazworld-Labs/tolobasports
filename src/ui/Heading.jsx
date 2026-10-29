@@ -4,7 +4,7 @@ import { devicesMax } from '../styles/BreakPoint'
 const Heading = styled.h1`
 
 font-family: 'Lato';
-color: var(--color-secoundary);
+color: var(--color-signal);
 text-shadow: 2px 1px 0px rgba(44, 51, 67, 0.36);
 
   ${(props) =>
