@@ -1,100 +1,173 @@
 import styled from 'styled-components'
+import { devicesMax } from '../../styles/BreakPoint'
+import Container from '../../ui/Container'
+import CtaBand from '../../ui/CtaBand'
+import EditorialRow from '../../ui/EditorialRow'
 import Header from '../../ui/Header'
 import Heading from '../../ui/Heading'
-import Row from '../../ui/Row'
-import Section from '../../ui/Section'
+import Picture from '../../ui/Picture'
 import Underline from '../../ui/UnderLine'
-import GetMentored from './GetMentored'
-import { devicesMax } from '../../styles/BreakPoint'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import {
+  breadcrumb,
+  cta,
+  intro,
+  options,
+  optionsHeading,
+  pageTitle,
+} from './mentoringCopy'
 
-const StyledContent = styled.div`
-  padding: 4rem;
-  display: flex;
-  gap: 20px;
+const Page = styled.div`
+  padding-block: var(--space-9) 0;
+`
+
+const Options = styled.section`
+  padding-block: var(--space-11);
+  background-color: var(--color-grey-50);
 
   @media ${devicesMax.md} {
-    flex-direction: column;
-    padding: 2rem;
+    padding-block: var(--space-9);
   }
 `
-const StyledText = styled.div`
+
+const OptionsHeader = styled.div`
+  margin-bottom: var(--space-9);
+  text-align: center;
+`
+
+const Grid = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media ${devicesMax.sm} {
+    grid-template-columns: minmax(0, 1fr);
+  }
+`
+
+const Card = styled.li`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  flex: 1;
+  overflow: hidden;
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+`
 
-  border: 1px solid var(--color-ink-700);
-  border-top: 5px solid var(--color-signal);
-`
-const P = styled.p`
-  text-align: justify;
-
-  @media ${devicesMax.md} {
-    font-size: 1.2rem;
-  }
-`
-const ImgBox = styled.div`
-  height: 300px;
-  flex: 1;
-`
-const Img = styled(LazyLoadImage)`
+const Photo = styled(Picture)`
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 `
-const Strong = styled.strong`
-  color: var(--color-signal);
+
+const Body = styled.div`
+  flex: 1;
+  padding: var(--space-6);
+  border-top: 0.4rem solid var(--color-signal);
+`
+
+const CardTitle = styled.h3`
+  font-size: var(--heading-3);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-900);
+`
+
+const Msg = styled.p`
+  margin-top: var(--space-3);
+  color: var(--color-grey-700);
+`
+
+const Acts = styled.ul`
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+`
+
+const Act = styled.li`
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-grey-700);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 1rem;
+    height: 0.4rem;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-signal-600);
+  }
 `
 
 function MentoringContent() {
   return (
     <>
-      <Header images="mentor" />
-      <Section>
-        <Row>
-          <Heading as="h1">Nurturing Excellence Through Mentorship</Heading>
-          <Underline />
-        </Row>
-        <StyledContent>
-          <StyledText>
-            <P>
-              <Strong>At Toloba Sports Consult: </Strong>We understand the
-              transformative power of the right mentoring programs for young
-              student-athletes. The journey of growth extends beyond the
-              physical realm, and it&apos;s our mission to guide them towards
-              maturity in both their mental and physical aspects.
-            </P>
-          </StyledText>
-          <ImgBox>
-            <Img src="/pc15.jpg" alt="pc15" loading="lazy" />
-          </ImgBox>
-        </StyledContent>
+      <Header
+        images="mentor"
+        title={pageTitle}
+        crumb={breadcrumb}
+        flush
+      />
+      <Page>
+        {intro.map((row, index) => (
+          <EditorialRow
+            key={row.label}
+            id={`mentor-${index}`}
+            // The first block is a bold lead-in label, not a heading.
+            heading={index === 0 ? undefined : row.label}
+            label={row.label}
+            paragraphs={
+              index === 0 ? [{ label: row.label, text: row.text }] : [row.text]
+            }
+            image={row.image}
+            flip={index % 2 === 1}
+            tone={index % 2 === 1 ? 'grey' : 'white'}
+          />
+        ))}
+      </Page>
 
-        <StyledContent>
-          <ImgBox>
-            <Img src="/pc16.jpg" alt="pc16" loading="lazy" />
-          </ImgBox>
-          <StyledText>
-            <P>
-              <Strong>Mentoring for Holistic Development: </Strong>
-              Our mentoring programs at Toloba Sports Consult go beyond teaching
-              football techniques; they instill qualities that shape
-              student-athletes into well-rounded individuals. We believe that
-              true excellence involves not only excelling on the field but also
-              adopting the right attitude, work ethic, and mannerisms in life.
-            </P>
-          </StyledText>
-        </StyledContent>
-      </Section>
-      <Section>
-        <Row>
-          <Heading as="h2">GET MONTORED</Heading>
-          <Underline />
-        </Row>
-        <GetMentored />
-      </Section>
+      <Options aria-labelledby="mentor-options">
+        <Container>
+          <OptionsHeader>
+            <Heading as="h2" id="mentor-options">
+              {optionsHeading}
+            </Heading>
+            <Underline />
+          </OptionsHeader>
+          <Grid>
+            {options.map((option) => (
+              <Card key={option.heading}>
+                <Photo
+                  base={option.image.base}
+                  small={480}
+                  large={800}
+                  width={option.image.width}
+                  height={option.image.height}
+                  alt={option.image.alt}
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 30vw"
+                />
+                <Body>
+                  <CardTitle>{option.heading}</CardTitle>
+                  {option.msg && <Msg>{option.msg}</Msg>}
+                  <Acts>
+                    {option.acts.map((act) => (
+                      <Act key={act}>{act}</Act>
+                    ))}
+                  </Acts>
+                </Body>
+              </Card>
+            ))}
+          </Grid>
+        </Container>
+      </Options>
+
+      <CtaBand label="Contact us" cta={cta} />
     </>
   )
 }
