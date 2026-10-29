@@ -1,6 +1,3 @@
-// Mentoring page copy. Wording is kept as it was in MentoringContent.jsx and getData.js;
-// plain spelling slips are fixed (GET MONTORED, COMPETION, Receivingh, "field,including").
-
 export const pageTitle = 'Nurturing Excellence Through Mentorship'
 export const breadcrumb = 'Mentoring'
 
@@ -33,12 +30,12 @@ export const intro = [
   },
 ]
 
-export const optionsHeading = 'GET MENTORED'
+export const optionsHeading = 'Get Mentored'
 
 // Image files: public/optimized/<base>-480.webp and <base>-800.webp.
 export const options = [
   {
-    heading: 'POSITION SPECIFIC',
+    heading: 'Position Specific',
     image: {
       base: 'pc16',
       width: 800,
@@ -55,7 +52,7 @@ export const options = [
     ],
   },
   {
-    heading: 'COMPETITION',
+    heading: 'Competition',
     image: {
       base: 'pc3',
       width: 800,
@@ -72,7 +69,7 @@ export const options = [
     ],
   },
   {
-    heading: 'TACTICAL',
+    heading: 'Tactical',
     image: {
       base: 'pc14',
       width: 800,
@@ -85,7 +82,7 @@ export const options = [
     ],
   },
   {
-    heading: 'TECHNICAL',
+    heading: 'Technical',
     image: {
       base: 'pc34',
       width: 800,
@@ -101,7 +98,7 @@ export const options = [
     ],
   },
   {
-    heading: 'PERFORMANCE',
+    heading: 'Performance',
     image: {
       base: 'pc37',
       width: 800,
@@ -116,7 +113,7 @@ export const options = [
     ],
   },
   {
-    heading: 'MINDSET',
+    heading: 'Mindset',
     image: {
       base: 'pc35',
       width: 800,

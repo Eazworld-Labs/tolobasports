@@ -1,6 +1,4 @@
-// Partners page copy. Wording is kept as it was in PartContent.jsx.
-
-export const pageTitle = 'Partner with us'
+export const pageTitle = 'Partner With Us'
 export const breadcrumb = 'Partners'
 
 export const intro = {
@@ -17,7 +15,7 @@ export const intro = {
   },
 }
 
-export const whyHeading = 'WHY PARTNER WITH US'
+export const whyHeading = 'Why Partner With Us'
 
 export const items = [
   {
@@ -42,9 +40,8 @@ export const items = [
   },
 ]
 
-// Placeholder artwork (stock logos; com4 is the Apple logo), not shown on the page.
-// PartnerLogos.jsx renders these and can be put back once the owner supplies real
-// partner logos and names.
+// Stock placeholder logos (com4 is the Apple logo), not shown on the page.
+// PartnerLogos.jsx can render them again once real partner logos exist.
 export const logos = [
   { base: 'logo-com1', width: 225, height: 225, alt: 'Partner logo' },
   { base: 'logo-com2', width: 400, height: 400, alt: 'Partner logo' },

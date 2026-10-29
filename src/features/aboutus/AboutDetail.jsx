@@ -49,8 +49,6 @@ const SectionTitle = styled.h2`
   color: var(--color-ink-900);
 `
 
-/* ---------- intro ---------- */
-
 const IntroGrid = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -83,8 +81,6 @@ const Photo = styled(Picture)`
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 `
-
-/* ---------- highlights ---------- */
 
 const FactList = styled.ul`
   display: grid;
@@ -122,8 +118,6 @@ const FactCaption = styled.p`
   text-transform: uppercase;
   color: var(--color-grey-300);
 `
-
-/* ---------- scouting process ---------- */
 
 const ProcessGrid = styled.div`
   display: grid;
@@ -176,8 +170,6 @@ const CardTitle = styled.h3`
   color: var(--color-ink-900);
 `
 
-/* ---------- videos ---------- */
-
 const Videos = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.$count}, minmax(0, 1fr));
@@ -197,8 +189,6 @@ const Video = styled.div`
   background-color: var(--color-ink-900);
   box-shadow: var(--shadow-md);
 `
-
-/* ---------- team ---------- */
 
 const Header = styled.div`
   margin-bottom: var(--space-9);
@@ -255,8 +245,6 @@ const PersonTitle = styled.p`
   text-transform: capitalize;
 `
 
-/* ---------- career ---------- */
-
 const Panel = styled.div`
   position: relative;
   overflow: hidden;
@@ -288,6 +276,7 @@ const Panel = styled.div`
 `
 
 const Eyebrow = styled.p`
+  text-transform: uppercase;
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.12em;

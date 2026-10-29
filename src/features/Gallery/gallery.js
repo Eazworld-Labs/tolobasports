@@ -1,8 +1,5 @@
-// Gallery images. `original` is the full-size source file (kept in source-assets, not
-// served); regenerate the optimized copies from it if needed.
-// The grid uses the ~600px thumbnail and the lightbox the resized full image, both
-// in public/optimized/gallery. pc25.jpeg was listed before but does not exist, so it
-// was removed. Alt text is neutral on purpose.
+// The grid shows the thumbnail and the lightbox the larger copy, both in
+// public/optimized/gallery. `original` points at the source file in source-assets.
 
 export const images = [
   {

@@ -186,10 +186,8 @@ function ContactForm() {
       reset()
       setStatus('success')
       toast.success('Your message has been sent')
-    } catch (error) {
-      // The user's input is kept so they can try again; nothing from the form
-      // or the response is logged.
-      console.error('Contact form: sending failed', error?.status)
+    } catch {
+      // Keep the user's input so they can try again.
       setStatus('error')
     }
   }

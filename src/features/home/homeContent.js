@@ -1,21 +1,15 @@
-// Home page content. Wording is kept exactly as it was in the components.
-
 export const hero = {
   eyebrow: ['Scouting', 'Consulting', 'Mentoring'],
-  // H1 = titleStart + highlighted titleHighlight. Options considered:
-  //  A. Turning raw talent into professional football careers  (chosen)
-  //  B. Find the talent. Build the player. Open the door.
-  //  C. Where hidden talent becomes professional football.
+  // The h1 is titleStart followed by the highlighted titleHighlight.
   titleStart: 'Turning raw talent into professional',
   titleHighlight: 'football careers',
-  // The old tagline, with "We prioritize" dropped and the casing fixed.
   lead: 'Fostering talent, enhancing skills, and nurturing athletes to reach their full potential in the world of sports.',
   primaryCta: { label: 'Contact us', to: '/contact' },
   secondaryCta: { label: 'About us', to: '/aboutus' },
   imageAlt: 'Musah Toloba, Founder and CEO of Toloba Sports Consult',
 }
 
-export const interestsHeading = 'CHOOSE YOUR INTEREST'
+export const interestsHeading = 'Choose Your Interest'
 
 // `image` is the base name of public/optimized/<image>-480.webp and -800.webp.
 export const interests = [
@@ -31,7 +25,7 @@ export const interests = [
   },
   {
     id: 'residential',
-    title: 'RESIDENTIAL FOOTBALL SCHOOL',
+    title: 'Residential Football School',
     to: '/consult',
     image: 'musah2',
     imageWidth: 800,
@@ -41,7 +35,7 @@ export const interests = [
   },
   {
     id: 'euro',
-    title: 'EUROPEAN PROGRAMMES',
+    title: 'European Programmes',
     to: '/programmes',
     image: 'pc20',
     imageWidth: 800,
@@ -51,7 +45,7 @@ export const interests = [
   },
   {
     id: 'coach',
-    title: 'COACH EDUCATION',
+    title: 'Coach Education',
     to: '/trainer',
     image: 'musah3',
     imageWidth: 768,

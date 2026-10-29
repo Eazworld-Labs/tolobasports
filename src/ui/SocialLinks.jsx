@@ -56,7 +56,7 @@ function SocialLinks({ size = 'sm' }) {
           href={SITE.facebook}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Toloba Sports on Facebook (opens in a new tab)"
+          aria-label="Toloba Sports Consult on Facebook (opens in a new tab)"
           $size={size}
         >
           <FaFacebookF aria-hidden="true" />
@@ -67,7 +67,7 @@ function SocialLinks({ size = 'sm' }) {
           href={SITE.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Toloba Sports on Instagram (opens in a new tab)"
+          aria-label="Toloba Sports Consult on Instagram (opens in a new tab)"
           $size={size}
         >
           <FaInstagram aria-hidden="true" />

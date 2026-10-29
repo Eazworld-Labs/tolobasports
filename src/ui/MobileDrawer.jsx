@@ -203,13 +203,13 @@ function MobileDrawer({ open, onClose }) {
             {ALL_LINKS.filter((l) => l.to !== CONTACT_LINK.to).map((link) => (
               <li key={link.to}>
                 <DrawerLink to={link.to} end={link.end} onClick={onClose}>
-                  {link.drawerLabel || link.label}
+                  {link.label}
                 </DrawerLink>
               </li>
             ))}
             <ContactItem>
               <ContactLink to={CONTACT_LINK.to} onClick={onClose}>
-                {CONTACT_LINK.drawerLabel}
+                {CONTACT_LINK.label}
               </ContactLink>
             </ContactItem>
           </List>

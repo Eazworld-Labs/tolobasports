@@ -87,7 +87,7 @@ function ContactInfo() {
           rel="noopener noreferrer"
           $variant="secondary"
         >
-          Show Map
+          Show map
           <span className="sr-only"> (opens in a new tab)</span>
         </ButtonLink>
       </div>

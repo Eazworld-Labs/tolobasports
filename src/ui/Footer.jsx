@@ -151,7 +151,7 @@ function Footer() {
             {ALL_LINKS.map((link) => (
               <li key={link.to}>
                 <FooterLink to={link.to} end={link.end}>
-                  {link.drawerLabel || link.label}
+                  {link.label}
                 </FooterLink>
               </li>
             ))}
@@ -171,7 +171,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Show Map
+                  Show map
                   <span className="sr-only"> (opens in a new tab)</span>
                 </InlineLink>
               </span>
@@ -188,7 +188,7 @@ function Footer() {
 
       <Bottom>
         <Reveal as={BottomInner} variant="fade-in">
-          <p>©Copyright 2019 Toloba sports consult. All rights reserved.</p>
+          <p>©Copyright 2019 Toloba Sports Consult. All rights reserved.</p>
           <p>
             Powered by eazword solutions.{'  '}
             <InlineLink

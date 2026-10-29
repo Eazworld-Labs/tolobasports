@@ -1,6 +1,3 @@
-// Contact page copy. Visible labels are kept as they were; the spelling slips
-// "Lacation", "Acadamy" and "FootBall" are fixed.
-
 export const pageTitle = 'Get In Touch'
 export const breadcrumb = 'Contact'
 export const infoHeading = 'Contact Information'

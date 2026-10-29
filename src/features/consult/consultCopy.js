@@ -1,8 +1,7 @@
-// Consult page copy. Wording is kept as it was in ConsultContent.jsx.
 // A row shows its video when embedId is not empty, otherwise its photo.
 // The last section is shown as the closing call-to-action panel (no media).
 
-export const pageTitle = 'CONSULT WITH US'
+export const pageTitle = 'Consult With Us'
 
 export const sections = [
   {

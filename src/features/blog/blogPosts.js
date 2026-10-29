@@ -1,6 +1,4 @@
-// Blog copy. Wording is kept as it was in BlogContent.jsx; the article is split into
-// paragraphs at sentence boundaries, and the broken entity "&pos;" (shown literally
-// in "Curcio&pos;s" and "Daniel&pos;s") is fixed to an apostrophe.
+// The article is split into paragraphs at sentence boundaries.
 
 export const blogTitle = 'Media & Blog'
 

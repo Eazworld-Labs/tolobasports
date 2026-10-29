@@ -63,8 +63,6 @@ const Hero = styled.section`
   }
 `
 
-/* ---------- background layers ---------- */
-
 const Backdrop = styled.div`
   position: absolute;
   inset: -4% 0;
@@ -159,8 +157,6 @@ const BigWord = styled.span`
   }
 `
 
-/* ---------- layout ---------- */
-
 const Inner = styled.div`
   flex: 1;
   width: 100%;
@@ -205,7 +201,7 @@ const Eyebrow = styled.p`
     content: '';
     width: 36px;
     height: 3px;
-    border-radius: 3px;
+    border-radius: var(--radius-xs);
     background-color: var(--color-lime);
   }
 
@@ -265,8 +261,6 @@ const HeroButton = styled(ButtonLink)`
     outline-offset: 3px;
   }
 `
-
-/* ---------- founder ---------- */
 
 const Stage = styled.div`
   position: relative;
@@ -359,8 +353,6 @@ const Founder = styled.img`
   object-position: bottom;
 `
 
-/* ---------- trust strip, scroll cue, edge ---------- */
-
 const StatsBar = styled.div`
   position: relative;
   z-index: 3;
@@ -375,7 +367,7 @@ const Stats = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.07),
@@ -422,7 +414,7 @@ const Cue = styled.a`
   align-items: center;
   gap: 6px;
   padding: 6px 12px 6px 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -568,7 +560,7 @@ function Welcome() {
       </Inner>
 
       <StatsBar>
-        <Stats aria-label="Why athletes choose us">
+        <Stats aria-label="Key facts">
           {HERO_STATS.map((stat) => (
             <Stat key={stat.label}>
               <StatValue>{stat.value}</StatValue>

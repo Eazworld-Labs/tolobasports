@@ -1,6 +1,3 @@
-// About page copy. Wording is kept as it was in AboutDetail.jsx; the only edit is
-// the spelling fix "foo tball" -> "football".
-
 export const pageTitle = 'About Us'
 
 export const intro = {
@@ -10,7 +7,7 @@ export const intro = {
     'is a beacon of opportunity for aspiring football talents across the globe. Our unwavering commitment to nurturing the stars of tomorrow is matched only by our passion for the beautiful game.',
 }
 
-// Short phrases lifted word for word from the copy below, shown as scannable facts.
+// Short phrases taken word for word from the copy below, shown as scannable facts.
 export const highlights = [
   { value: 'UEFA Certified coaches', caption: 'Our Scouting Process' },
   { value: 'Portugal, Spain, and Turkey', caption: 'professional scouts' },
@@ -65,7 +62,7 @@ export const videos = [
   { embedId: '', title: 'Toloba Sports Consult video' },
 ]
 
-export const teamHeading = 'OUR TEAM'
+export const teamHeading = 'Our Team'
 
 export const team = [
   {
@@ -111,12 +108,12 @@ export const team = [
 ]
 
 export const career = {
-  eyebrow: 'CAREER',
+  eyebrow: 'Career',
   heading: 'Join Us in the Pursuit of Excellence',
   paragraphs: [
     "The measure of our success is reflected in the achievements of the players we have nurtured. These young talents, once hidden gems, have not only represented Ghana's junior national teams but have also achieved the extraordinary by securing coveted contracts with esteemed European clubs. Their journeys inspire us and stand as testaments to our commitment to nurturing the stars of tomorrow",
     "If you're passionate about football and aspire to be a part of the next generation of football stars, Toloba Sports Consult is your platform for growth and opportunity. Join us as we explore, train, and mentor the future football legends.",
   ],
   email: 'Mtoloba@tolobasports.com',
-  cta: { label: 'CONTACT US', to: '/contact' },
+  cta: { label: 'Contact us', to: '/contact' },
 }

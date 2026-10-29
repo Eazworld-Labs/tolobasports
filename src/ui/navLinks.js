@@ -1,7 +1,7 @@
 // Single source of truth for site navigation (header, drawer and footer).
 export const PRIMARY_LINKS = [
   { to: '/', label: 'Home', end: true },
-  { to: '/aboutus', label: 'About', drawerLabel: 'About Toloba SC' },
+  { to: '/aboutus', label: 'About' },
   { to: '/scouting', label: 'Scouting' },
   { to: '/consult', label: 'Consulting' },
   { to: '/mentoring', label: 'Mentoring' },
@@ -17,7 +17,6 @@ export const MORE_LINKS = [
 export const CONTACT_LINK = {
   to: '/contact',
   label: 'Contact',
-  drawerLabel: 'Contact Us',
 }
 
 // All destinations shown in the drawer and footer.

@@ -1,4 +1,3 @@
-// Scouting page copy. Wording is kept as it was in Scout.jsx.
 // A row shows its video when embedId is not empty, otherwise its photo.
 
 export const pageTitle = 'Scouting'
@@ -66,16 +65,15 @@ export const closing = {
   cta: { label: 'Contact us', to: '/contact' },
 }
 
-// The old page showed this next to a "CLICK HERE" button that had no destination,
-// so only the text is shown until a schedule link exists.
+// There is no schedule link yet, so only the text is shown. Set `action` to add a button.
 export const announcement = {
-  text: 'CHECK SCOUTING SCHEDULE AND OTHER IMPORTANT ANNOUNCEMENTS',
-  action: null, // e.g. { label: 'CLICK HERE', href: '...' }
+  text: 'Check Scouting Schedule and Other Important Announcements',
+  action: null, // e.g. { label: 'Click here', href: '...' }
 }
 
 // The section is shown only when at least one embedId is not empty.
 export const rising = {
-  heading: 'THE RISING STARS',
+  heading: 'The Rising Stars',
   videos: [
     { embedId: '', title: 'Toloba Sports Consult video' },
     { embedId: '', title: 'Toloba Sports Consult video' },
