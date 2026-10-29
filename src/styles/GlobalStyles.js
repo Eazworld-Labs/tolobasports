@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Type: families */
   --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
 
   /* Type: fluid scale (clamp between phone and desktop) */
   --text-xs: clamp(1.2rem, 1.15rem + 0.1vw, 1.3rem);
