@@ -46,8 +46,9 @@ const Video = styled.div`
   margin-top: var(--space-9);
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
 `
 
 const Source = styled.p`

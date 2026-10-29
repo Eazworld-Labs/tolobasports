@@ -24,6 +24,19 @@ const Inner = styled.div`
   margin: 0 auto;
 `
 
+const Badge = styled.p`
+  display: inline-block;
+  margin-bottom: var(--space-5);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-lime);
+  color: var(--color-ink-900);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+`
+
 const Title = styled.h1`
   font-size: var(--heading-1);
   font-weight: 800;
@@ -57,13 +70,14 @@ const BackLink = styled(Link)`
   }
 `
 
-// Full-width message page: the page's single h1, one short text and two links.
+// Full-width message page: a badge, the page's single h1, one sentence and two links.
 // `noindex` keeps pages without real content out of search results.
-function StatusPage({ title, text, primary, secondary, noindex }) {
+function StatusPage({ badge, title, text, primary, secondary, noindex }) {
   useNoIndex(Boolean(noindex))
   return (
     <Wrap aria-labelledby="status-page-title">
       <Inner>
+        <Badge>{badge}</Badge>
         <Title id="status-page-title">{title}</Title>
         <Text>{text}</Text>
         <Actions>

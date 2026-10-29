@@ -62,7 +62,7 @@ const Logo = styled.li`
   height: 120px;
   padding: 12px;
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
 `
 
@@ -90,7 +90,7 @@ const Toggle = styled.button`
   width: 4.4rem;
   height: 4.4rem;
   border: 1px solid var(--color-grey-300);
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   background-color: var(--color-white);
   color: var(--color-ink-700);
 

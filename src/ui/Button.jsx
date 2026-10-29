@@ -8,7 +8,8 @@ const Button = styled.button`
   color: var(--color-white);
   border: none;
   padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
   transition:
     background-color 0.2s,
     transform 0.2s;

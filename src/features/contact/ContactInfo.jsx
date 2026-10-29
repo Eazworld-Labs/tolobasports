@@ -10,7 +10,7 @@ const Card = styled.aside`
   align-self: start;
   padding: var(--space-9);
   border-top: 0.6rem solid var(--color-lime);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-ink-900);
   background-image: linear-gradient(
     135deg,
@@ -18,6 +18,7 @@ const Card = styled.aside`
     var(--color-ink-700) 100%
   );
   color: var(--color-grey-200);
+  box-shadow: var(--shadow-md);
 
   @media ${devicesMax.md} {
     padding: var(--space-7) var(--space-6);

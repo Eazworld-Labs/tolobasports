@@ -4,8 +4,9 @@ import StatusPage from '../ui/StatusPage'
 function NotFound() {
   return (
     <StatusPage
+      badge="404"
       title="Page not found"
-      text="Error 404. We could not find the page you were looking for."
+      text="We could not find the page you were looking for."
       primary={{ label: 'Back to home', to: '/' }}
       secondary={{ label: 'Contact us', to: '/contact' }}
       noindex

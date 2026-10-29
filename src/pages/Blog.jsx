@@ -25,8 +25,9 @@ const Card = styled.li`
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   overflow: hidden;
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
 
   @media ${devicesMax.md} {
     grid-template-columns: minmax(0, 1fr);
@@ -85,7 +86,7 @@ const More = styled(Link)`
   margin-top: var(--space-7);
   min-height: 4.4rem;
   padding: var(--space-3) var(--space-7);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-signal-600);
   color: var(--color-white);
   font-weight: 600;

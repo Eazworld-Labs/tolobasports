@@ -4,7 +4,7 @@
 const SITE_NAME = 'Toloba Sports Consult'
 
 const COMING_SOON =
-  'This page is coming soon. Get in touch and we will be happy to talk.'
+  'We are still preparing this page. Get in touch and we will be happy to talk.'
 
 const PAGES = {
   '/': {

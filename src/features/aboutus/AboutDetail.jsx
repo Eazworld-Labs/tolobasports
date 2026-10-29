@@ -68,8 +68,8 @@ const Photo = styled(Picture)`
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 `
 
 const FactList = styled.ul`
@@ -85,7 +85,7 @@ const FactList = styled.ul`
 const Fact = styled.li`
   padding: var(--space-7);
   border-top: 0.4rem solid var(--color-lime);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-ink-700);
 `
 
@@ -125,8 +125,8 @@ const ProcessPhoto = styled(Picture)`
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 
   /* stays in view beside the tall list of cards (below the sticky header) */
   @media (min-width: 1025px) {
@@ -144,8 +144,9 @@ const Card = styled.li`
   padding: var(--space-7);
   border: 1px solid var(--color-grey-200);
   border-left: 0.5rem solid var(--color-signal);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
 
   & p {
     margin-top: var(--space-3);
@@ -174,8 +175,9 @@ const Videos = styled.div`
 const Video = styled.div`
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
 `
 
 const Header = styled.div`
@@ -196,8 +198,9 @@ const Team = styled.ul`
 const Person = styled.li`
   overflow: hidden;
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
 `
 
 const PersonPhoto = styled(Picture)`
@@ -236,7 +239,7 @@ const Panel = styled.div`
   position: relative;
   overflow: hidden;
   padding: var(--space-10) var(--space-10);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background-color: var(--color-ink-900);
   background-image: linear-gradient(
     135deg,

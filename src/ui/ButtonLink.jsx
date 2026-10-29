@@ -11,7 +11,7 @@ const ButtonLink = styled(Link)`
   min-height: 4.4rem;
   padding: var(--space-3) var(--space-7);
   border: 2px solid transparent;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: 0.02em;

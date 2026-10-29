@@ -59,7 +59,7 @@ const Photo = styled.img`
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
 `
 
 const IconButton = styled.button`
@@ -69,7 +69,7 @@ const IconButton = styled.button`
   width: 4.8rem;
   height: 4.8rem;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--color-white);
   transition: background-color 0.2s;

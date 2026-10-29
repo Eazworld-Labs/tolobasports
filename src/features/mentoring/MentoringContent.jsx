@@ -53,8 +53,9 @@ const Card = styled.li`
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
 `
 
 const Photo = styled(Picture)`

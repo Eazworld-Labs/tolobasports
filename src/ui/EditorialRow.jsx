@@ -73,15 +73,16 @@ const Photo = styled(Picture)`
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 `
 
 const Video = styled.div`
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
 `
 
 // paragraphs: strings, or { label, text } for a bold lead-in label.

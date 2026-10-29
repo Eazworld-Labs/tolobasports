@@ -3,8 +3,9 @@ import StatusPage from './StatusPage'
 function ComingSoon({ title, noindex }) {
   return (
     <StatusPage
+      badge="Coming soon"
       title={title}
-      text="This page is coming soon. Get in touch and we will be happy to talk."
+      text="We are still preparing this page. Get in touch and we will be happy to talk."
       primary={{ label: 'Contact us', to: '/contact' }}
       secondary={{ label: 'Back to home', to: '/' }}
       noindex={noindex}

@@ -40,8 +40,8 @@ const Photo = styled(Picture)`
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 `
 
 const Lead = styled.p`
@@ -104,7 +104,7 @@ const Card = styled.li`
   height: 100%;
   padding: var(--space-8);
   border-top: 0.4rem solid var(--color-lime);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-ink-700);
   color: var(--color-grey-200);
 `

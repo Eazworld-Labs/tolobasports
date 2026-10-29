@@ -24,8 +24,9 @@ const IS_CONFIGURED = Boolean(SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY)
 const Card = styled.section`
   padding: var(--space-9);
   border: 1px solid var(--color-grey-200);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
 
   @media ${devicesMax.md} {
     padding: var(--space-7) var(--space-5);
@@ -70,7 +71,7 @@ const control = `
   width: 100%;
   padding: 1.2rem 1.4rem;
   border: 1px solid var(--color-grey-500);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-white);
   font-size: var(--text-base);
   color: var(--color-ink-900);
@@ -107,7 +108,7 @@ const Status = styled.div`
       props.$kind === 'success'
         ? 'var(--color-lime)'
         : 'var(--color-signal-600)'};
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-grey-50);
   color: var(--color-ink-900);
 
