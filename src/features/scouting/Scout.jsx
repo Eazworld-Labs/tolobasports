@@ -1,184 +1,129 @@
 import styled from 'styled-components'
-import Heading from '../../ui/Heading'
-import Row from '../../ui/Row'
-import Section from '../../ui/Section'
-import UnderLine from '../../ui/UnderLine'
-import Button from '../../ui/Button'
 import { devicesMax } from '../../styles/BreakPoint'
+import ButtonLink from '../../ui/ButtonLink'
+import Container from '../../ui/Container'
+import CtaBand from '../../ui/CtaBand'
+import EditorialRow from '../../ui/EditorialRow'
+import Heading from '../../ui/Heading'
+import Underline from '../../ui/UnderLine'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { announcement, closing, rising, rows } from './scoutingCopy'
 
-const ScoutContent = styled.div`
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  padding: 0 8rem;
-  margin-bottom: 4rem;
-
-  @media ${devicesMax.md} {
-    flex-direction: column;
-    padding: 0 2rem;
-  }
+const Page = styled.div`
+  padding-block: var(--space-9) 0;
 `
-const ScoutDetail = styled.div`
-  flex: 1;
-  height: 100%;
-`
-const ScoutText = styled.div`
-  flex: 1;
-  border: 1px solid var(--color-ink-700);
-  border-top: 5px solid var(--color-signal);
-  padding: 4rem;
-  color: var(--color-grey-500);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+const Notice = styled.section`
+  padding-block: var(--space-9);
+  background-color: var(--color-lime);
+  color: var(--color-ink-900);
+`
+
+const NoticeInner = styled(Container)`
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-
-  @media ${devicesMax.md} {
-    padding: 1.5rem;
-  }
-`
-const Img = styled(LazyLoadImage)`
-  width: 100%;
-  /* height: 310px; */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
-const StyledP = styled.p`
-  width: 100%;
-  font-size: 2rem;
-  text-align: justify;
-`
-
-const StyledCheck = styled.div`
-  padding: 4rem;
-  background-image: url('/pc37.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 8rem;
-
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  gap: var(--space-6);
+`
+
+const NoticeText = styled.p`
+  max-width: 48ch;
+  font-family: var(--font-heading);
+  font-size: var(--heading-3);
+  font-weight: 700;
+  line-height: 1.15;
+`
+
+const Stars = styled.section`
+  padding-block: var(--space-11);
 
   @media ${devicesMax.md} {
-    margin-bottom: 4rem;
-    padding: 2rem;
+    padding-block: var(--space-9);
   }
 `
-const H4 = styled.h4`
-  font-family: var(--font-body);
-  font-weight: 600;
-  color: var(--color-white);
-  font-size: 2rem;
-`
-const VideoContent = styled.div`
-  padding: 4rem;
-  height: 40rem;
 
-  display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  align-items: center;
+const StarsHeader = styled.div`
+  margin-bottom: var(--space-8);
+  text-align: center;
+`
+
+const Videos = styled.div`
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.$count}, minmax(0, 1fr));
+  gap: var(--space-6);
 
   @media ${devicesMax.md} {
-    flex-direction: column;
-    padding: 2rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 `
-const Strong = styled.strong`
-  color: var(--color-signal);
+
+const Video = styled.div`
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+  box-shadow: var(--shadow-md);
 `
+
 function Scout() {
+  const embeds = rising.videos.filter((v) => v.embedId)
+
   return (
     <>
-      <Section>
-        <Row>
-          <Heading as="h1">Scouting</Heading>
-          <UnderLine />
-        </Row>
-        <ScoutContent>
-          <ScoutDetail>
-            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
-          </ScoutDetail>
-          <ScoutText>
-            <StyledP>
-              <Strong>Our Scouting Process: </Strong>
-              At Toloba Sports Consult, we believe in a holistic approach to
-              scouting and nurturing football talent. Our annual scouting
-              process is executed by UEFA Certified coaches, ensuring that the
-              selection of promising football talents is carried out with the
-              highest standards of expertise. This year, we&apos;ve taken our
-              scouting process to new heights by forming strategic partnerships
-              with professional scouts hailing from Portugal, Spain, and Turkey.
-              These scouts bring a wealth of experience and possess vital
-              connections with top European clubs. Their expertise and networks
-              are invaluable, significantly expanding the horizons for young
-              talents who aspire to make a mark in the world of football.
-            </StyledP>
-          </ScoutText>
-        </ScoutContent>
-        <ScoutContent>
-          <ScoutText>
-            <StyledP>
-              <Strong>Twice a Year Scouting: </Strong>
-              We are proud to announce that these scouts from Portugal, Spain,
-              and Turkey will visit twice a year. This means that aspiring
-              football talents have not just one but two opportunities to
-              showcase their skills and take a step closer to their dreams.
-            </StyledP>
-          </ScoutText>
-          <ScoutDetail>
-            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
-          </ScoutDetail>
-        </ScoutContent>
-        <ScoutContent>
-          <ScoutDetail>
-            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
-          </ScoutDetail>
-          <ScoutText>
-            <StyledP>
-              <Strong>A World of Opportunity: </Strong>
-              Toloba Sports Consult&apos;s global perspective ensures that
-              talent knows no borders. With scouts from Portugal, Spain, and
-              Turkey on board, we are committed to reaching talent across
-              diverse geographies. Our mission is to unearth hidden gems
-              worldwide, offering them the opportunity of a lifetime.
-            </StyledP>
-          </ScoutText>
-        </ScoutContent>
-        <ScoutContent>
-          <ScoutText>
-            <StyledP>
-              <Strong> Join Us in the Pursuit of Excellence: </Strong>
-              If you&apos;re passionate about football and aspire to be a part
-              of the next generation of football stars, Toloba Sports Consult is
-              your platform for growth and opportunity. Join us as we explore,
-              train, and mentor the future football legends.
-            </StyledP>
-          </ScoutText>
-          <ScoutDetail>
-            <Img src="/pc30.jpg" alt="pc30" loading="lazy" />
-          </ScoutDetail>
-        </ScoutContent>
-      </Section>
-      <StyledCheck>
-        <H4>CHECK SCOUTING SCHEDULE AND OTHER IMPORTANT ANNOUNCEMENTS</H4>
-        <Button>CLICK HERE</Button>
-      </StyledCheck>
-      <Section>
-        <Row>
-          <Heading as="h2">THE RISING STARS</Heading>
-          <UnderLine />
-        </Row>
-        <VideoContent>
-          <YoutubeEmbed embedId="" />
-          <YoutubeEmbed embedId="" />
-        </VideoContent>
-      </Section>
+      <Page>
+        {rows.map((row, index) => (
+          <EditorialRow
+            key={row.heading}
+            id={`scout-${index}`}
+            heading={row.heading}
+            paragraphs={row.paragraphs}
+            embedId={row.embedId}
+            videoTitle={row.videoTitle}
+            image={row.image}
+            flip={index % 2 === 1}
+            tone={index % 2 === 1 ? 'grey' : 'white'}
+          />
+        ))}
+      </Page>
+
+      <Notice aria-label="Announcements">
+        <NoticeInner>
+          <NoticeText>{announcement.text}</NoticeText>
+          {announcement.action && (
+            <ButtonLink to={announcement.action.href} $variant="outline">
+              {announcement.action.label}
+            </ButtonLink>
+          )}
+        </NoticeInner>
+      </Notice>
+
+      {embeds.length > 0 && (
+        <Stars aria-labelledby="rising-stars">
+          <Container>
+            <StarsHeader>
+              <Heading as="h2" id="rising-stars">
+                {rising.heading}
+              </Heading>
+              <Underline />
+            </StarsHeader>
+            <Videos $count={embeds.length}>
+              {embeds.map((video) => (
+                <Video key={video.embedId}>
+                  <YoutubeEmbed embedId={video.embedId} title={video.title} />
+                </Video>
+              ))}
+            </Videos>
+          </Container>
+        </Stars>
+      )}
+
+      <CtaBand
+        id="scout-closing"
+        heading={closing.heading}
+        paragraphs={closing.paragraphs}
+        cta={closing.cta}
+      />
     </>
   )
 }
