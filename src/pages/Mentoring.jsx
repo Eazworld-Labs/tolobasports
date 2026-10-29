@@ -1,4 +1,4 @@
-import MentoringContent from '../features/mentoring /MentoringContent'
+import MentoringContent from '../features/mentoring/MentoringContent'
 
 function Mentoring() {
   return (
