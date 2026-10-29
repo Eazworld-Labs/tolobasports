@@ -50,6 +50,7 @@ const Tagline = styled.p`
   max-width: 34rem;
   font-size: var(--text-base);
   color: var(--color-grey-200);
+  hyphens: manual;
 `
 
 const ColTitle = styled.h2`
