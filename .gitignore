@@ -26,3 +26,12 @@ dist-ssr
 # Environment files
 .env
 .env.local
+
+# Local assistant and editor tooling
+.claude/
+CLAUDE.md
+.cursor/
+.cursorrules
+.windsurf/
+.aider*
+graphify-out/

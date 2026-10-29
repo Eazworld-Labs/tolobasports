@@ -1,7 +1,14 @@
 {
-  "name": "mtlo",
+  "name": "toloba-sports-consult",
+  "version": "1.0.0",
+  "description": "Website for Toloba Sports Consult, a football scouting, consulting and mentoring consultancy in Ghana.",
+  "author": "Eazworld Labs",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eazworld-Labs/tolobasports.git"
+  },
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
