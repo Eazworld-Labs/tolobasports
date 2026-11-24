@@ -28,7 +28,7 @@ dist-ssr
 .env.local
 
 # Local assistant and editor tooling
-.claude/
+.claude/settings.local.json
 CLAUDE.md
 .cursor/
 .cursorrules
