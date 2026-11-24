@@ -17,7 +17,6 @@ import { hero } from './homeContent'
 const HERO_STATS = [
   { value: 'UEFA', label: 'Certified coaches' },
   { value: '3', label: 'Partner scout countries' },
-  { value: '2×', label: 'Scouting visits a year' },
 ]
 
 const motionOK = '@media (prefers-reduced-motion: no-preference)'
@@ -260,7 +259,7 @@ const StatsBar = styled.div`
 
 const Stats = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-xs);
   background: linear-gradient(

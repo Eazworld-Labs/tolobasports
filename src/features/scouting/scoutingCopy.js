@@ -6,7 +6,8 @@ export const rows = [
   {
     heading: 'Our Scouting Process:',
     paragraphs: [
-      "At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our annual scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise. This year, we've taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. These scouts bring a wealth of experience and possess vital connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.",
+      'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
+      'We have taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. We are looking forward to having a broader scope of scouts from other countries on board in the not too distant future. These scouts bring a wealth of experience and have connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.',
     ],
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
@@ -18,23 +19,6 @@ export const rows = [
       height: 750,
       alt: 'A football stadium filled with fans under a sunset sky',
       position: '50% 50%',
-    },
-  },
-  {
-    heading: 'Twice a Year Scouting:',
-    paragraphs: [
-      'We are proud to announce that these scouts from Portugal, Spain, and Turkey will visit twice a year. This means that aspiring football talents have not just one but two opportunities to showcase their skills and take a step closer to their dreams.',
-    ],
-    embedId: '',
-    videoTitle: 'Toloba Sports Consult video',
-    image: {
-      base: 'match-challenge',
-      small: 640,
-      large: 1000,
-      width: 1000,
-      height: 667,
-      alt: 'Two players competing for the ball during a match on a grass pitch',
-      position: '50% 55%',
     },
   },
   {
