@@ -69,6 +69,16 @@ const Stage = styled.div`
   padding: 0 var(--space-4);
 `
 
+const Clip = styled.video`
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-sm);
+  background-color: #000;
+`
+
 const Photo = styled.img`
   display: block;
   max-width: 100%;
@@ -111,7 +121,14 @@ const Nav = styled.div`
   padding: var(--space-4);
 `
 
-function GalleryModel({ images, index, onClose, onNavigate }) {
+function GalleryModel({
+  images,
+  index,
+  onClose,
+  onNavigate,
+  label = 'Photo viewer',
+  noun = 'photo',
+}) {
   const dialogRef = useRef(null)
   const closeRef = useRef(null)
   const touchX = useRef(null)
@@ -140,6 +157,7 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
   // Warm the cache for the neighbouring photos.
   useEffect(() => {
     for (const i of [index - 1, index + 1]) {
+      // Photos (and video posters) only; videos load when opened.
       new Image().src = images[(i + total) % total].full
     }
   }, [index, images, total])
@@ -183,7 +201,7 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Photo viewer"
+        aria-label={label}
         onClick={closeOnBackdrop}
       >
         <Bar onClick={closeOnBackdrop}>
@@ -193,7 +211,7 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
           <IconButton
             ref={closeRef}
             type="button"
-            aria-label="Close photo viewer"
+            aria-label={`Close ${noun} viewer`}
             onClick={onClose}
           >
             <HiOutlineXMark aria-hidden="true" />
@@ -213,26 +231,41 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
             onNavigate((index + (dx < 0 ? 1 : -1) + total) % total)
           }}
         >
-          <Photo
-            key={image.full}
-            src={image.full}
-            width={image.fullWidth}
-            height={image.fullHeight}
-            alt={image.alt}
-          />
+          {image.video ? (
+            // Opened on purpose by the visitor, so it starts playing.
+            <Clip
+              key={image.video}
+              src={image.video}
+              poster={image.full}
+              width={image.fullWidth}
+              height={image.fullHeight}
+              controls
+              autoPlay
+              playsInline
+              aria-label={image.alt}
+            />
+          ) : (
+            <Photo
+              key={image.full}
+              src={image.full}
+              width={image.fullWidth}
+              height={image.fullHeight}
+              alt={image.alt}
+            />
+          )}
         </Stage>
         <Caption aria-hidden="true">{image.alt}</Caption>
         <Nav onClick={closeOnBackdrop}>
           <IconButton
             type="button"
-            aria-label="Previous photo"
+            aria-label={`Previous ${noun}`}
             onClick={() => onNavigate((index - 1 + total) % total)}
           >
             <HiOutlineChevronLeft aria-hidden="true" />
           </IconButton>
           <IconButton
             type="button"
-            aria-label="Next photo"
+            aria-label={`Next ${noun}`}
             onClick={() => onNavigate((index + 1) % total)}
           >
             <HiOutlineChevronRight aria-hidden="true" />
