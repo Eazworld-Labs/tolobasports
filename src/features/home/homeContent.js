@@ -143,7 +143,7 @@ export const field = {
 export const news = {
   heading: 'In the news',
   intro: 'Press coverage and stories from our work.',
-  all: { label: 'All news and stories', to: '/blog' },
+  all: { label: 'All news', to: '/blog' },
   source: 'GhanaWeb',
   headline:
     'Musah Toloba recognised for sports initiatives and offered a collaboration by the Turcaf President',

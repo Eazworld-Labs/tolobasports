@@ -65,8 +65,9 @@ const Play = styled.span`
   }
 `
 
-function YouTubeFacade({ id, title, className }) {
-  const [playing, setPlaying] = useState(false)
+// `autoPlay` skips the thumbnail when the visitor has already asked to watch.
+function YouTubeFacade({ id, title, className, autoPlay = false }) {
+  const [playing, setPlaying] = useState(autoPlay)
 
   return (
     <Frame className={className}>

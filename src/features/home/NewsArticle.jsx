@@ -1,141 +1,155 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { HiArrowUpRight } from 'react-icons/hi2'
+import { HiArrowRight, HiArrowUpRight, HiPlay, HiXMark } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
-import SectionHead from '../../ui/SectionHead'
 import YouTubeFacade from '../../ui/YouTubeFacade'
 import Block from '../../ui/kit/Block'
-import TextLink from '../../ui/kit/TextLink'
 import { posts } from '../blog/blogPosts'
 import { news } from './homeContent'
 
-// A small newsroom: the press story as the featured card, the latest blog post
-// beside it, and a link to everything.
-const Stack = styled.div`
-  display: grid;
-  gap: var(--space-5);
-`
-
-// Horizontal cards: media or title on the left, text on the right; stacked on
-// tablets and phones.
-const Card = styled.article`
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
-  overflow: hidden;
-
-  @media ${devicesMax.lg} {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`
-
-const Body = styled.div`
+// "In the news" as a simple list: one row per story, each row fully clickable,
+// with the press video opening inline on demand.
+const Head = styled.div`
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
   gap: var(--space-4);
-  padding: var(--space-7) var(--space-7);
+  margin-bottom: var(--space-7);
 
-  @media ${devicesMax.md} {
-    padding: var(--space-6) var(--space-5);
+  & h2 {
+    font-size: var(--heading-2);
+    color: var(--color-heading);
   }
 `
 
-const Meta = styled.p`
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  color: var(--color-text);
-`
-
-const Headline = styled.h3`
-  font-size: clamp(2.2rem, 1.6rem + 0.9vw, 2.8rem);
-  line-height: 1.2;
-  color: var(--color-heading);
-`
-
-const Summary = styled.p`
-  color: var(--color-text);
-`
-
-// Clamp long excerpts so the two cards stay balanced.
-const Excerpt = styled.p`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  overflow: hidden;
-  color: var(--color-text);
-`
-
-const Spacer = styled.div`
-  flex: 1;
-`
-
-const External = styled.a`
+const AllLink = styled(Link)`
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  align-self: flex-start;
+  gap: var(--space-2);
   font-weight: 600;
   color: var(--color-link);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.4rem;
 
   & svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    transition: transform 0.2s;
   }
   &:hover {
     color: var(--color-link-hover);
   }
-`
-
-const Video = styled(YouTubeFacade)`
-  /* Fills its column beside the text on desktop; 16:9 when stacked. */
-  align-self: stretch;
-  width: 100%;
-  height: 100%;
-  min-height: 30rem;
-  aspect-ratio: auto;
-  border-radius: 0;
-
-  /* YouTube's 4:3 thumbnail has the 16:9 picture letterboxed inside; in this
-     taller frame a slight zoom keeps the black bars out of view. */
-  @media (min-width: 1025px) {
-    & img,
-    & button:hover img {
-      transform: scale(1.22);
-    }
-  }
-
-  @media ${devicesMax.lg} {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 16 / 9;
+  &:hover svg {
+    transform: translateX(0.3rem);
   }
 `
 
-// The whole blog card is the click target: the link's ::after covers it.
-const StoryCard = styled(Card)`
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: start;
+const List = styled.ul`
+  border-top: 1px solid var(--color-line);
+`
+
+// Grid: tag | headline (and the inline video) | actions.
+// Grid: thumbnail | tag and headline (and the inline video) | actions.
+const Row = styled.li`
+  position: relative;
+  display: grid;
+  grid-template-columns: 22rem minmax(0, 1fr) auto;
+  gap: var(--space-4) var(--space-7);
+  align-items: center;
+  padding: var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--color-line);
   transition: background-color 0.2s;
 
-  @media ${devicesMax.lg} {
-    grid-template-columns: minmax(0, 1fr);
-
-    & > div + div {
-      padding-top: 0;
-    }
-  }
-
   &:hover {
-    background-color: var(--color-paper);
+    background-color: var(--color-surface);
   }
+
+  @media ${devicesMax.md} {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--space-3) var(--space-4);
+    align-items: start;
+    padding-inline: 0;
+  }
+`
+
+const Thumb = styled.div`
+  position: relative;
+  aspect-ratio: 16 / 9; /* also hides YouTube's letterbox bars */
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-band);
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  ${Row}:hover & img {
+    transform: scale(1.05);
+  }
+
+  @media ${devicesMax.md} {
+    grid-row: span 2;
+  }
+`
+
+// For stories without their own photo: the logo on navy, never a stand-in photo.
+const BrandTile = styled(Thumb)`
+  display: grid;
+  place-items: center;
+
+  & img {
+    width: 46%;
+    height: auto;
+    object-fit: contain;
+  }
+`
+
+const PlayBadge = styled.span`
+  position: absolute;
+  left: var(--space-2);
+  bottom: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(10, 18, 32, 0.8);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--color-white);
+
+  & svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  /* Too big for the small phone thumbnail; "Watch video" says the same. */
+  @media ${devicesMax.md} {
+    display: none;
+  }
+`
+
+const Text = styled.div`
+  display: grid;
+  gap: var(--space-2);
+`
+
+const Tag = styled.p`
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-text);
+`
+
+const Title = styled.h3`
+  font-size: clamp(1.9rem, 1.5rem + 0.8vw, 2.6rem);
+  line-height: 1.25;
+  color: var(--color-heading);
+
+  /* The title link covers the whole row, so the row is the click target. */
   & a::after {
     content: '';
     position: absolute;
@@ -143,57 +157,169 @@ const StoryCard = styled(Card)`
   }
 `
 
-const Foot = styled.div`
-  margin-top: var(--space-7);
+const Actions = styled.div`
+  position: relative;
+  z-index: 1; /* above the row-wide link */
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+`
+
+const VideoButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 4.4rem;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  white-space: nowrap;
+
+  & svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--color-link);
+  }
+  &:hover {
+    border-color: var(--color-heading);
+  }
+`
+
+const Arrow = styled.span`
+  display: grid;
+  place-items: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  color: var(--color-heading);
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+
+  & svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  ${Row}:hover & {
+    background-color: var(--color-signal);
+    border-color: var(--color-signal);
+    color: var(--color-white);
+  }
+`
+
+const Player = styled.div`
+  position: relative;
+  z-index: 1; /* playable, not swallowed by the row link */
+  grid-column: 2 / -1;
+  max-width: 72rem;
+  margin-top: var(--space-3);
+
+  @media ${devicesMax.md} {
+    grid-column: 1 / -1;
+  }
 `
 
 function NewsArticle() {
+  const [videoOpen, setVideoOpen] = useState(false)
   const latest = posts[0]
 
   return (
     <Block $tone="paper" aria-labelledby="news-title">
       <Container>
-        <SectionHead id="news-title" title={news.heading} intro={news.intro} />
-        <Stack>
-          <Card aria-labelledby="news-featured">
-            <Video id={news.videoId} title={news.videoTitle} />
-            <Body>
-              <Meta>Press · {news.source}</Meta>
-              <Headline id="news-featured">{news.headline}</Headline>
-              <Summary>{news.summary}</Summary>
-              <Spacer />
-              <External
-                href={news.link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+        <Head>
+          <h2 id="news-title">{news.heading}</h2>
+          <AllLink to={news.all.to}>
+            {news.all.label}
+            <HiArrowRight aria-hidden="true" />
+          </AllLink>
+        </Head>
+
+        <List>
+          <Row>
+            <Thumb>
+              <img
+                src={`https://i.ytimg.com/vi/${news.videoId}/hqdefault.jpg`}
+                alt=""
+                width="480"
+                height="360"
+                loading="lazy"
+                decoding="async"
+              />
+              <PlayBadge aria-hidden="true">
+                <HiPlay />
+                Video
+              </PlayBadge>
+            </Thumb>
+            <Text>
+              <Tag>Press · {news.source}</Tag>
+              <Title>
+                <a
+                  href={news.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {news.headline}
+                  <span className="sr-only">
+                    {' '}
+                    (GhanaWeb, opens in a new tab)
+                  </span>
+                </a>
+              </Title>
+            </Text>
+            <Actions>
+              <VideoButton
+                type="button"
+                aria-expanded={videoOpen}
+                aria-controls="news-video"
+                onClick={() => setVideoOpen((o) => !o)}
               >
-                {news.link.label}
-                <HiArrowUpRight aria-hidden="true" />
-                <span className="sr-only"> (opens in a new tab)</span>
-              </External>
-            </Body>
-          </Card>
+                {videoOpen ? (
+                  <HiXMark aria-hidden="true" />
+                ) : (
+                  <HiPlay aria-hidden="true" />
+                )}
+                {videoOpen ? 'Close video' : 'Watch video'}
+              </VideoButton>
+              <Arrow aria-hidden="true">
+                <HiArrowUpRight />
+              </Arrow>
+            </Actions>
+            <Player id="news-video" hidden={!videoOpen}>
+              {videoOpen && (
+                <YouTubeFacade
+                  id={news.videoId}
+                  title={news.videoTitle}
+                  autoPlay
+                />
+              )}
+            </Player>
+          </Row>
 
           {latest && (
-            <StoryCard aria-labelledby="news-story">
-              <Body>
-                <Meta>Story · Media &amp; Blog</Meta>
-                <Headline id="news-story">{latest.title}</Headline>
-              </Body>
-              <Body>
-                <Excerpt>{latest.excerpt}</Excerpt>
-                <Spacer />
-                <TextLink to={`/blog/${latest.slug}`}>
-                  Read the story
-                  <span className="sr-only">: {latest.title}</span>
-                </TextLink>
-              </Body>
-            </StoryCard>
+            <Row>
+              <BrandTile>
+                <img src="/mloogo.png" alt="" loading="lazy" decoding="async" />
+              </BrandTile>
+              <Text>
+                <Tag>Story · Media &amp; Blog</Tag>
+                <Title>
+                  <Link to={`/blog/${latest.slug}`}>{latest.title}</Link>
+                </Title>
+              </Text>
+              <Actions>
+                <Arrow aria-hidden="true">
+                  <HiArrowRight />
+                </Arrow>
+              </Actions>
+            </Row>
           )}
-        </Stack>
-        <Foot>
-          <TextLink to={news.all.to}>{news.all.label}</TextLink>
-        </Foot>
+        </List>
       </Container>
     </Block>
   )
