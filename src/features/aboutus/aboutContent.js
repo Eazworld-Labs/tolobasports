@@ -47,7 +47,14 @@ export const teamHeading = 'Our Team'
 
 // The team section appears when this list has entries.
 // Each: { name, title, photo (key in ui/photos.js), position? }.
-export const team = []
+export const team = [
+  {
+    name: 'Francis Dzameshie',
+    title: 'Administrator',
+    photo: 'team-francis-dzameshie',
+    position: '50% 25%',
+  },
+]
 
 export const career = {
   eyebrow: 'Career',

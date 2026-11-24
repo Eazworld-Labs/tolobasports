@@ -170,8 +170,7 @@ const Videos = styled.div`
 `
 
 const Header = styled.div`
-  margin-bottom: var(--space-9);
-  text-align: center;
+  margin-bottom: var(--space-8);
 `
 
 const Team = styled.ul`
@@ -186,10 +185,9 @@ const Team = styled.ul`
 
 const Person = styled.li`
   overflow: hidden;
-  border: 1px solid var(--color-grey-200);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background-color: var(--color-white);
-  box-shadow: var(--shadow-sm);
 `
 
 const PersonPhoto = styled(Picture)`
@@ -203,7 +201,6 @@ const PersonPhoto = styled(Picture)`
 
 const PersonText = styled.div`
   padding: var(--space-5);
-  text-align: center;
 `
 
 const PersonName = styled.h3`
@@ -218,10 +215,8 @@ const PersonName = styled.h3`
 
 const PersonTitle = styled.p`
   margin-top: var(--space-1);
-  font-size: var(--text-base);
-  color: var(--color-signal-600);
-  font-weight: 600;
-  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: var(--color-ink-500);
 `
 
 const Panel = styled.div`

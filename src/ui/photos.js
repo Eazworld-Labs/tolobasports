@@ -2,6 +2,12 @@
 // `width`/`height` are the largest file's. Originals are in source-assets/photos.
 // Alt text describes only what is visible; add names when they are confirmed.
 export const PHOTOS = {
+  'team-francis-dzameshie': {
+    sizes: [480, 840],
+    width: 840,
+    height: 1080,
+    alt: 'Francis Dzameshie, Administrator',
+  },
   'squad-club-banner': {
     sizes: [800, 1280],
     width: 1280,
