@@ -170,6 +170,12 @@ export const PHOTOS = {
     height: 854,
     alt: 'A group in an office holding up Africa Youth Cup shirts',
   },
+  'abu-dhabi-meeting': {
+    sizes: [320, 480, 768],
+    width: 768,
+    height: 1024,
+    alt: 'Musah Toloba and Daniel Curcio sitting side by side at an outdoor seating area at night',
+  },
 }
 
 // The gallery page, in groups. Every photo except the team portraits appears once.
@@ -199,6 +205,7 @@ export const GALLERY_GROUPS = [
       'minister-meeting',
       'delegation-ayc-shirts',
       'delegation-ayc-shirts-2',
+      'abu-dhabi-meeting',
       'office-visit',
       'awards-night',
       'tv-studio',

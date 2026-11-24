@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { HiArrowRight, HiArrowUpRight, HiPlay, HiXMark } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
+import Picture from '../../ui/Picture'
 import YouTubeFacade from '../../ui/YouTubeFacade'
 import Block from '../../ui/kit/Block'
 import { posts } from '../blog/blogPosts'
@@ -303,9 +304,25 @@ function NewsArticle() {
 
           {latest && (
             <Row>
-              <BrandTile>
-                <img src="/mloogo.png" alt="" loading="lazy" decoding="async" />
-              </BrandTile>
+              {latest.image ? (
+                <Thumb>
+                  <Picture
+                    photo={latest.image.photo}
+                    position={latest.image.position}
+                    alt=""
+                    sizes="(max-width: 768px) 11rem, 22rem"
+                  />
+                </Thumb>
+              ) : (
+                <BrandTile>
+                  <img
+                    src="/mloogo.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </BrandTile>
+              )}
               <Text>
                 <Tag>Story · Media &amp; Blog</Tag>
                 <Title>
