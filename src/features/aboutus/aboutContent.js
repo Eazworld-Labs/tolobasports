@@ -2,36 +2,34 @@ export const pageTitle = 'About Us'
 
 export const intro = {
   heading: 'About Toloba Sports Consult',
-  leadLabel: 'Toloba Sports Consult:',
+  leadLabel: 'Toloba Sports Consult',
   leadText:
-    'is a beacon of opportunity for aspiring football talents across the globe. Our unwavering commitment to nurturing the stars of tomorrow is matched only by our passion for the beautiful game.',
+    'is a beacon of opportunity for aspiring talented sports persons across the globe. Whereas football is our focused sports discipline, we believe that offering the platform for athletes talented in other sporting fields diversifies our purpose for a greater good to sports in general.',
+  // Further paragraphs shown under the lead.
+  paragraphs: [
+    'Our unwavering commitment to nurturing the stars of tomorrow is matched by our passion for dedicating valuable time, resources and professional guidance to talented footballers and other sports athletes.',
+  ],
 }
 
 // Short phrases taken word for word from the copy below, shown as scannable facts.
 export const highlights = [
   { value: 'UEFA Certified coaches', caption: 'Our Scouting Process' },
   { value: 'Portugal, Spain, and Turkey', caption: 'professional scouts' },
-  { value: 'twice a year', caption: 'Twice a Year Scouting' },
+  { value: 'mental and physical', caption: 'Mentoring' },
 ]
 
 export const process = [
   {
     label: 'Our Scouting Process:',
     paragraphs: [
-      'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our annual scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
-      "This year, we've taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. These scouts bring a wealth of experience and possess vital connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.",
+      'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
+      'We have taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. We are looking forward to having a broader scope of scouts from other countries on board in the not too distant future. These scouts bring a wealth of experience and have connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.',
     ],
   },
   {
-    label: 'Twice a Year Scouting:',
+    label: 'Mentoring:',
     paragraphs: [
-      'We are proud to announce that these scouts from Portugal, Spain, and Turkey will visit twice a year. This means that aspiring football talents have not just one but two opportunities to showcase their skills and take a step closer to their dreams.',
-    ],
-  },
-  {
-    label: 'A World of Opportunity:',
-    paragraphs: [
-      "Toloba Sports Consult's global perspective ensures that talent knows no borders. With scouts from Portugal, Spain, and Turkey on board, we are committed to reaching talent across diverse geographies. Our mission is to unearth hidden gems worldwide, offering them the opportunity of a lifetime.",
+      'At Toloba Sports Consult, we understand the transformative power of the right mentoring programmes for young student-athletes. The journey of growth extends beyond the physical realm, and it is our mission to guide them towards maturity in both their mental and physical aspects.',
     ],
   },
 ]

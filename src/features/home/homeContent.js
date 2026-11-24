@@ -6,7 +6,6 @@ export const hero = {
   lead: 'Fostering talent, enhancing skills, and nurturing athletes to reach their full potential in the world of sports.',
   primaryCta: { label: 'Contact us', to: '/contact' },
   secondaryCta: { label: 'About us', to: '/aboutus' },
-  imageAlt: 'Musah Toloba, Founder and CEO of Toloba Sports Consult',
 }
 
 export const interestsHeading = 'Choose Your Interest'

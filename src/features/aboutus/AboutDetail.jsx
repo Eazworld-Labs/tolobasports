@@ -330,6 +330,9 @@ function AboutDetail() {
               <Lead>
                 <strong>{intro.leadLabel}</strong> {intro.leadText}
               </Lead>
+              {intro.paragraphs.map((text) => (
+                <Lead key={text.slice(0, 30)}>{text}</Lead>
+              ))}
             </Reveal>
             <Reveal
               as={Photo}

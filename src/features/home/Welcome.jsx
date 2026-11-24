@@ -26,10 +26,6 @@ const rise = keyframes`
   from { opacity: 0; transform: translateY(26px); }
   to { opacity: 1; transform: none; }
 `
-const slideIn = keyframes`
-  from { opacity: 0; transform: translateX(48px); }
-  to { opacity: 1; transform: none; }
-`
 const drift = keyframes`
   from { transform: scale(1.06); }
   to { transform: scale(1.16); }
@@ -163,20 +159,18 @@ const Inner = styled.div`
   max-width: var(--container-max);
   margin: 0 auto;
   padding: clamp(32px, 3.6vw, 56px) var(--container-pad) 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: clamp(16px, 3vw, 48px);
-  align-items: stretch;
+  display: flex;
+  align-items: center;
+  min-height: clamp(360px, 36vw, 560px);
 
   @media ${devicesMax.lg} {
-    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
     padding-top: 40px;
-    gap: 0;
   }
 `
 
 const Copy = styled.div`
-  align-self: center;
+  max-width: 64rem;
   padding-bottom: 32px;
 
   @media ${devicesMax.lg} {
@@ -252,97 +246,6 @@ const HeroButton = styled(ButtonLink)`
     outline: 3px solid var(--color-lime);
     outline-offset: 3px;
   }
-`
-
-const Stage = styled.div`
-  position: relative;
-  min-height: clamp(360px, 36vw, 560px);
-
-  @media ${devicesMax.lg} {
-    height: clamp(280px, 72vw, 420px);
-    min-height: 0;
-    margin-top: 12px;
-    overflow: hidden;
-  }
-`
-
-// Crimson slab behind the figure, with a lime edge.
-const Slab = styled.div`
-  position: absolute;
-  inset: 4% -12% 0 14%;
-  z-index: 0;
-  background: linear-gradient(160deg, var(--color-signal-600) 0%, #6d0d20 100%);
-  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
-  opacity: 0.36;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
-
-  @media ${devicesMax.lg} {
-    inset: 22% -10% 0 24%;
-    opacity: 0.3;
-  }
-  ${motionOK} {
-    animation: ${slideIn} 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--color-lime);
-    clip-path: polygon(34% 0, 35.6% 0, 1.6% 100%, 0 100%);
-  }
-`
-
-const Glow = styled.div`
-  position: absolute;
-  inset: 0 -10% 0 5%;
-  z-index: 1;
-  background: radial-gradient(
-    55% 60% at 58% 42%,
-    rgba(181, 211, 52, 0.26),
-    rgba(201, 29, 55, 0.14) 55%,
-    transparent 75%
-  );
-  filter: blur(18px);
-`
-
-// The cut-out is cropped at its right and bottom edges, so both fade out.
-const Figure = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  height: 112%;
-  aspect-ratio: 780 / 973;
-  max-width: 100%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 97%),
-    linear-gradient(to left, transparent 0%, #000 17%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, #000 58%, transparent 97%),
-    linear-gradient(to left, transparent 0%, #000 17%);
-  mask-composite: intersect;
-  filter: drop-shadow(0 0 28px rgba(0, 0, 0, 0.55)) saturate(0.92)
-    contrast(1.05);
-  ${motionOK} {
-    animation: ${slideIn} 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s both;
-  }
-
-  @media ${devicesMax.lg} {
-    right: 2%;
-    height: 100%;
-    ${motionOK} {
-      animation: ${rise} 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s both;
-    }
-  }
-`
-
-const Founder = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: bottom;
 `
 
 const StatsBar = styled.div`
@@ -533,22 +436,6 @@ function Welcome() {
             </HeroButton>
           </Actions>
         </Copy>
-
-        <Stage>
-          <Slab aria-hidden="true" />
-          <Glow aria-hidden="true" />
-          <Figure>
-            <Founder
-              src="/optimized/founder-soft-780.webp"
-              srcSet="/optimized/founder-soft-520.webp 520w, /optimized/founder-soft-780.webp 780w, /optimized/founder-soft-1040.webp 1040w"
-              sizes="(max-width: 1024px) 420px, 560px"
-              width="780"
-              height="973"
-              alt={hero.imageAlt}
-              decoding="async"
-            />
-          </Figure>
-        </Stage>
       </Inner>
 
       <StatsBar>
