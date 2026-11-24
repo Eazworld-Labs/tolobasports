@@ -1,14 +1,16 @@
 import GalleryContent from '../features/Gallery/GalleryContent'
 import GalleryVideos from '../features/Gallery/GalleryVideos'
-import Header from '../ui/Header'
+import PageHero from '../ui/kit/PageHero'
 
 function Gallery() {
   return (
     <>
-      <Header
-        title="Gallery"
-        intro="Photos and videos from our scouting, partnerships, events and athletes."
-        flush
+      <PageHero
+        crumb="Gallery"
+        kicker="Gallery"
+        title="Photos and"
+        highlight="videos"
+        lead="Moments from our scouting visits, partnerships, events and athletes."
       />
       <GalleryContent />
       <GalleryVideos />

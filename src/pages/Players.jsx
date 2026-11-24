@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from '../ui/Container'
-import Header from '../ui/Header'
+import PageHero from '../ui/kit/PageHero'
 import Picture from '../ui/Picture'
 import RequestForm from '../ui/RequestForm'
 import SectionHead from '../ui/SectionHead'
@@ -148,7 +148,15 @@ const Small = styled.h3`
 function Players() {
   return (
     <>
-      <Header title={pageTitle} intro={intro} flush />
+      <PageHero
+        crumb={pageTitle}
+        kicker="For athletes"
+        title="Get scouted and"
+        highlight="mentored"
+        lead={intro}
+        actions={[{ label: 'Apply as a player', to: '#apply' }]}
+        photo={{ photo: 'staff-pitch-selfie', position: '50% 40%' }}
+      />
 
       {stories.length > 0 && (
         <Block aria-labelledby="stories-title">

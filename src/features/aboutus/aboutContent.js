@@ -1,47 +1,87 @@
+// About page copy, from Toloba's own text. Facts are only those stated elsewhere
+// on the site; nothing is invented.
+
 export const pageTitle = 'About Us'
 
-export const intro = {
-  heading: 'About Toloba Sports Consult',
-  leadLabel: 'Toloba Sports Consult',
-  leadText:
-    'is a beacon of opportunity for aspiring talented sports persons across the globe. Whereas football is our focused sports discipline, we believe that offering the platform for athletes talented in other sporting fields diversifies our purpose for a greater good to sports in general.',
-  // Further paragraphs shown under the lead.
+export const hero = {
+  crumb: 'About',
+  kicker: 'About Toloba Sports Consult',
+  title: 'A beacon of opportunity for',
+  highlight: 'talented athletes',
+  lead: 'Football is our focus. We believe that offering the platform to athletes talented in other sporting fields diversifies our purpose for a greater good to sports in general.',
+  actions: [
+    { label: 'Meet the team', to: '#team' },
+    { label: 'Book a consultation', to: '/contact' },
+  ],
+  photo: { photo: 'squad-club-banner', position: '50% 45%' },
+}
+
+export const facts = [
+  { value: 'UEFA Certified', caption: 'coaches lead our scouting' },
+  { value: 'Portugal, Spain, Turkey', caption: 'partner scouts' },
+  { value: 'Football first', caption: 'other sports welcome' },
+  { value: 'Accra, Ghana', caption: 'where we are based' },
+]
+
+export const story = {
+  kicker: 'Our story',
+  title: 'Who we are',
   paragraphs: [
+    'Toloba Sports Consult is a beacon of opportunity for aspiring talented sports persons across the globe. Whereas football is our focused sports discipline, we believe that offering the platform for athletes talented in other sporting fields diversifies our purpose for a greater good to sports in general.',
     'Our unwavering commitment to nurturing the stars of tomorrow is matched by our passion for dedicating valuable time, resources and professional guidance to talented footballers and other sports athletes.',
+  ],
+  pillars: [
+    {
+      eyebrow: 'Mission',
+      title:
+        'To guide young student-athletes towards maturity in both their mental and physical aspects.',
+    },
+    {
+      eyebrow: 'Vision',
+      title:
+        'To create a new generation of educated and skilled footballers while nurturing careers around the sport.',
+    },
   ],
 }
 
-// Short phrases taken word for word from the copy below, shown as scannable facts.
-export const highlights = [
-  { value: 'UEFA Certified coaches', caption: 'Our Scouting Process' },
-  { value: 'Portugal, Spain, and Turkey', caption: 'professional scouts' },
-  { value: 'mental and physical', caption: 'Mentoring' },
-]
-
-export const process = [
-  {
-    label: 'Our Scouting Process:',
-    paragraphs: [
-      'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
-      'We have taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. We are looking forward to having a broader scope of scouts from other countries on board in the not too distant future. These scouts bring a wealth of experience and have connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.',
-    ],
-  },
-  {
-    label: 'Mentoring:',
-    paragraphs: [
-      'At Toloba Sports Consult, we understand the transformative power of the right mentoring programmes for young student-athletes. The journey of growth extends beyond the physical realm, and it is our mission to guide them towards maturity in both their mental and physical aspects.',
-    ],
-  },
-]
-
-// Photo keys from ui/photos.js.
-export const photos = {
-  signing: { photo: 'squad-club-banner' },
-  pitch: { photo: 'scout-shirt-airport-2', position: '50% 35%' },
+export const services = {
+  title: 'What we do',
+  intro: 'Three disciplines, one aim: opportunity for talented athletes.',
+  items: [
+    {
+      title: 'Scouting',
+      text: 'A holistic approach to scouting and nurturing football talent, carried out by UEFA certified coaches with partner scouts from Portugal, Spain and Turkey.',
+      link: { label: 'About scouting', to: '/scouting' },
+    },
+    {
+      title: 'Consulting',
+      text: 'Professional football consultancy for student-athletes, coaches and football entities across Europe, Asia, Australia and the Americas.',
+      link: { label: 'About consulting', to: '/consult' },
+    },
+    {
+      title: 'Mentoring',
+      text: 'Guiding young student-athletes towards maturity in both their mental and physical aspects, on and off the pitch.',
+      link: { label: 'About mentoring', to: '/mentoring' },
+    },
+  ],
 }
 
-// Self-hosted clips, by key in ui/videos.js.
-export const videos = ['airport-welcome-drummers', 'office-meeting']
+export const scouting = {
+  title: 'How we scout',
+  paragraphs: [
+    'We believe in a holistic approach to scouting and nurturing football talent. Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
+    'We have formed strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey, and look forward to welcoming scouts from other countries in the not too distant future. These scouts bring a wealth of experience and have connections with top European clubs.',
+  ],
+  photo: { photo: 'scout-shirt-airport-2', position: '50% 35%' },
+  link: { label: 'More about scouting', to: '/scouting' },
+}
+
+export const record = {
+  kicker: 'Track record',
+  statement:
+    "Players we have nurtured have represented Ghana's junior national teams and secured contracts with esteemed European clubs.",
+  text: 'The measure of our success is reflected in the achievements of the players we have nurtured. Their journeys inspire us and stand as testaments to our commitment to nurturing the stars of tomorrow.',
+}
 
 export const teamHeading = 'Our Team'
 
@@ -76,12 +116,10 @@ export const team = [
 ]
 
 export const career = {
-  eyebrow: 'Career',
-  heading: 'Join Us in the Pursuit of Excellence',
+  heading: 'Join us in the pursuit of excellence',
   paragraphs: [
-    "The measure of our success is reflected in the achievements of the players we have nurtured. These young talents, once hidden gems, have not only represented Ghana's junior national teams but have also achieved the extraordinary by securing coveted contracts with esteemed European clubs. Their journeys inspire us and stand as testaments to our commitment to nurturing the stars of tomorrow",
-    "If you're passionate about football and aspire to be a part of the next generation of football stars, Toloba Sports Consult is your platform for growth and opportunity. Join us as we explore, train, and mentor the future football legends.",
+    "If you're passionate about football and aspire to be a part of the next generation, Toloba Sports Consult is your platform for growth and opportunity. Join us as we explore, train, and mentor the future football legends.",
   ],
-  email: 'Mtoloba@tolobasports.com',
   cta: { label: 'Contact us', to: '/contact' },
+  email: 'Mtoloba@tolobasports.com',
 }

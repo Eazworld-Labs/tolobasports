@@ -2,66 +2,74 @@ import { useCallback, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
-import Reveal from '../../ui/Reveal'
-import { images } from './gallery'
+import Block from '../../ui/kit/Block'
+import { groups, images } from './gallery'
 import GalleryModel from './GalleryModel'
 
-const Wrap = styled.section`
-  padding-block: var(--space-10) var(--space-11);
-
-  @media ${devicesMax.md} {
-    padding-block: var(--space-8) var(--space-9);
+// Photos in labelled groups of small square tiles. Clicking a tile opens the
+// full-size viewer, which pages through every photo.
+const Group = styled.section`
+  & + & {
+    margin-top: var(--space-10);
   }
 `
 
-// CSS columns give a masonry layout; each tile keeps its photo's own proportions.
+const GroupHead = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-line);
+
+  & h2 {
+    font-size: 2.2rem;
+    color: var(--color-heading);
+  }
+  & p {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    color: var(--color-text);
+  }
+`
+
 const Grid = styled.ul`
-  column-count: 4;
-  column-gap: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-3);
 
   @media ${devicesMax.lg} {
-    column-count: 3;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   @media ${devicesMax.sm} {
-    column-count: 2;
-    column-gap: var(--space-3);
-  }
-`
-
-const Item = styled.li`
-  break-inside: avoid;
-  margin-bottom: var(--space-4);
-
-  @media ${devicesMax.sm} {
-    margin-bottom: var(--space-3);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2);
   }
 `
 
 const Tile = styled.button`
+  position: relative;
   display: block;
   width: 100%;
+  aspect-ratio: 1 / 1;
   padding: 0;
   overflow: hidden;
-  border: none;
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
   background-color: var(--color-paper);
-  box-shadow: var(--shadow-sm);
   cursor: zoom-in;
-  line-height: 0;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
 
-  &:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: var(--shadow-md);
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
   }
-`
-
-const Thumb = styled.img`
-  display: block;
-  width: 100%;
-  height: auto;
+  &:hover img {
+    transform: scale(1.04);
+  }
 `
 
 function GalleryContent() {
@@ -84,34 +92,44 @@ function GalleryContent() {
   }, [])
 
   return (
-    <Wrap aria-label="Photo gallery">
+    <Block aria-label="Photo gallery">
       <Container>
-        <Grid>
-          {images.map((image, index) => (
-            <Reveal
-              as={Item}
-              key={image.thumb}
-              variant="scale-in"
-              delay={(index % 4) * 70}
-            >
-              <Tile
-                type="button"
-                data-gallery-index={index}
-                aria-haspopup="dialog"
-                onClick={() => open(index)}
-              >
-                <Thumb
-                  src={image.thumb}
-                  width={image.thumbWidth}
-                  height={image.thumbHeight}
-                  alt={image.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </Tile>
-            </Reveal>
-          ))}
-        </Grid>
+        {groups.map((group, g) => (
+          <Group key={group.title} aria-labelledby={`gallery-group-${g}`}>
+            <GroupHead>
+              <h2 id={`gallery-group-${g}`}>{group.title}</h2>
+              <p>
+                {group.indexes.length}{' '}
+                {group.indexes.length === 1 ? 'photo' : 'photos'}
+              </p>
+            </GroupHead>
+            <Grid>
+              {group.indexes.map((index) => {
+                const image = images[index]
+                return (
+                  <li key={image.key}>
+                    <Tile
+                      type="button"
+                      data-gallery-index={index}
+                      aria-haspopup="dialog"
+                      aria-label={`View larger: ${image.alt}`}
+                      onClick={() => open(index)}
+                    >
+                      <img
+                        src={image.thumb}
+                        width={image.thumbWidth}
+                        height={image.thumbHeight}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </Tile>
+                  </li>
+                )
+              })}
+            </Grid>
+          </Group>
+        ))}
       </Container>
       {openIndex !== null && (
         <GalleryModel
@@ -121,7 +139,7 @@ function GalleryContent() {
           onNavigate={setOpenIndex}
         />
       )}
-    </Wrap>
+    </Block>
   )
 }
 

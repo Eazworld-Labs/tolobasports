@@ -4,7 +4,7 @@ import { HiArrowLeft } from 'react-icons/hi2'
 import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
 import CtaBand from '../../ui/CtaBand'
-import Header from '../../ui/Header'
+import PageHero from '../../ui/kit/PageHero'
 import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
 import { blogTitle, posts } from './blogPosts'
@@ -89,7 +89,12 @@ const Back = styled(Link)`
 function BlogContent() {
   return (
     <>
-      <Header title={post.title} crumb={blogTitle} flush />
+      <PageHero
+        crumb={blogTitle}
+        kicker="Media & Blog"
+        title={post.title}
+        small
+      />
       <Wrap>
         <Container>
           <Grid $hasImage={Boolean(post.image)}>

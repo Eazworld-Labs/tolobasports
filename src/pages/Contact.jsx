@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 import Container from '../ui/Container'
-import Header from '../ui/Header'
+import PageHero from '../ui/kit/PageHero'
 import RequestForm from '../ui/RequestForm'
 import { devicesMax } from '../styles/BreakPoint'
 import ContactInfo from '../features/contact/ContactInfo'
-import {
-  bookingForm,
-  breadcrumb,
-  intro,
-  pageTitle,
-} from '../features/contact/contactCopy'
+import { bookingForm, breadcrumb, intro } from '../features/contact/contactCopy'
 
 const Wrap = styled.div`
   padding-block: var(--space-10) var(--space-11);
@@ -32,7 +27,13 @@ const Grid = styled(Container)`
 function Contact() {
   return (
     <>
-      <Header title={pageTitle} crumb={breadcrumb} intro={intro} flush />
+      <PageHero
+        crumb={breadcrumb}
+        kicker="Contact"
+        title="Book a"
+        highlight="consultation"
+        lead={intro}
+      />
       <Wrap id="book">
         <Grid>
           <ContactInfo />

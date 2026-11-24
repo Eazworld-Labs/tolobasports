@@ -38,9 +38,26 @@ const Bar = styled.div`
 `
 
 const Counter = styled.p`
-  font-size: var(--text-base);
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
   letter-spacing: 0.02em;
+  color: var(--color-grey-300);
+
+  & strong {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+`
+
+const Caption = styled.p`
+  max-width: 70ch;
+  margin: var(--space-4) auto 0;
+  padding-inline: var(--space-4);
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-grey-300);
 `
 
 const Stage = styled.div`
@@ -97,6 +114,7 @@ const Nav = styled.div`
 function GalleryModel({ images, index, onClose, onNavigate }) {
   const dialogRef = useRef(null)
   const closeRef = useRef(null)
+  const touchX = useRef(null)
   const image = images[index]
   const total = images.length
 
@@ -170,7 +188,7 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
       >
         <Bar onClick={closeOnBackdrop}>
           <Counter aria-live="polite">
-            Photo {index + 1} of {total}
+            <strong>{image.group}</strong> · {index + 1} / {total}
           </Counter>
           <IconButton
             ref={closeRef}
@@ -181,7 +199,20 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
             <HiOutlineXMark aria-hidden="true" />
           </IconButton>
         </Bar>
-        <Stage onClick={closeOnBackdrop}>
+        <Stage
+          onClick={closeOnBackdrop}
+          onTouchStart={(e) => {
+            touchX.current = e.touches[0].clientX
+          }}
+          onTouchEnd={(e) => {
+            // A horizontal swipe of 50px or more moves to the next or previous photo.
+            if (touchX.current === null) return
+            const dx = e.changedTouches[0].clientX - touchX.current
+            touchX.current = null
+            if (Math.abs(dx) < 50) return
+            onNavigate((index + (dx < 0 ? 1 : -1) + total) % total)
+          }}
+        >
           <Photo
             key={image.full}
             src={image.full}
@@ -190,6 +221,7 @@ function GalleryModel({ images, index, onClose, onNavigate }) {
             alt={image.alt}
           />
         </Stage>
+        <Caption aria-hidden="true">{image.alt}</Caption>
         <Nav onClick={closeOnBackdrop}>
           <IconButton
             type="button"

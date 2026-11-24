@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from '../ui/Container'
-import Header from '../ui/Header'
+import PageHero from '../ui/kit/PageHero'
 import Picture from '../ui/Picture'
 import Reveal from '../ui/Reveal'
 import { blogTitle, posts } from '../features/blog/blogPosts'
@@ -97,7 +97,12 @@ const More = styled(Link)`
 function Blog() {
   return (
     <>
-      <Header title={blogTitle} flush />
+      <PageHero
+        crumb={blogTitle}
+        kicker="Media & Blog"
+        title="News and"
+        highlight="stories"
+      />
       <Wrap aria-label="Articles">
         <Container>
           <List>

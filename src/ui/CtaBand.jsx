@@ -34,7 +34,29 @@ const Text = styled.p`
   hyphens: manual;
 `
 
-function CtaBand({ id, heading, paragraphs = [], cta, label }) {
+const Actions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: ${(props) => (props.$slim ? 'center' : 'flex-start')};
+  gap: var(--space-4) var(--space-7);
+  margin-top: ${(props) => (props.$slim ? '0' : 'var(--space-8)')};
+`
+
+const Mail = styled.a`
+  font-weight: 600;
+  color: var(--color-white);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4rem;
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--color-lime);
+  }
+`
+
+function CtaBand({ id, heading, paragraphs = [], cta, label, email }) {
   const slim = !heading
 
   return (
@@ -53,9 +75,10 @@ function CtaBand({ id, heading, paragraphs = [], cta, label }) {
           {paragraphs.map((text) => (
             <Text key={text.slice(0, 30)}>{text}</Text>
           ))}
-          <div style={{ marginTop: slim ? 0 : 'var(--space-8)' }}>
+          <Actions $slim={slim}>
             <ButtonLink to={cta.to}>{cta.label}</ButtonLink>
-          </div>
+            {email && <Mail href={`mailto:${email}`}>{email}</Mail>}
+          </Actions>
         </Reveal>
       </Container>
     </Band>

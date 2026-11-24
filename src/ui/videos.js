@@ -40,6 +40,24 @@ export const VIDEOS = {
     duration: 66,
     title: 'Guests talking together in a lounge',
   },
+  'airport-interview-short': {
+    width: 480,
+    height: 848,
+    duration: 34,
+    title: 'Two men in kente stoles interviewed at the airport (short clip)',
+  },
+  'airport-counter': {
+    width: 480,
+    height: 848,
+    duration: 9,
+    title: 'Visitors at an airport service desk',
+  },
+  'pitch-gathering': {
+    width: 480,
+    height: 848,
+    duration: 2,
+    title: 'A group gathered beside an artificial pitch',
+  },
 }
 
 // Order for the gallery page.
@@ -50,4 +68,7 @@ export const VIDEO_ORDER = [
   'airport-media-interview',
   'office-meeting',
   'lounge-meeting',
+  'airport-interview-short',
+  'airport-counter',
+  'pitch-gathering',
 ]

@@ -1,47 +1,54 @@
-// A row shows its video when embedId is not empty, otherwise its photo.
+// Scouting page copy, from Toloba's own text.
 
 export const pageTitle = 'Scouting'
 
-export const rows = [
-  {
-    heading: 'Our Scouting Process:',
-    paragraphs: [
-      'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent. Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
-      'We have taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. We are looking forward to having a broader scope of scouts from other countries on board in the not too distant future. These scouts bring a wealth of experience and have connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.',
-    ],
-    embedId: '',
-    videoTitle: 'Toloba Sports Consult video',
-    image: { photo: 'scout-shirt-airport' },
-  },
-  {
-    heading: 'A World of Opportunity:',
-    paragraphs: [
-      "Toloba Sports Consult's global perspective ensures that talent knows no borders. With scouts from Portugal, Spain, and Turkey on board, we are committed to reaching talent across diverse geographies. Our mission is to unearth hidden gems worldwide, offering them the opportunity of a lifetime.",
-    ],
-    embedId: '',
-    videoTitle: 'Toloba Sports Consult video',
-    image: { photo: 'airport-interview' },
-  },
+export const hero = {
+  crumb: 'Scouting',
+  kicker: 'Scouting',
+  title: 'Scouting led by',
+  highlight: 'UEFA Certified coaches',
+  lead: 'At Toloba Sports Consult, we believe in a holistic approach to scouting and nurturing football talent, carried out with the highest standards of expertise.',
+  actions: [
+    { label: 'Apply as a player', to: '/players#apply' },
+    { label: 'Book a consultation', to: '/contact' },
+  ],
+}
+
+export const process = {
+  title: 'Our scouting process',
+  paragraphs: [
+    'Our scouting process is executed by UEFA Certified coaches, ensuring that the selection of promising football talents is carried out with the highest standards of expertise.',
+    'We have taken our scouting process to new heights by forming strategic partnerships with professional scouts hailing from Portugal, Spain, and Turkey. We are looking forward to having a broader scope of scouts from other countries on board in the not too distant future.',
+  ],
+  photo: { photo: 'scout-shirt-airport', position: '50% 30%' },
+}
+
+export const facts = [
+  { value: 'UEFA Certified', caption: 'coaches run every scouting' },
+  { value: 'Portugal, Spain, Turkey', caption: 'partner scouts' },
+  { value: 'Top European clubs', caption: 'our scouts’ connections' },
 ]
 
-// Shown as the closing call-to-action panel.
-export const closing = {
-  heading: 'Join Us in the Pursuit of Excellence:',
+export const world = {
+  title: 'A world of opportunity',
   paragraphs: [
-    "If you're passionate about football and aspire to be a part of the next generation of football stars, Toloba Sports Consult is your platform for growth and opportunity. Join us as we explore, train, and mentor the future football legends.",
+    "Toloba Sports Consult's global perspective ensures that talent knows no borders. With scouts from Portugal, Spain, and Turkey on board, we are committed to reaching talent across diverse geographies.",
+    'These scouts bring a wealth of experience and have connections with top European clubs. Their expertise and networks are invaluable, significantly expanding the horizons for young talents who aspire to make a mark in the world of football.',
   ],
-  cta: { label: 'Contact us', to: '/contact' },
+  photo: { photo: 'airport-interview' },
 }
 
-// There is no schedule link yet, so only the text is shown. Set `action` to add a button.
-export const announcement = {
-  text: 'Check Scouting Schedule and Other Important Announcements',
-  action: null, // e.g. { label: 'Click here', href: '...' }
-}
-
-// The section is shown only when at least one embedId is not empty.
 // Self-hosted clips, by key in ui/videos.js.
-export const rising = {
-  heading: 'Scouting visits',
+export const visits = {
+  title: 'Scouting visits',
+  intro: 'Welcoming partner scouts and players in Accra.',
   videos: ['airport-media-interview', 'airport-welcome-arrivals'],
+}
+
+export const closing = {
+  heading: 'Join us in the pursuit of excellence',
+  paragraphs: [
+    "If you're passionate about football and aspire to be a part of the next generation of football stars, Toloba Sports Consult is your platform for growth and opportunity.",
+  ],
+  cta: { label: 'Apply as a player', to: '/players#apply' },
 }
