@@ -183,9 +183,16 @@ function Footer() {
             </ContactRow>
             <ContactRow>
               <HiOutlineEnvelope aria-hidden="true" />
-              <InlineLink href={`mailto:${SITE.email}`}>
-                {SITE.email}
-              </InlineLink>
+              <span>
+                {SITE.emails.map((address, n) => (
+                  <span key={address}>
+                    {n > 0 && <br />}
+                    <InlineLink href={`mailto:${address}`}>
+                      {address}
+                    </InlineLink>
+                  </span>
+                ))}
+              </span>
             </ContactRow>
             <ContactRow>
               <HiOutlinePhone aria-hidden="true" />

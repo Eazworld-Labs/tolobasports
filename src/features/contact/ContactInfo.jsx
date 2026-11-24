@@ -92,10 +92,12 @@ function ContactInfo() {
           <HiOutlineMapPin aria-hidden="true" />
           <span>{SITE.address}</span>
         </Row>
-        <Row>
-          <HiOutlineEnvelope aria-hidden="true" />
-          <TextLink href={`mailto:${SITE.email}`}>{SITE.email}</TextLink>
-        </Row>
+        {SITE.emails.map((address) => (
+          <Row key={address}>
+            <HiOutlineEnvelope aria-hidden="true" />
+            <TextLink href={`mailto:${address}`}>{address}</TextLink>
+          </Row>
+        ))}
         {SITE.phones.map((ph) => (
           <Row key={ph.tel}>
             <HiOutlinePhone aria-hidden="true" />

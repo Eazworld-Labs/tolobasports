@@ -2,6 +2,12 @@
 export const SITE = {
   name: 'Toloba Sports Consult',
   email: 'Mtoloba@tolobasports.com',
+  // Every contact address shown on the site; the first is the main one.
+  emails: [
+    'Mtoloba@tolobasports.com',
+    'Mtoloba@yahoo.com',
+    'blissfulshore@outlook.com',
+  ],
   // `tel` is the dialable form; `display` is how the number is written.
   phones: [
     { label: 'Ghana', display: '+233 55 372 2354', tel: '+233553722354' },
