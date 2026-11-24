@@ -7,7 +7,7 @@ import Logo from './Logo'
 import SocialLinks from './SocialLinks'
 import MobileDrawer from './MobileDrawer'
 import { SITE } from './siteInfo'
-import { CONTACT_LINK, MORE_LINKS, PRIMARY_LINKS } from './navLinks'
+import { BOOK_LINK, MORE_LINKS, PRIMARY_LINKS } from './navLinks'
 
 const UTILITY_HEIGHT = '3.6rem'
 
@@ -18,11 +18,6 @@ const StyledHeader = styled.header`
   position: sticky;
   top: calc(var(--utility-h) * -1);
   z-index: var(--z-header);
-
-  /* The red focus ring is under 3:1 on the navy bars; lime is over 7:1. */
-  & :focus-visible {
-    outline-color: var(--color-lime);
-  }
 `
 
 const SkipLink = styled.a`
@@ -59,6 +54,11 @@ const UtilityBar = styled.div`
   font-size: var(--text-xs);
   display: flex;
   align-items: center;
+
+  /* The red focus ring is under 3:1 on navy; lime is over 7:1. */
+  & :focus-visible {
+    outline-color: var(--color-lime);
+  }
 `
 
 const EmailLink = styled.a`
@@ -79,8 +79,8 @@ const EmailLink = styled.a`
 `
 
 const MainBar = styled.div`
-  background-color: var(--color-ink-700);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-line);
 
   & > div {
     min-height: 7.2rem;
@@ -115,22 +115,23 @@ const navItem = css`
   border-radius: var(--radius-sm);
   background: none;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-grey-200);
+  font-weight: 500;
+  color: var(--color-ink-500);
   white-space: nowrap;
   transition:
     color 0.2s,
     background-color 0.2s;
 
   &:hover {
-    color: var(--color-white);
-    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--color-ink-900);
+    background-color: var(--color-paper);
   }
 `
 
 const activeMark = css`
-  color: var(--color-white);
-  box-shadow: inset 0 -3px 0 var(--color-lime);
+  color: var(--color-ink-900);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--color-signal);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 `
 
@@ -166,9 +167,10 @@ const MoreList = styled.ul`
   right: 0;
   min-width: 20rem;
   padding: var(--space-2);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
 `
 
 const MoreLink = styled(NavLink)`
@@ -176,16 +178,17 @@ const MoreLink = styled(NavLink)`
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-grey-200);
+  font-weight: 500;
+  color: var(--color-ink-500);
 
   &:hover {
-    color: var(--color-white);
-    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--color-ink-900);
+    background-color: var(--color-paper);
   }
   &.active {
-    color: var(--color-white);
-    box-shadow: inset 3px 0 0 var(--color-lime);
+    color: var(--color-ink-900);
+    font-weight: 600;
+    box-shadow: inset 2px 0 0 var(--color-signal);
   }
 `
 
@@ -193,7 +196,8 @@ const CtaLink = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   margin-left: var(--space-2);
-  padding: var(--space-2) var(--space-5);
+  min-height: 4.4rem;
+  padding: 0 var(--space-5);
   border-radius: var(--radius-sm);
   background-color: var(--color-signal-600);
   color: var(--color-white);
@@ -215,17 +219,17 @@ const MenuButton = styled.button`
   width: 4.4rem;
   height: 4.4rem;
   margin-left: auto;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-sm);
   background: none;
-  color: var(--color-white);
+  color: var(--color-ink-900);
 
   & svg {
     width: 2.6rem;
     height: 2.6rem;
   }
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-paper);
   }
 
   @media ${devicesMax.lg} {
@@ -348,7 +352,7 @@ function SiteHeader() {
                 <MoreMenu />
               </li>
               <li>
-                <CtaLink to={CONTACT_LINK.to}>{CONTACT_LINK.label}</CtaLink>
+                <CtaLink to={BOOK_LINK.to}>{BOOK_LINK.label}</CtaLink>
               </li>
             </NavList>
           </DesktopNav>

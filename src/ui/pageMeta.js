@@ -15,7 +15,7 @@ const PAGES = {
   '/aboutus': {
     title: 'About Us',
     description:
-      'Toloba Sports Consult is a beacon of opportunity for aspiring football talents across the globe.',
+      'Toloba Sports Consult is a beacon of opportunity for aspiring talented sports persons across the globe.',
   },
   '/scouting': {
     title: 'Scouting',
@@ -38,9 +38,14 @@ const PAGES = {
       'We are on a mission to transform the landscape of football through our multifaceted approach that encompasses Consulting, Scouting, and Mentoring.',
   },
   '/contact': {
-    title: 'Contact Us',
+    title: 'Book a consultation',
     description:
-      'M TOLOBA SPORTS - Ghana, Osabu st, abelempke GA-16A-9330. Email Mtoloba@tolobasports.com.',
+      'Tell us what you need and when suits you. We reply by email to confirm a time. Osabu St, Abelemkpe, Accra, Ghana.',
+  },
+  '/players': {
+    title: 'Players',
+    description:
+      'Apply to be scouted and mentored by our UEFA certified coaches. Football is our focus, and athletes from other sports are welcome too.',
   },
   '/image-gallery': {
     title: 'Images Gallery',

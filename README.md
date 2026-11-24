@@ -43,7 +43,7 @@ src/
   ui/         shared components: header, footer, buttons, reveal-on-scroll, ...
   hooks/      shared hooks
   styles/     global styles and design tokens (CSS variables)
-public/       static files served as-is (favicons, manifest, robots.txt, optimized images)
+public/       static files served as-is (favicons, manifest, robots.txt, photos/, logos/)
 source-assets/  original full-size images, not served
 ```
 
@@ -54,13 +54,16 @@ source-assets/  original full-size images, not served
 
 ## Images
 
-Pages use resized WebP copies from `public/optimized/`. The originals are in `source-assets/` (kept in the repo, excluded from the Docker image). To make a new optimized copy:
+Photos are WebP copies in `public/photos/`, named `<key>-<width>.webp` (an 800px copy and one up to 1600px). Each key is listed in `src/ui/photos.js` with its sizes, dimensions and alt text; pages refer to photos by key (`<Picture photo="key" />`). The originals are in `source-assets/photos/` (kept in the repo, excluded from the Docker image). Partner logos are in `public/logos/`.
+
+To add a photo, make the copies, then add an entry to `src/ui/photos.js`:
 
 ```bash
-npx sharp-cli -i source-assets/images/photo.jpeg -o public/optimized/new-name-800.webp -f webp -q 74 resize 800
+npx sharp-cli -i source-assets/photos/new-key.jpeg -o public/photos/new-key-800.webp -f webp -q 76 resize 800
+npx sharp-cli -i source-assets/photos/new-key.jpeg -o public/photos/new-key-1600.webp -f webp -q 76 resize 1600
 ```
 
-Then reference it by base name in the relevant data file. Give every image descriptive alt text.
+Alt text describes only what is visible; add names once they are confirmed. Add the key to `GALLERY_ORDER` to show it in the gallery.
 
 ## Deployment
 

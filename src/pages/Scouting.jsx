@@ -5,7 +5,7 @@ import { pageTitle } from '../features/scouting/scoutingCopy'
 function Scouting() {
   return (
     <>
-      <Header images="scout" title={pageTitle} flush />
+      <Header title={pageTitle} flush />
       <Scout />
     </>
   )

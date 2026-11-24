@@ -1,96 +1,95 @@
 import styled from 'styled-components'
 import { devicesMax } from '../../styles/BreakPoint'
-import Reveal from '../../ui/Reveal'
+import Container from '../../ui/Container'
 import YoutubeEmbed from '../../ui/YoutubeEmbed'
 import { news } from './homeContent'
 
-const Wrap = styled.section`
-  background-color: var(--color-grey-50);
-  border-top: 1px solid var(--color-grey-200);
+const Band = styled.section`
+  padding-block: clamp(5.6rem, 8vw, 10.4rem);
+  background-color: var(--color-paper);
+  border-top: 1px solid var(--color-line);
 `
 
-const Inner = styled.article`
-  width: 100%;
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: var(--space-11) var(--container-pad);
+const Grid = styled(Container)`
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(3.2rem, 5vw, 6.4rem);
+  align-items: center;
 
-  @media ${devicesMax.md} {
-    padding-block: var(--space-9);
+  @media ${devicesMax.lg} {
+    grid-template-columns: minmax(0, 1fr);
   }
 `
 
+const Kicker = styled.p`
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-ink-500);
+`
+
 const Headline = styled.h2`
-  font-size: var(--heading-2);
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: var(--heading-3);
+  line-height: 1.2;
   color: var(--color-ink-900);
 `
 
 const Text = styled.div`
-  max-width: 65ch;
-  margin-top: var(--space-7);
-  font-size: var(--text-lg);
-  line-height: 1.75;
-  color: var(--color-grey-700);
+  margin-top: var(--space-5);
+  color: var(--color-ink-500);
 
-  & p {
-    hyphens: manual;
-  }
   & p + p {
-    margin-top: var(--space-5);
+    margin-top: var(--space-4);
   }
 `
 
-const Video = styled.div`
-  margin-top: var(--space-9);
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
-`
-
-const Source = styled.p`
+const Source = styled.a`
+  display: inline-block;
   margin-top: var(--space-6);
-  font-size: var(--text-base);
-  color: var(--color-grey-600);
+  font-weight: 600;
+  color: var(--color-signal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4rem;
 
-  & a {
-    font-weight: 600;
-    color: var(--color-signal-600);
-    text-decoration: underline;
-    text-underline-offset: 0.4rem;
-  }
-  & a:hover {
+  &:hover {
     color: var(--color-signal-700);
   }
 `
 
+const Video = styled.div`
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink-900);
+`
+
 function NewsArticle() {
   return (
-    <Wrap aria-labelledby="news-title">
-      <Inner>
-        <Reveal>
+    <Band aria-labelledby="news-title">
+      <Grid as="article">
+        <div>
+          <Kicker>{news.kicker}</Kicker>
           <Headline id="news-title">{news.headline}</Headline>
-        </Reveal>
-        <Reveal as={Text} delay={80}>
-          {news.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-          ))}
-        </Reveal>
-        <Reveal as={Video} variant="scale-in">
-          <YoutubeEmbed embedId={news.videoId} title={news.videoTitle} />
-        </Reveal>
-        <Reveal as={Source}>
-          <span>{news.sourceLabel}</span>{' '}
-          <a href={news.sourceUrl} target="_blank" rel="noopener noreferrer">
-            {news.sourceText}
+          <Text>
+            {news.summary.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </Text>
+          <Source
+            href={news.source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {news.source.label}
             <span className="sr-only"> (opens in a new tab)</span>
-          </a>
-        </Reveal>
-      </Inner>
-    </Wrap>
+          </Source>
+        </div>
+        <Video>
+          <YoutubeEmbed embedId={news.videoId} title={news.videoTitle} />
+        </Video>
+      </Grid>
+    </Band>
   )
 }
 

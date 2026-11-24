@@ -1,41 +1,47 @@
 import styled from 'styled-components'
 import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
-import { devicesMax } from '../../styles/BreakPoint'
-import ButtonLink from '../../ui/ButtonLink'
-import Reveal from '../../ui/Reveal'
 import { SITE } from '../../ui/siteInfo'
-import { infoHeading } from './contactCopy'
+import { infoHeading, whoFor } from './contactCopy'
 
-const Card = styled.aside`
+const Aside = styled.aside`
   align-self: start;
-  padding: var(--space-9);
-  border-top: 0.6rem solid var(--color-lime);
-  border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
-  background-image: linear-gradient(
-    135deg,
-    var(--color-ink-900) 0%,
-    var(--color-ink-700) 100%
-  );
-  color: var(--color-grey-200);
-  box-shadow: var(--shadow-md);
+`
 
-  @media ${devicesMax.md} {
-    padding: var(--space-7) var(--space-6);
+const Who = styled.ul`
+  display: grid;
+  gap: var(--space-3);
+
+  & li {
+    position: relative;
+    padding-left: var(--space-6);
+    color: var(--color-ink-900);
+  }
+  & li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 1rem;
+    height: 1rem;
+    border: 1.5px solid var(--color-ink-900);
+    border-radius: 50%;
+    background-color: var(--color-lime);
   }
 `
 
 const Title = styled.h2`
-  font-size: var(--heading-3);
-  font-weight: 700;
-  color: var(--color-white);
+  margin-top: var(--space-9);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-line);
+  font-size: 2rem;
+  color: var(--color-ink-900);
 `
 
 const List = styled.address`
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  margin-top: var(--space-6);
+  gap: var(--space-4);
+  margin-top: var(--space-5);
   font-style: normal;
 `
 
@@ -43,31 +49,38 @@ const Row = styled.p`
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
-  font-size: var(--text-lg);
+  color: var(--color-ink-500);
 
   & svg {
     flex: none;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
     margin-top: 0.3rem;
-    color: var(--color-lime);
+    color: var(--color-ink-900);
   }
 `
 
-const Mail = styled.a`
-  color: var(--color-white);
+const TextLink = styled.a`
+  font-weight: 600;
+  color: var(--color-signal);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.4rem;
   overflow-wrap: anywhere;
 
   &:hover {
-    color: var(--color-lime);
+    color: var(--color-signal-700);
   }
 `
 
 function ContactInfo() {
   return (
-    <Reveal as={Card} variant="slide-left" aria-labelledby="contact-info">
+    <Aside aria-labelledby="contact-info">
+      <Who aria-label="Who we work with">
+        {whoFor.map((w) => (
+          <li key={w}>{w}</li>
+        ))}
+      </Who>
       <Title id="contact-info">{infoHeading}</Title>
       <List>
         <Row>
@@ -76,22 +89,21 @@ function ContactInfo() {
         </Row>
         <Row>
           <HiOutlineEnvelope aria-hidden="true" />
-          <Mail href={`mailto:${SITE.email}`}>{SITE.email}</Mail>
+          <TextLink href={`mailto:${SITE.email}`}>{SITE.email}</TextLink>
+        </Row>
+        <Row>
+          <span aria-hidden="true" style={{ width: '2rem' }} />
+          <TextLink
+            href={SITE.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Show on a map
+            <span className="sr-only"> (opens in a new tab)</span>
+          </TextLink>
         </Row>
       </List>
-      <div style={{ marginTop: 'var(--space-7)' }}>
-        <ButtonLink
-          as="a"
-          href={SITE.mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          $variant="secondary"
-        >
-          Show map
-          <span className="sr-only"> (opens in a new tab)</span>
-        </ButtonLink>
-      </div>
-    </Reveal>
+    </Aside>
   )
 }
 

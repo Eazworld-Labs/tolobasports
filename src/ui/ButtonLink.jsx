@@ -8,13 +8,12 @@ const ButtonLink = styled(Link)`
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-height: 4.4rem;
-  padding: var(--space-3) var(--space-7);
-  border: 2px solid transparent;
+  min-height: 4.8rem;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
   font-size: var(--text-base);
   font-weight: 600;
-  letter-spacing: 0.02em;
   text-align: center;
   transition:
     background-color 0.2s,

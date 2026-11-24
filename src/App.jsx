@@ -18,6 +18,7 @@ import Blog from './pages/Blog'
 import Programmes from './pages/Programmes'
 import Trainer from './pages/Trainer'
 import NotFound from './pages/NotFound'
+import Players from './pages/Players'
 import BlogContent from './features/blog/BlogContent'
 import ScrollToTop from './ui/ScrollToTop'
 import RouteMeta from './ui/RouteMeta'
@@ -39,6 +40,7 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="mentoring" element={<Mentoring />} />
             <Route path="partners" element={<Partners />} />
+            <Route path="players" element={<Players />} />
             <Route path="blog" element={<Blog />} />
             <Route
               path="blog/APivotalMeetinginAbuDhabi"

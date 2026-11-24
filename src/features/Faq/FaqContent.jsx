@@ -47,7 +47,7 @@ function FaqContent() {
   const [isOpen, setIsOpen] = useState(0)
   return (
     <>
-      <Header images="faq" />
+      <Header />
       <Section>
         <Row>
           <Heading as="h1">FAQ&apos;s</Heading>

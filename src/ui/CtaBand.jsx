@@ -10,11 +10,6 @@ const Band = styled.section`
   padding-block: ${(props) =>
     props.$slim ? 'var(--space-9)' : 'var(--space-11)'};
   background-color: var(--color-ink-900);
-  background-image: linear-gradient(
-    135deg,
-    var(--color-ink-900) 0%,
-    var(--color-ink-700) 100%
-  );
   color: var(--color-white);
   text-align: ${(props) => (props.$slim ? 'center' : 'left')};
 

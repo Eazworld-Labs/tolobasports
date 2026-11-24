@@ -2,56 +2,22 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from './Container'
-import { BANNERS } from './bannerImages'
 
-// Compact inner-page banner: dark ink, the page photo under a gradient, a lime
-// accent bar, an optional h1 and a short breadcrumb. The photo is decorative.
-// Pass `title` to render the page's single h1; pages that already have their own
-// h1 leave it out and get a slim photo strip. `crumb` is a shorter breadcrumb label
-// when the title is long. `flush` removes the bottom gap.
-const Banner = styled.div`
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  min-height: ${(props) =>
-    props.$hasTitle ? 'clamp(15rem, 19vw, 21rem)' : 'clamp(9rem, 11vw, 13rem)'};
+// Inner-page header: a pale band with a breadcrumb, the page's single h1 and an
+// optional one-line intro. No photo, so the page's own content leads.
+// `crumb` is a shorter breadcrumb label when the title is long; `intro` is a
+// short sentence under the title; `flush` removes the bottom gap.
+const Band = styled.div`
   margin-bottom: ${(props) => (props.$flush ? '0' : 'var(--space-10)')};
-  background-color: var(--color-ink-900);
-  color: var(--color-white);
-`
-
-const Photo = styled.img`
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`
-
-const Shade = styled.div`
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    rgba(20, 26, 38, 0.94) 0%,
-    rgba(20, 26, 38, 0.8) 55%,
-    rgba(20, 26, 38, 0.6) 100%
-  );
-
-  @media ${devicesMax.md} {
-    background: rgba(20, 26, 38, 0.82);
-  }
+  background-color: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
 `
 
 const Inner = styled(Container)`
-  padding-block: var(--space-7) var(--space-7);
+  padding-block: var(--space-9) var(--space-9);
 
   @media ${devicesMax.md} {
-    padding-block: var(--space-6);
+    padding-block: var(--space-7);
   }
 `
 
@@ -61,46 +27,42 @@ const Crumbs = styled.ol`
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--color-grey-300);
+  margin-bottom: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-ink-500);
 
   & li + li::before {
     content: '/';
     margin-right: var(--space-2);
-    color: var(--color-grey-400);
   }
   & a {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
   }
   & a:hover {
-    color: var(--color-white);
+    color: var(--color-ink-900);
   }
 `
 
 const Title = styled.h1`
-  font-size: clamp(34px, 3.2vw + 14px, 58px);
+  max-width: 22ch;
+  font-size: var(--heading-1);
   font-weight: 800;
-  line-height: 1.05;
-  color: var(--color-white);
+  line-height: 1.04;
+  color: var(--color-ink-900);
 `
 
-function Header({ images, title, crumb, flush, children }) {
-  const banner = BANNERS[images]
+const Intro = styled.p`
+  max-width: 60ch;
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  color: var(--color-ink-500);
+`
 
+function Header({ title, crumb, intro, flush, children }) {
   return (
-    <Banner $hasTitle={Boolean(title)} $flush={flush}>
-      {banner && (
-        <Photo
-          src={`/optimized/banner-${images}-960.webp`}
-          srcSet={`/optimized/banner-${images}-960.webp 960w, /optimized/banner-${images}-1600.webp ${banner.width}w`}
-          sizes="100vw"
-          alt=""
-          style={{ objectPosition: banner.position }}
-        />
-      )}
-      <Shade />
+    <Band $flush={flush}>
       <Inner>
         {title && (
           <nav aria-label="Breadcrumb">
@@ -113,9 +75,10 @@ function Header({ images, title, crumb, flush, children }) {
           </nav>
         )}
         {title && <Title>{title}</Title>}
+        {intro && <Intro>{intro}</Intro>}
         {children}
       </Inner>
-    </Banner>
+    </Band>
   )
 }
 

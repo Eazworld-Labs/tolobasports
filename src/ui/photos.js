@@ -1,0 +1,156 @@
+// Photos in public/photos as <key>-<width>.webp. `sizes` lists the widths that exist;
+// `width`/`height` are the largest file's. Originals are in source-assets/photos.
+// Alt text describes only what is visible; add names when they are confirmed.
+export const PHOTOS = {
+  'squad-club-banner': {
+    sizes: [800, 1280],
+    width: 1280,
+    height: 960,
+    alt: 'A youth football squad and staff posing on an artificial pitch beside a club banner',
+  },
+  'squad-club-banner-2': {
+    sizes: [800, 1280],
+    width: 1280,
+    height: 960,
+    alt: 'Young players and staff lined up on an artificial pitch beside a club banner',
+  },
+  'scout-shirt-airport': {
+    sizes: [768],
+    width: 768,
+    height: 1024,
+    alt: 'A visiting scout and a Toloba Sports Consult representative holding a Toloba number 10 shirt at an airport',
+  },
+  'scout-shirt-airport-2': {
+    sizes: [768],
+    width: 768,
+    height: 1024,
+    alt: 'A visiting scout and a Toloba Sports Consult representative holding up a white football shirt at an airport',
+  },
+  'airport-interview': {
+    sizes: [800, 1600],
+    width: 1600,
+    height: 1200,
+    alt: 'Two men wearing kente stoles being interviewed by the media at an airport',
+  },
+  'player-signing': {
+    sizes: [498],
+    width: 498,
+    height: 498,
+    alt: 'A player in a blue and white club shirt standing with two men in an office',
+  },
+  'shirt-handover-office': {
+    sizes: [800, 960],
+    width: 960,
+    height: 1280,
+    alt: 'Two men holding a green football shirt in the Toloba Sports Consult office',
+  },
+  'minister-meeting': {
+    sizes: [800, 832],
+    width: 832,
+    height: 537,
+    alt: "Ghana's Minister for Youth and Sports, Mustapha Yussif, and Musah Toloba holding an Africa Youth Cup shirt",
+  },
+  'delegation-ayc-shirts': {
+    sizes: [800, 1280],
+    width: 1280,
+    height: 854,
+    alt: 'A group of men and women in an office holding up Africa Youth Cup shirts',
+  },
+  'office-visit': {
+    sizes: [800, 893],
+    width: 893,
+    height: 1600,
+    alt: 'Two men in white traditional outfits standing together in an office',
+  },
+  'awards-night': {
+    sizes: [800, 810],
+    width: 810,
+    height: 1080,
+    alt: 'Two men in white outfits on stage at the Nouvu SWAG awards, one holding an award',
+  },
+  'tv-studio': {
+    sizes: [800, 1120],
+    width: 1120,
+    height: 504,
+    alt: 'Three people talking on a television studio set',
+  },
+  'staff-pitch-selfie': {
+    sizes: [720],
+    width: 720,
+    height: 960,
+    alt: 'Toloba Sports Consult staff in branded caps taking a selfie beside a football pitch',
+  },
+  'staff-group-selfie': {
+    sizes: [800, 810],
+    width: 810,
+    height: 1080,
+    alt: 'A group of Toloba Sports Consult staff and supporters smiling for a selfie at a pitch',
+  },
+  'staff-on-pitch': {
+    sizes: [500],
+    width: 500,
+    height: 1080,
+    alt: 'Three Toloba Sports Consult staff members standing on a football pitch',
+  },
+  'staff-event': {
+    sizes: [800, 1214],
+    width: 1214,
+    height: 1517,
+    alt: 'Two women in Toloba Sports Consult t-shirts and caps at an event',
+  },
+  'event-guests': {
+    sizes: [800, 1080],
+    width: 1080,
+    height: 1080,
+    alt: 'Two women seated at an outdoor event, one wearing a lanyard',
+  },
+  'para-boxing-flag': {
+    sizes: [720],
+    width: 720,
+    height: 540,
+    alt: 'Two boxers in wheelchairs raising their gloves in front of a Ghana flag',
+  },
+  'para-boxing-training': {
+    sizes: [800, 1600],
+    width: 1600,
+    height: 1200,
+    alt: 'Two boxers in wheelchairs training beside a punch bag, with a coach watching',
+  },
+  'para-boxing-training-2': {
+    sizes: [800, 1600],
+    width: 1600,
+    height: 2133,
+    alt: 'Two wheelchair boxers in a guard stance at an outdoor training area',
+  },
+  'ohum-gala-flyer': {
+    sizes: [800, 1600],
+    width: 1600,
+    height: 900,
+    alt: 'Flyer: Toloba Sports Consult supports the Ohum Festival Football Gala, Awukugua 2026',
+  },
+}
+
+// Order for the gallery page.
+export const GALLERY_ORDER = [
+  'squad-club-banner',
+  'squad-club-banner-2',
+  'scout-shirt-airport',
+  'scout-shirt-airport-2',
+  'airport-interview',
+  'player-signing',
+  'shirt-handover-office',
+  'minister-meeting',
+  'delegation-ayc-shirts',
+  'office-visit',
+  'awards-night',
+  'tv-studio',
+  'staff-pitch-selfie',
+  'staff-group-selfie',
+  'staff-on-pitch',
+  'staff-event',
+  'event-guests',
+  'para-boxing-flag',
+  'para-boxing-training',
+  'para-boxing-training-2',
+  'ohum-gala-flyer',
+]

@@ -22,7 +22,8 @@ const List = styled.ul`
 
 const Card = styled.li`
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: ${(props) =>
+    props.$hasImage ? 'minmax(0, 0.8fr) minmax(0, 1.2fr)' : 'minmax(0, 1fr)'};
   overflow: hidden;
   border: 1px solid var(--color-grey-200);
   border-radius: var(--radius-md);
@@ -55,13 +56,9 @@ const Body = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding: var(--space-9);
-  border-top: 0.5rem solid transparent;
-  border-left: 0.5rem solid var(--color-signal);
 
   @media ${devicesMax.md} {
     padding: var(--space-7) var(--space-6);
-    border-left: none;
-    border-top: 0.5rem solid var(--color-signal);
   }
 `
 
@@ -100,13 +97,18 @@ const More = styled(Link)`
 function Blog() {
   return (
     <>
-      <Header images="test" title={blogTitle} flush />
+      <Header title={blogTitle} flush />
       <Wrap aria-label="Articles">
         <Container>
           <List>
             {posts.map((post) => (
-              <Reveal as={Card} key={post.slug}>
-                <Photo {...post.image} sizes="(max-width: 768px) 92vw, 38vw" />
+              <Reveal as={Card} key={post.slug} $hasImage={Boolean(post.image)}>
+                {post.image && (
+                  <Photo
+                    {...post.image}
+                    sizes="(max-width: 768px) 92vw, 38vw"
+                  />
+                )}
                 <Body>
                   <Title>{post.title}</Title>
                   <Excerpt>{post.excerpt}</Excerpt>

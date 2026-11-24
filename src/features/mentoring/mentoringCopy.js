@@ -5,43 +5,21 @@ export const intro = [
   {
     label: 'At Toloba Sports Consult:',
     text: "We understand the transformative power of the right mentoring programs for young student-athletes. The journey of growth extends beyond the physical realm, and it's our mission to guide them towards maturity in both their mental and physical aspects.",
-    image: {
-      base: 'player-juggling',
-      small: 640,
-      large: 1000,
-      width: 1000,
-      height: 667,
-      alt: 'A footballer jumping to control a ball on a grass pitch',
-      position: '40% 50%',
-    },
+    image: { photo: 'staff-group-selfie' },
   },
   {
     label: 'Mentoring for Holistic Development:',
     text: 'Our mentoring programs at Toloba Sports Consult go beyond teaching football techniques; they instill qualities that shape student-athletes into well-rounded individuals. We believe that true excellence involves not only excelling on the field but also adopting the right attitude, work ethic, and mannerisms in life.',
-    image: {
-      base: 'kids-watching-match',
-      small: 640,
-      large: 1000,
-      width: 1000,
-      height: 665,
-      alt: 'Four children in football shirts sitting on the grass with their backs to the camera, watching a game',
-      position: '50% 40%',
-    },
+    image: { photo: 'para-boxing-training' },
   },
 ]
 
 export const optionsHeading = 'Get Mentored'
 
-// Image files: public/optimized/<base>-480.webp and <base>-800.webp.
 export const options = [
   {
     heading: 'Position Specific',
-    image: {
-      base: 'fans-filming',
-      width: 800,
-      height: 534,
-      alt: 'A crowd of fans in a stadium holding up phones to film the match',
-    },
+    image: null,
     msg: 'Master the unique skills needed at different positions on the field, including',
     acts: [
       'Making runs',
@@ -53,12 +31,7 @@ export const options = [
   },
   {
     heading: 'Competition',
-    image: {
-      base: 'three-footballs',
-      width: 800,
-      height: 533,
-      alt: 'Three footballs resting on a grass pitch',
-    },
+    image: null,
     msg: 'Master the unique skills needed at different positions on the field, including',
     acts: [
       'Speed of play',
@@ -70,12 +43,7 @@ export const options = [
   },
   {
     heading: 'Tactical',
-    image: {
-      base: 'autumn-match',
-      width: 800,
-      height: 533,
-      alt: 'Players in a match on a grass pitch with autumn trees behind',
-    },
+    image: null,
     acts: [
       'Understand the dynamics of play through numbers.',
       '1 vs 1, 2 vs 2 and up to 11 vs 11 drills focusing on attacking, defending and ball movement.',
@@ -83,12 +51,7 @@ export const options = [
   },
   {
     heading: 'Technical',
-    image: {
-      base: 'stadium-night-lights',
-      width: 800,
-      height: 536,
-      alt: 'A football stadium lit up at night',
-    },
+    image: null,
     acts: [
       'Dribbling/ball control',
       'Passing',
@@ -99,12 +62,7 @@ export const options = [
   },
   {
     heading: 'Performance',
-    image: {
-      base: 'ball-on-turf',
-      width: 800,
-      height: 533,
-      alt: 'A football on artificial turf next to the white pitch markings',
-    },
+    image: null,
     acts: [
       'Maximise speed and agility',
       'Build power',
@@ -114,12 +72,7 @@ export const options = [
   },
   {
     heading: 'Mindset',
-    image: {
-      base: 'floodlit-stadium',
-      width: 800,
-      height: 409,
-      alt: 'A floodlit stadium at night with the pitch in the foreground',
-    },
+    image: null,
     acts: [
       'Pre-match routines',
       'Preparation',

@@ -82,7 +82,7 @@ const P = styled.p`
 function TestContent() {
   return (
     <>
-      <Header images="test">
+      <Header>
         <StyledTest>TESTIMONIALS</StyledTest>
       </Header>
       <Section type="padd">

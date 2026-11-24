@@ -34,24 +34,10 @@ export const process = [
   },
 ]
 
-// `image` is the base name of public/optimized/<image>-<small>.webp / -<large>.webp.
+// Photo keys from ui/photos.js.
 export const photos = {
-  signing: {
-    base: 'about-signing',
-    small: 960,
-    large: 1600,
-    width: 1600,
-    height: 839,
-    alt: 'Two men sitting at a desk with pens in hand, about to sign papers',
-  },
-  pitch: {
-    base: 'about-pitch',
-    small: 640,
-    large: 1080,
-    width: 1080,
-    height: 810,
-    alt: 'A group of young footballers and staff posing together on a football pitch',
-  },
+  signing: { photo: 'squad-club-banner' },
+  pitch: { photo: 'scout-shirt-airport-2', position: '50% 35%' },
 }
 
 // Videos render only when embedId is not empty.
@@ -62,48 +48,9 @@ export const videos = [
 
 export const teamHeading = 'Our Team'
 
-export const team = [
-  {
-    name: 'Mr.Musah Toloba',
-    title: 'CEO',
-    image: 'team-musah-toloba',
-    small: 400,
-    large: 600,
-    width: 600,
-    height: 600,
-    position: '50% 40%',
-  },
-  {
-    name: 'Mr. Mohamed Abib Tchabagna',
-    title: 'international scout',
-    image: 'team-mohamed-abib-tchabagna',
-    small: 400,
-    large: 640,
-    width: 640,
-    height: 638,
-    position: '50% 40%',
-  },
-  {
-    name: 'Mr Bismark Arjani',
-    title: 'Vice President',
-    image: 'team-bismark-arjani',
-    small: 400,
-    large: 640,
-    width: 640,
-    height: 809,
-    position: '50% 30%',
-  },
-  {
-    name: 'binti MD Deni/ismaliah',
-    title: 'International public relations',
-    image: 'team-binti-md-deni',
-    small: 400,
-    large: 640,
-    width: 640,
-    height: 816,
-    position: '50% 35%',
-  },
-]
+// The team section appears when this list has entries.
+// Each: { name, title, photo (key in ui/photos.js), position? }.
+export const team = []
 
 export const career = {
   eyebrow: 'Career',

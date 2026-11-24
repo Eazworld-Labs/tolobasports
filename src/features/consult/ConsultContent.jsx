@@ -14,7 +14,7 @@ function ConsultContent() {
 
   return (
     <>
-      <Header images="mentor" title={pageTitle} flush />
+      <Header title={pageTitle} flush />
       <Page>
         {rows.map((section, index) => (
           <EditorialRow

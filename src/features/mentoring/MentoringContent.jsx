@@ -5,7 +5,6 @@ import CtaBand from '../../ui/CtaBand'
 import EditorialRow from '../../ui/EditorialRow'
 import Header from '../../ui/Header'
 import Heading from '../../ui/Heading'
-import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
 import { stagger } from '../../ui/stagger'
 import {
@@ -52,36 +51,26 @@ const Card = styled.li`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--color-grey-200);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   box-shadow: var(--shadow-sm);
 `
 
-const Photo = styled(Picture)`
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-`
-
 const Body = styled.div`
   flex: 1;
-  padding: var(--space-6);
-  border-top: 0.4rem solid var(--color-signal);
+  padding: var(--space-7) var(--space-6);
 `
 
 const CardTitle = styled.h3`
   font-size: var(--heading-3);
   font-weight: 700;
-  letter-spacing: 0.02em;
   color: var(--color-ink-900);
 `
 
 const Msg = styled.p`
   margin-top: var(--space-3);
-  color: var(--color-grey-700);
+  color: var(--color-ink-500);
 `
 
 const Acts = styled.ul`
@@ -91,13 +80,13 @@ const Acts = styled.ul`
 `
 
 const Act = styled.li`
-  color: var(--color-grey-700);
+  color: var(--color-ink-500);
 `
 
 function MentoringContent() {
   return (
     <>
-      <Header images="mentor" title={pageTitle} crumb={breadcrumb} flush />
+      <Header title={pageTitle} crumb={breadcrumb} flush />
       <Page>
         {intro.map((row, index) => (
           <EditorialRow
@@ -130,15 +119,6 @@ function MentoringContent() {
                 key={option.heading}
                 delay={stagger(index % 3, { step: 100 })}
               >
-                <Photo
-                  base={option.image.base}
-                  small={480}
-                  large={800}
-                  width={option.image.width}
-                  height={option.image.height}
-                  alt={option.image.alt}
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 30vw"
-                />
                 <Body>
                   <CardTitle>{option.heading}</CardTitle>
                   {option.msg && <Msg>{option.msg}</Msg>}

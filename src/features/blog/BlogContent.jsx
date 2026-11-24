@@ -22,7 +22,8 @@ const Wrap = styled.article`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 38rem);
+  grid-template-columns: ${(props) =>
+    props.$hasImage ? 'minmax(0, 1fr) minmax(0, 38rem)' : 'minmax(0, 1fr)'};
   gap: var(--space-10);
   align-items: start;
 
@@ -88,10 +89,10 @@ const Back = styled(Link)`
 function BlogContent() {
   return (
     <>
-      <Header images="test" title={post.title} crumb={blogTitle} flush />
+      <Header title={post.title} crumb={blogTitle} flush />
       <Wrap>
         <Container>
-          <Grid>
+          <Grid $hasImage={Boolean(post.image)}>
             <div>
               <Reveal as={Text}>
                 {post.paragraphs.map((paragraph) => (
@@ -103,13 +104,15 @@ function BlogContent() {
                 Back to {blogTitle}
               </Back>
             </div>
-            <Reveal as={Figure} variant="slide-right" delay={120}>
-              <Photo
-                {...post.image}
-                sizes="(max-width: 1024px) 92vw, 38rem"
-                eager
-              />
-            </Reveal>
+            {post.image && (
+              <Reveal as={Figure} variant="slide-right" delay={120}>
+                <Photo
+                  {...post.image}
+                  sizes="(max-width: 1024px) 92vw, 38rem"
+                  eager
+                />
+              </Reveal>
+            )}
           </Grid>
         </Container>
       </Wrap>

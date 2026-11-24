@@ -4,15 +4,7 @@ export const breadcrumb = 'Partners'
 export const intro = {
   label: 'Toloba Sports Consult:',
   text: 'We are on a mission to transform the landscape of football through our multifaceted approach that encompasses Consulting, Scouting, and Mentoring. Our vision is to create a new generation of educated and skilled footballers while nurturing careers around the sport.',
-  image: {
-    base: 'youth-match',
-    small: 640,
-    large: 1000,
-    width: 1000,
-    height: 415,
-    alt: 'Young footballers playing a match in front of a goal',
-    position: '60% 50%',
-  },
+  image: { photo: 'shirt-handover-office' },
 }
 
 export const whyHeading = 'Why Partner With Us'

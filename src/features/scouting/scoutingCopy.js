@@ -11,15 +11,7 @@ export const rows = [
     ],
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
-    image: {
-      base: 'stadium-sunset',
-      small: 640,
-      large: 1000,
-      width: 1000,
-      height: 750,
-      alt: 'A football stadium filled with fans under a sunset sky',
-      position: '50% 50%',
-    },
+    image: { photo: 'scout-shirt-airport' },
   },
   {
     heading: 'A World of Opportunity:',
@@ -28,15 +20,7 @@ export const rows = [
     ],
     embedId: '',
     videoTitle: 'Toloba Sports Consult video',
-    image: {
-      base: 'stadium-interior',
-      small: 640,
-      large: 1000,
-      width: 1000,
-      height: 615,
-      alt: 'Inside a large football stadium under a blue sky',
-      position: '50% 50%',
-    },
+    image: { photo: 'airport-interview' },
   },
 ]
 

@@ -21,11 +21,10 @@ import {
 const Band = styled.section`
   padding-block: var(--space-11);
   background-color: ${(props) =>
-    props.$tone === 'ink'
-      ? 'var(--color-ink-900)'
-      : props.$tone === 'grey'
-      ? 'var(--color-grey-50)'
+    props.$tone === 'ink' || props.$tone === 'grey'
+      ? 'var(--color-paper)'
       : 'var(--color-white)'};
+  border-top: 1px solid var(--color-line);
 
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
@@ -83,18 +82,17 @@ const FactList = styled.ul`
 `
 
 const Fact = styled.li`
-  padding: var(--space-7);
-  border-top: 0.4rem solid var(--color-lime);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-ink-700);
+  padding: var(--space-6) 0 0;
+  border-top: 1px solid var(--color-ink-900);
 `
 
 const FactValue = styled.p`
   font-family: var(--font-heading);
+  font-stretch: var(--heading-stretch);
   font-size: var(--heading-3);
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-lime);
+  line-height: 1.15;
+  color: var(--color-ink-900);
 
   &::first-letter {
     text-transform: uppercase;
@@ -103,10 +101,9 @@ const FactValue = styled.p`
 
 const FactCaption = styled.p`
   margin-top: var(--space-2);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-grey-300);
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-ink-500);
 `
 
 const ProcessGrid = styled.div`
@@ -142,9 +139,8 @@ const Cards = styled.ul`
 
 const Card = styled.li`
   padding: var(--space-7);
-  border: 1px solid var(--color-grey-200);
-  border-left: 0.5rem solid var(--color-signal);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
   background-color: var(--color-white);
   box-shadow: var(--shadow-sm);
 
@@ -239,26 +235,9 @@ const Panel = styled.div`
   position: relative;
   overflow: hidden;
   padding: var(--space-10) var(--space-10);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background-color: var(--color-ink-900);
-  background-image: linear-gradient(
-    135deg,
-    var(--color-ink-900) 0%,
-    var(--color-ink-700) 100%
-  );
   color: var(--color-white);
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 0.8rem;
-    background: linear-gradient(
-      to bottom,
-      var(--color-lime) 0 50%,
-      var(--color-signal-600) 50% 100%
-    );
-  }
 
   @media ${devicesMax.md} {
     padding: var(--space-8) var(--space-6);
@@ -266,11 +245,9 @@ const Panel = styled.div`
 `
 
 const Eyebrow = styled.p`
-  text-transform: uppercase;
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--color-lime);
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-grey-300);
 `
 
 const PanelTitle = styled.h2`
@@ -396,39 +373,40 @@ function AboutDetail() {
         </Band>
       )}
 
-      <Band $tone={embeds.length > 0 ? 'grey' : 'white'} aria-labelledby="team">
-        <Container>
-          <Reveal as={Header}>
-            <Heading as="h2" id="team">
-              {teamHeading}
-            </Heading>
-          </Reveal>
-          <Team>
-            {team.map((person, index) => (
-              <Reveal
-                as={Person}
-                key={person.image}
-                delay={stagger(index, { step: 100 })}
-              >
-                <PersonPhoto
-                  base={person.image}
-                  small={person.small}
-                  large={person.large}
-                  width={person.width}
-                  height={person.height}
-                  alt={person.name}
-                  position={person.position}
-                  sizes="(max-width: 1024px) 46vw, 22vw"
-                />
-                <PersonText>
-                  <PersonName>{person.name}</PersonName>
-                  <PersonTitle>{person.title}</PersonTitle>
-                </PersonText>
-              </Reveal>
-            ))}
-          </Team>
-        </Container>
-      </Band>
+      {team.length > 0 && (
+        <Band
+          $tone={embeds.length > 0 ? 'grey' : 'white'}
+          aria-labelledby="team"
+        >
+          <Container>
+            <Reveal as={Header}>
+              <Heading as="h2" id="team">
+                {teamHeading}
+              </Heading>
+            </Reveal>
+            <Team>
+              {team.map((person, index) => (
+                <Reveal
+                  as={Person}
+                  key={person.name}
+                  delay={stagger(index, { step: 100 })}
+                >
+                  <PersonPhoto
+                    photo={person.photo}
+                    alt={person.name}
+                    position={person.position}
+                    sizes="(max-width: 1024px) 46vw, 22vw"
+                  />
+                  <PersonText>
+                    <PersonName>{person.name}</PersonName>
+                    <PersonTitle>{person.title}</PersonTitle>
+                  </PersonText>
+                </Reveal>
+              ))}
+            </Team>
+          </Container>
+        </Band>
+      )}
 
       <Band aria-labelledby="career">
         <Container>

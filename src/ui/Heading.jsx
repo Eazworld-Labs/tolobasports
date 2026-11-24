@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components'
 
 const Heading = styled.h1`
   font-family: var(--font-heading);
-  color: var(--color-signal);
+  font-stretch: var(--heading-stretch);
+  color: var(--color-ink-900);
   line-height: 1.1;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 
   ${(props) =>
@@ -30,7 +31,6 @@ const Heading = styled.h1`
     css`
       font-size: var(--heading-4);
       font-weight: 600;
-      text-align: center;
     `}
 `
 export default Heading

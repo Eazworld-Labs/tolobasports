@@ -4,50 +4,57 @@ import { devicesMax } from './BreakPoint'
 // Design tokens. 1rem = 10px (see html font-size below).
 const GlobalStyles = createGlobalStyle`
 :root {
-  /* Colour: brand */
-  --color-ink-900: #141a26;
-  --color-ink-700: #2c3343;
-  --color-signal: #ea2642;
-  --color-signal-600: #c91d37; /* white text on this passes AA (5.7:1) */
-  --color-signal-700: #a5152d;
-  --color-lime: #b5d334;
+  /* Colour: brand (clean consultancy) */
+  --color-ink-900: #13233a; /* navy: headings, footer */
+  --color-ink-700: #24364f;
+  --color-ink-500: #4a5a6e; /* body text: 6.9:1 on white */
+  --color-paper: #f4f6f3; /* pale pitch-grey section background */
+  --color-line: #d8ded9; /* 1px dividers and card borders */
+  --color-line-strong: #b7c0b9; /* form field borders: 3:1 on white */
+  --color-signal: #c91d37; /* actions; white text on it is 5.7:1 */
+  --color-signal-600: #c91d37;
+  --color-signal-700: #a8172d;
+  --color-lime: #b5d334; /* fills and markers only, never text on white */
   --color-white: #fff;
 
-  /* Colour: neutrals */
+  /* Colour: neutrals, tuned to the paper/navy palette so older components follow it.
+     300 and lighter also serve as text on navy, so they stay light. */
   --color-grey-0: #fff;
-  --color-grey-50: #f9fafb;
-  --color-grey-100: #f3f4f6;
-  --color-grey-200: #e5e7eb;
-  --color-grey-300: #d1d5db;
-  --color-grey-400: #9ca3af;
-  --color-grey-500: #6b7280;
-  --color-grey-600: #4b5563;
-  --color-grey-700: #374151;
-  --color-grey-800: #1f2937;
-  --color-grey-900: #111827;
+  --color-grey-50: #f4f6f3;
+  --color-grey-100: #eef1ed;
+  --color-grey-200: #d8ded9;
+  --color-grey-300: #c9d1d8;
+  --color-grey-400: #9aa6b2;
+  --color-grey-500: #5d6b7c;
+  --color-grey-600: #4a5a6e;
+  --color-grey-700: #4a5a6e;
+  --color-grey-800: #24364f;
+  --color-grey-900: #13233a;
 
   /* Colour: roles */
-  --color-text: var(--color-grey-700);
+  --color-text: var(--color-ink-500);
   --color-text-strong: var(--color-ink-900);
-  --color-text-muted: var(--color-grey-500);
+  --color-text-muted: var(--color-ink-500);
   --color-bg: var(--color-white);
-  --color-focus: var(--color-signal);
-  --color-backdrop: rgba(20, 26, 38, 0.6);
+  --color-focus: #ea2642; /* 4.3:1 on white, 4.0:1 on paper, 3.7:1 on navy */
+  --color-backdrop: rgba(19, 35, 58, 0.6);
 
-  /* Type: families */
-  --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Type: families. Archivo is set wide (font-stretch) for headings. */
+  --font-heading: 'Archivo', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --heading-stretch: 112%;
 
   /* Type: fluid scale (clamp between phone and desktop) */
   --text-xs: clamp(1.2rem, 1.15rem + 0.1vw, 1.3rem);
   --text-sm: clamp(1.3rem, 1.25rem + 0.15vw, 1.4rem);
-  --text-base: 1.6rem;
+  --text-base: 1.7rem;
   --text-lg: clamp(1.7rem, 1.55rem + 0.4vw, 2rem);
   --text-xl: clamp(2rem, 1.7rem + 0.8vw, 2.6rem);
   --heading-4: clamp(2.2rem, 1.7rem + 1.4vw, 3rem);
   --heading-3: clamp(2rem, 1.7rem + 0.8vw, 2.6rem);
   --heading-2: clamp(2.6rem, 1.9rem + 2vw, 3.8rem);
-  --heading-1: clamp(3.4rem, 1.6rem + 4vw, 5.6rem);
+  --heading-1: clamp(3.6rem, 1.8rem + 3.6vw, 6rem);
 
   /* Spacing */
   --space-1: 0.4rem;
@@ -66,17 +73,17 @@ const GlobalStyles = createGlobalStyle`
   --container-max: 128rem;
   --container-pad: clamp(1.6rem, 4vw, 4rem);
 
-  /* Radii */
-  --radius-xs: 3px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  /* Radii: 4px for controls, 6px for cards and photos */
+  --radius-xs: 4px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
   --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(20, 26, 38, 0.35);
-  --shadow-md: 0 0.6rem 2.4rem rgba(20, 26, 38, 0.25);
-  --shadow-lg: 0 2.4rem 3.2rem rgba(20, 26, 38, 0.35);
+  /* Shadows: the clean direction separates with 1px borders instead */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 1.6rem 4rem rgba(19, 35, 58, 0.18);
 
   /* Reveal on scroll */
   --reveal-duration: 640ms;
@@ -124,7 +131,10 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
+  font-stretch: var(--heading-stretch);
+  font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 h5,
@@ -154,7 +164,7 @@ h6 {
 }
 
 p {
-  hyphens: auto;
+  hyphens: manual;
 }
 
 input,

@@ -16,14 +16,6 @@ export const posts = [
       'Their handshake sealed a commitment, as Daniel Curcio embraced the challenge of overseeing the referees for the Fifco tournament conference in Ghana. With the die-cast, their collaboration marked the inception of an exhilarating journey toward a brighter future for Ghanaian football. Little did they know that this partnership would give birth to a tournament that would capture hearts worldwide, setting new benchmarks for sportsmanship and fair play, not only in Ghana but across the global football stage.',
       'The story of their collaboration was merely the first chapter in a narrative of ambition, dedication, and the unifying power of sport.',
     ],
-    image: {
-      base: 'blog-abu-dhabi-meeting',
-      small: 480,
-      large: 768,
-      width: 768,
-      height: 1024,
-      alt: 'Two men sitting side by side at an outdoor seating area at night',
-      position: '50% 35%',
-    },
+    image: null,
   },
 ]

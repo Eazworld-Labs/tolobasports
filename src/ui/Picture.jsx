@@ -1,34 +1,31 @@
 import { forwardRef } from 'react'
+import { PHOTOS } from './photos'
 
-// Responsive <img> for the optimised WebP files in public/optimized.
-// `base-<small>.webp` and `base-<large>.webp` must exist; `width`/`height` are
-// the dimensions of the large file (they reserve space and set the aspect ratio).
+// Responsive <img> for a photo listed in ui/photos.js (files in public/photos).
+// `photo` is the key; `alt` overrides the default alt text (pass '' for decoration).
 const Picture = forwardRef(function Picture(
-  {
-    base,
-    small,
-    large,
-    width,
-    height,
-    alt,
-    sizes,
-    position,
-    eager = false,
-    style,
-    ...rest
-  },
+  { photo, alt, sizes = '100vw', position, eager = false, style, ...rest },
   ref,
 ) {
+  const entry = PHOTOS[photo]
+  if (!entry) {
+    if (import.meta.env.DEV) console.warn(`Unknown photo "${photo}"`)
+    return null
+  }
+  const src = (w) => `/photos/${photo}-${w}.webp`
+
   return (
     <img
       ref={ref}
-      src={`/optimized/${base}-${small}.webp`}
-      srcSet={`/optimized/${base}-${small}.webp ${small}w, /optimized/${base}-${large}.webp ${width}w`}
+      src={src(entry.sizes[0])}
+      srcSet={entry.sizes.map((w) => `${src(w)} ${w}w`).join(', ')}
       sizes={sizes}
-      width={width}
-      height={height}
-      alt={alt}
+      width={entry.width}
+      height={entry.height}
+      alt={alt ?? entry.alt}
       loading={eager ? undefined : 'lazy'}
+      // React 18 passes the lowercase attribute through; eslint does not know it.
+      {...(eager ? { fetchpriority: 'high' } : {})}
       decoding="async"
       style={position ? { ...style, objectPosition: position } : style}
       {...rest}

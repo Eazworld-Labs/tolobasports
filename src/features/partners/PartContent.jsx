@@ -57,15 +57,10 @@ const Lead = styled.p`
 `
 
 const SectionHeader = styled.div`
-  margin-bottom: var(--space-9);
-  text-align: center;
+  margin-bottom: var(--space-8);
 `
 
-const LightHeading = styled(Heading)`
-  color: var(--color-white);
-`
-
-const Cards = styled.ol`
+const Cards = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -102,27 +97,17 @@ const Cards = styled.ol`
 
 const Card = styled.li`
   height: 100%;
-  padding: var(--space-8);
-  border-top: 0.4rem solid var(--color-lime);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-ink-700);
-  color: var(--color-grey-200);
-`
-
-const Number = styled.p`
-  font-family: var(--font-heading);
-  font-size: var(--heading-2);
-  font-weight: 800;
-  line-height: 1;
-  color: var(--color-lime);
+  padding: var(--space-7) var(--space-6);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-ink-500);
 `
 
 const CardTitle = styled.h3`
-  margin-top: var(--space-4);
-  font-size: var(--heading-3);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--color-white);
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--color-ink-900);
 `
 
 const CardText = styled.p`
@@ -152,12 +137,12 @@ function PartContent() {
         </Container>
       </Band>
 
-      <Band $tone="ink" aria-labelledby="why-partner">
+      <Band $tone="grey" aria-labelledby="why-partner">
         <Container>
           <Reveal as={SectionHeader}>
-            <LightHeading as="h2" id="why-partner">
+            <Heading as="h2" id="why-partner">
               {whyHeading}
-            </LightHeading>
+            </Heading>
           </Reveal>
           <Cards>
             {items.map((item, index) => (
@@ -166,9 +151,6 @@ function PartContent() {
                 key={item.label}
                 delay={stagger(index % 3, { step: 100 })}
               >
-                <Number aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </Number>
                 <CardTitle>{item.label}</CardTitle>
                 <CardText>{item.text}</CardText>
               </Reveal>

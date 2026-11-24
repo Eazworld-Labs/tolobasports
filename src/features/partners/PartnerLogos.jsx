@@ -116,7 +116,7 @@ function PartnerLogos() {
               {logos.map((logo) => (
                 <Logo key={logo.base}>
                   <Img
-                    src={`/optimized/${logo.base}-400.webp`}
+                    src={`/logos/${logo.base}-400.webp`}
                     width={logo.width}
                     height={logo.height}
                     alt={copy === 0 ? logo.alt : ''}

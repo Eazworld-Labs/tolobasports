@@ -4,7 +4,11 @@ import Header from '../ui/Header'
 function Gallery() {
   return (
     <>
-      <Header images="mentor" title="Images Gallery" crumb="Gallery" flush />
+      <Header
+        title="Gallery"
+        intro="Moments from our scouting, partnerships, events and athletes."
+        flush
+      />
       <GalleryContent />
     </>
   )
