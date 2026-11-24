@@ -138,18 +138,20 @@ export const field = {
   cta: { label: 'See the full gallery', to: '/image-gallery' },
 }
 
-// A short summary of the GhanaWeb story; the full article is linked.
+// "In the news": the GhanaWeb story as the featured card, and the latest blog
+// post beside it. No dates are shown because none are recorded.
 export const news = {
-  kicker: 'In the news',
+  heading: 'In the news',
+  intro: 'Press coverage and stories from our work.',
+  all: { label: 'All news and stories', to: '/blog' },
+  source: 'GhanaWeb',
   headline:
     'Musah Toloba recognised for sports initiatives and offered a collaboration by the Turcaf President',
-  summary: [
-    'Mr. Musah Toloba, the Founder and CEO of Toloba Sports Consult, has received commendation and a collaboration proposal from Mr. Muhammet Ali Aras, the President of Turcaf. Mr. Ali Aras lauded Mr. Toloba for his efforts in identifying and nurturing talents, helping aspiring athletes achieve their dreams of becoming professional footballers.',
-    'Toloba Sports Consult has also been involved in building Astro Turfs, synthetic playing fields that give local communities and young talents access to high-quality facilities.',
-  ],
+  summary:
+    'Mr. Musah Toloba, the Founder and CEO of Toloba Sports Consult, received commendation and a collaboration proposal from Mr. Muhammet Ali Aras, the President of Turcaf, for his efforts in identifying and nurturing talents.',
   videoId: 'R4WnMNK6zQ0',
   videoTitle: 'Toloba Sports Consult and Turcaf collaboration',
-  source: {
+  link: {
     label: 'Read the full story on GhanaWeb',
     url: 'https://ghanaweb.mobi/ghanaian-entrepreneur-musah-toloba-recognized-for-sports-initiatives-and-receives-collaboration-offer-from-turcaf-president/',
   },
