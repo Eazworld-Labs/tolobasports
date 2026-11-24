@@ -17,13 +17,13 @@ const Card = styled.section`
   padding: clamp(2.4rem, 4vw, 4rem);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 `
 
 const Note = styled.p`
   margin-bottom: var(--space-6);
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Fields = styled.div`
@@ -49,7 +49,7 @@ const Group = styled.fieldset`
   & legend {
     padding-inline: var(--space-2);
     font-weight: 600;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
 
   @media ${devicesMax.md} {
@@ -67,17 +67,17 @@ const Field = styled.div`
 const Label = styled.label`
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Star = styled.span`
   margin-left: 0.2em;
-  color: var(--color-signal);
+  color: var(--color-link);
 `
 
 const Help = styled.p`
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const control = `
@@ -86,9 +86,9 @@ const control = `
   padding: 1.1rem 1.4rem;
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-sm);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   font-size: 1.6rem;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 
   &[aria-invalid='true'] {
     border-color: var(--color-signal);
@@ -111,7 +111,7 @@ const Textarea = styled.textarea`
 const FieldError = styled.p`
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--color-signal);
+  color: var(--color-link);
 `
 
 const Status = styled.div`
@@ -123,7 +123,7 @@ const Status = styled.div`
       props.$kind === 'success' ? 'var(--color-lime)' : 'var(--color-signal)'};
   border-radius: var(--radius-sm);
   background-color: var(--color-paper);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 
   & a {
     font-weight: 600;
@@ -142,7 +142,7 @@ const Actions = styled.div`
 
 const SendNote = styled.p`
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const SubmitButton = styled(Button)`

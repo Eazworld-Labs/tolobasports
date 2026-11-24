@@ -30,7 +30,7 @@ const Crumbs = styled.ol`
   margin-bottom: var(--space-5);
   font-family: var(--font-mono);
   font-size: 1.3rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & li + li::before {
     content: '/';
@@ -41,7 +41,7 @@ const Crumbs = styled.ol`
     text-underline-offset: 0.3rem;
   }
   & a:hover {
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
 `
 
@@ -50,14 +50,14 @@ const Title = styled.h1`
   font-size: var(--heading-1);
   font-weight: 800;
   line-height: 1.04;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Intro = styled.p`
   max-width: 60ch;
   margin-top: var(--space-5);
   font-size: var(--text-lg);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 function Header({ title, crumb, intro, flush, children }) {

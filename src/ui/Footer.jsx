@@ -10,7 +10,7 @@ import { SITE } from './siteInfo'
 import { ALL_LINKS } from './navLinks'
 
 const StyledFooter = styled.footer`
-  background-color: var(--color-ink-900);
+  background-color: var(--color-band);
   color: var(--color-grey-300);
   font-size: var(--text-sm);
 `

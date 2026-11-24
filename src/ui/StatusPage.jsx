@@ -10,7 +10,7 @@ const Wrap = styled.section`
   min-height: 60vh;
   padding: var(--space-11) var(--container-pad);
   background-color: var(--color-paper);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Inner = styled.div`
@@ -23,21 +23,21 @@ const Badge = styled.p`
   margin-bottom: var(--space-5);
   font-family: var(--font-mono);
   font-size: 1.3rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Title = styled.h1`
   font-size: var(--heading-1);
   font-weight: 800;
   line-height: 1.04;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Text = styled.p`
   max-width: 52ch;
   margin-top: var(--space-5);
   font-size: var(--text-lg);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Actions = styled.div`
@@ -50,13 +50,13 @@ const Actions = styled.div`
 
 const BackLink = styled(Link)`
   font-weight: 600;
-  color: var(--color-signal);
+  color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.4rem;
 
   &:hover {
-    color: var(--color-signal-700);
+    color: var(--color-link-hover);
   }
 `
 

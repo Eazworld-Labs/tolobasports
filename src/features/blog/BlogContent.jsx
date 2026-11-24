@@ -39,7 +39,7 @@ const Text = styled.div`
   & p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--color-grey-700);
+    color: var(--color-text);
     hyphens: manual;
   }
   & p + p {
@@ -73,7 +73,7 @@ const Back = styled(Link)`
   margin-top: var(--space-8);
   min-height: 4.4rem;
   font-weight: 600;
-  color: var(--color-signal-600);
+  color: var(--color-link);
   text-decoration: underline;
   text-underline-offset: 0.4rem;
 
@@ -82,7 +82,7 @@ const Back = styled(Link)`
     height: 1.8rem;
   }
   &:hover {
-    color: var(--color-signal-700);
+    color: var(--color-link-hover);
   }
 `
 

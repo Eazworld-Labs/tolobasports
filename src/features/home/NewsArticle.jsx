@@ -25,18 +25,18 @@ const Kicker = styled.p`
   margin-bottom: var(--space-4);
   font-family: var(--font-mono);
   font-size: 1.3rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Headline = styled.h2`
   font-size: var(--heading-3);
   line-height: 1.2;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Text = styled.div`
   margin-top: var(--space-5);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & p + p {
     margin-top: var(--space-4);
@@ -47,13 +47,13 @@ const Source = styled.a`
   display: inline-block;
   margin-top: var(--space-6);
   font-weight: 600;
-  color: var(--color-signal);
+  color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.4rem;
 
   &:hover {
-    color: var(--color-signal-700);
+    color: var(--color-link-hover);
   }
 `
 

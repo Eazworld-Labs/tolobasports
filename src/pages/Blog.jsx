@@ -25,9 +25,9 @@ const Card = styled.li`
   grid-template-columns: ${(props) =>
     props.$hasImage ? 'minmax(0, 0.8fr) minmax(0, 1.2fr)' : 'minmax(0, 1fr)'};
   overflow: hidden;
-  border: 1px solid var(--color-grey-200);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-md);
 
   @media ${devicesMax.md} {
@@ -66,14 +66,14 @@ const Title = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Excerpt = styled.p`
   max-width: 60ch;
   margin-top: var(--space-5);
   font-size: var(--text-lg);
-  color: var(--color-grey-700);
+  color: var(--color-text);
   hyphens: manual;
 `
 

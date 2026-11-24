@@ -12,7 +12,7 @@ import { field, paths, services, steps } from './homeContent'
 const Block = styled.section`
   padding-block: clamp(5.6rem, 8vw, 10.4rem);
   background-color: ${(props) =>
-    props.$tone === 'paper' ? 'var(--color-paper)' : 'var(--color-white)'};
+    props.$tone === 'paper' ? 'var(--color-paper)' : 'var(--color-surface)'};
 
   & + & {
     border-top: 1px solid var(--color-line);
@@ -21,13 +21,13 @@ const Block = styled.section`
 
 const MoreLink = styled(Link)`
   font-weight: 600;
-  color: var(--color-signal);
+  color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.4rem;
 
   &:hover {
-    color: var(--color-signal-700);
+    color: var(--color-link-hover);
   }
 `
 
@@ -50,7 +50,7 @@ const Path = styled.li`
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-7) var(--space-6);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 
   & + & {
     border-left: 1px solid var(--color-line);
@@ -66,18 +66,18 @@ const Path = styled.li`
 const Who = styled.p`
   font-family: var(--font-mono);
   font-size: 1.2rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const PathTitle = styled.h3`
   font-size: 2.2rem;
   line-height: 1.2;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const PathText = styled.p`
   flex: 1;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 export function Paths() {
@@ -133,7 +133,7 @@ const ServicePhoto = styled(Picture)`
 const ServiceTitle = styled.h2`
   margin-bottom: var(--space-7);
   font-size: var(--heading-2);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Service = styled.li`
@@ -148,10 +148,10 @@ const Service = styled.li`
   }
   & h3 {
     font-size: 2rem;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & p {
-    color: var(--color-ink-500);
+    color: var(--color-text);
   }
   & a {
     grid-column: 2;
@@ -237,12 +237,12 @@ const Step = styled.li`
     width: 3.6rem;
     height: 3.6rem;
     margin-bottom: var(--space-5);
-    border: 1.5px solid var(--color-ink-900);
+    border: 1.5px solid var(--color-heading);
     border-radius: 50%;
     background-color: var(--color-paper);
     font-family: var(--font-mono);
     font-size: 1.4rem;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & h3 {
     margin-bottom: var(--space-2);
@@ -251,11 +251,11 @@ const Step = styled.li`
     font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: 0;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & p {
     font-size: 1.5rem;
-    color: var(--color-ink-500);
+    color: var(--color-text);
   }
 `
 
@@ -310,7 +310,7 @@ const FieldPhoto = styled(Picture)`
 const FieldCaption = styled.p`
   margin-top: var(--space-3);
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const FieldFoot = styled.div`

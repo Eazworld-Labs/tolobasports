@@ -6,6 +6,7 @@ import { devicesMax } from '../styles/BreakPoint'
 import Logo from './Logo'
 import SocialLinks from './SocialLinks'
 import MobileDrawer from './MobileDrawer'
+import ThemeToggle from './ThemeToggle'
 import { SITE } from './siteInfo'
 import { BOOK_LINK, MORE_LINKS, PRIMARY_LINKS } from './navLinks'
 
@@ -26,8 +27,8 @@ const SkipLink = styled.a`
   top: calc(var(--utility-h) + var(--space-2));
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-sm);
-  background-color: var(--color-white);
-  color: var(--color-ink-900);
+  background-color: var(--color-surface);
+  color: var(--color-heading);
   font-weight: 600;
   transform: translateY(-400%);
 
@@ -49,7 +50,7 @@ const Container = styled.div`
 
 const UtilityBar = styled.div`
   height: var(--utility-h);
-  background-color: var(--color-ink-900);
+  background-color: var(--color-band);
   color: var(--color-grey-300);
   font-size: var(--text-xs);
   display: flex;
@@ -79,7 +80,7 @@ const EmailLink = styled.a`
 `
 
 const MainBar = styled.div`
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-line);
 
   & > div {
@@ -116,20 +117,20 @@ const navItem = css`
   background: none;
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--color-ink-500);
+  color: var(--color-text);
   white-space: nowrap;
   transition:
     color 0.2s,
     background-color 0.2s;
 
   &:hover {
-    color: var(--color-ink-900);
+    color: var(--color-heading);
     background-color: var(--color-paper);
   }
 `
 
 const activeMark = css`
-  color: var(--color-ink-900);
+  color: var(--color-heading);
   font-weight: 600;
   box-shadow: inset 0 -2px 0 var(--color-signal);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
@@ -169,7 +170,7 @@ const MoreList = styled.ul`
   padding: var(--space-2);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-lg);
 `
 
@@ -179,14 +180,14 @@ const MoreLink = styled(NavLink)`
   border-radius: var(--radius-sm);
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   &:hover {
-    color: var(--color-ink-900);
+    color: var(--color-heading);
     background-color: var(--color-paper);
   }
   &.active {
-    color: var(--color-ink-900);
+    color: var(--color-heading);
     font-weight: 600;
     box-shadow: inset 2px 0 0 var(--color-signal);
   }
@@ -218,11 +219,11 @@ const MenuButton = styled.button`
   justify-content: center;
   width: 4.4rem;
   height: 4.4rem;
-  margin-left: auto;
+  margin-left: var(--space-2);
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-sm);
   background: none;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 
   & svg {
     width: 2.6rem;
@@ -234,6 +235,15 @@ const MenuButton = styled.button`
 
   @media ${devicesMax.lg} {
     display: inline-flex;
+  }
+`
+
+// Beside the CTA on desktop; pushed right, before the menu button, on phones.
+const HeaderToggle = styled(ThemeToggle)`
+  margin-left: var(--space-3);
+
+  @media ${devicesMax.lg} {
+    margin-left: auto;
   }
 `
 
@@ -356,6 +366,7 @@ function SiteHeader() {
               </li>
             </NavList>
           </DesktopNav>
+          <HeaderToggle />
           <MenuButton
             ref={menuButtonRef}
             type="button"

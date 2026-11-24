@@ -27,7 +27,7 @@ const Kicker = styled.p`
   font-family: var(--font-mono);
   font-size: 1.3rem;
   letter-spacing: 0.02em;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 // The one place the type is pushed: Archivo at its widest, heaviest setting.
@@ -37,11 +37,11 @@ const Title = styled.h1`
   font-stretch: 125%;
   line-height: 1.02;
   letter-spacing: -0.025em;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 
   & em {
     font-style: normal;
-    color: var(--color-signal);
+    color: var(--color-link);
   }
 `
 
@@ -49,7 +49,7 @@ const Lead = styled.p`
   max-width: 34em;
   margin-top: var(--space-6);
   font-size: var(--text-lg);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Actions = styled.div`
@@ -67,11 +67,11 @@ const Creds = styled.ul`
   padding-top: var(--space-5);
   border-top: 1px solid var(--color-line);
   font-size: 1.5rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & strong {
     font-weight: 600;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
 `
 

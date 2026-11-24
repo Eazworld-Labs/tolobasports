@@ -61,9 +61,9 @@ const Logo = styled.li`
   width: 200px;
   height: 120px;
   padding: 12px;
-  border: 1px solid var(--color-grey-200);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 `
 
 const Img = styled.img`
@@ -91,15 +91,15 @@ const Toggle = styled.button`
   height: 4.4rem;
   border: 1px solid var(--color-grey-300);
   border-radius: var(--radius-pill);
-  background-color: var(--color-white);
-  color: var(--color-ink-700);
+  background-color: var(--color-surface);
+  color: var(--color-heading);
 
   & svg {
     width: 2rem;
     height: 2rem;
   }
   &:hover {
-    background-color: var(--color-grey-100);
+    background-color: var(--color-paper);
   }
 `
 

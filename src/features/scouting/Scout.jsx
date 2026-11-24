@@ -16,7 +16,7 @@ const Page = styled.div`
 const Notice = styled.section`
   padding-block: var(--space-9);
   background-color: var(--color-lime);
-  color: var(--color-ink-900);
+  color: var(--color-ink-900); /* navy on lime in both themes */
 `
 
 const NoticeInner = styled(Container)`

@@ -23,7 +23,7 @@ const Band = styled.section`
   background-color: ${(props) =>
     props.$tone === 'ink' || props.$tone === 'grey'
       ? 'var(--color-paper)'
-      : 'var(--color-white)'};
+      : 'var(--color-surface)'};
   border-top: 1px solid var(--color-line);
 
   @media ${devicesMax.md} {
@@ -35,7 +35,7 @@ const SectionTitle = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const IntroGrid = styled.div`
@@ -55,11 +55,11 @@ const Lead = styled.p`
   margin-top: var(--space-6);
   font-size: var(--text-xl);
   line-height: 1.6;
-  color: var(--color-grey-700);
+  color: var(--color-text);
   hyphens: manual;
 
   & strong {
-    color: var(--color-signal-600);
+    color: var(--color-link);
   }
 `
 
@@ -83,7 +83,7 @@ const FactList = styled.ul`
 
 const Fact = styled.li`
   padding: var(--space-6) 0 0;
-  border-top: 1px solid var(--color-ink-900);
+  border-top: 1px solid var(--color-heading);
 `
 
 const FactValue = styled.p`
@@ -92,7 +92,7 @@ const FactValue = styled.p`
   font-size: var(--heading-3);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 
   &::first-letter {
     text-transform: uppercase;
@@ -103,7 +103,7 @@ const FactCaption = styled.p`
   margin-top: var(--space-2);
   font-family: var(--font-mono);
   font-size: 1.3rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const ProcessGrid = styled.div`
@@ -141,7 +141,7 @@ const Card = styled.li`
   padding: var(--space-7);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-sm);
 
   & p {
@@ -153,7 +153,7 @@ const Card = styled.li`
 const CardTitle = styled.h3`
   font-size: var(--heading-3);
   font-weight: 700;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Videos = styled.div`
@@ -187,7 +187,7 @@ const Person = styled.li`
   overflow: hidden;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 `
 
 const PersonPhoto = styled(Picture)`
@@ -196,7 +196,7 @@ const PersonPhoto = styled(Picture)`
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  background-color: var(--color-grey-100);
+  background-color: var(--color-paper);
 `
 
 const PersonText = styled.div`
@@ -208,7 +208,7 @@ const PersonName = styled.h3`
   font-size: var(--text-lg);
   font-weight: 700;
   line-height: 1.25;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
   text-transform: capitalize;
   text-wrap: balance;
 `
@@ -216,7 +216,7 @@ const PersonName = styled.h3`
 const PersonTitle = styled.p`
   margin-top: var(--space-1);
   font-size: 1.5rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Panel = styled.div`
@@ -224,7 +224,7 @@ const Panel = styled.div`
   overflow: hidden;
   padding: var(--space-10) var(--space-10);
   border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
+  background-color: var(--color-band);
   color: var(--color-white);
 
   @media ${devicesMax.md} {

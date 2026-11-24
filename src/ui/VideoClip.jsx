@@ -18,7 +18,7 @@ const Player = styled.video`
 const Caption = styled.figcaption`
   margin-top: var(--space-3);
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & span {
     font-family: var(--font-mono);

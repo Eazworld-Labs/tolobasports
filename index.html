@@ -2,6 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<script>
+			// Apply a saved light/dark choice before first paint (no flash).
+			// Without one, the CSS follows the system setting.
+			try {
+				var t = localStorage.getItem('theme')
+				if (t === 'light' || t === 'dark')
+					document.documentElement.setAttribute('data-theme', t)
+			} catch (e) {}
+		</script>
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
@@ -23,6 +32,12 @@
 		<meta
 			name="theme-color"
 			content="#ffffff"
+			media="(prefers-color-scheme: light)"
+		/>
+		<meta
+			name="theme-color"
+			content="#0f1a29"
+			media="(prefers-color-scheme: dark)"
 		/>
 		<meta
 			name="description"

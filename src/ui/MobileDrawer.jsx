@@ -40,7 +40,7 @@ const Panel = styled.div`
   flex-direction: column;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: var(--color-ink-900);
+  background-color: var(--color-band);
   box-shadow: var(--shadow-lg);
   transform: translateX(${(props) => (props.$open ? '0' : '100%')});
   transition: transform 0.3s ease;

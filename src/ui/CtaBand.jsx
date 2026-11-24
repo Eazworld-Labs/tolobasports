@@ -9,7 +9,7 @@ import Reveal from './Reveal'
 const Band = styled.section`
   padding-block: ${(props) =>
     props.$slim ? 'var(--space-9)' : 'var(--space-11)'};
-  background-color: var(--color-ink-900);
+  background-color: var(--color-band);
   color: var(--color-white);
   text-align: ${(props) => (props.$slim ? 'center' : 'left')};
 

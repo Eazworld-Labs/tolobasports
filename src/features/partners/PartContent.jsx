@@ -14,8 +14,8 @@ const Band = styled.section`
     props.$tone === 'ink'
       ? 'var(--color-ink-900)'
       : props.$tone === 'grey'
-      ? 'var(--color-grey-50)'
-      : 'var(--color-white)'};
+      ? 'var(--color-paper)'
+      : 'var(--color-surface)'};
 
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
@@ -48,11 +48,11 @@ const Lead = styled.p`
   max-width: 60ch;
   font-size: var(--text-xl);
   line-height: 1.6;
-  color: var(--color-grey-700);
+  color: var(--color-text);
   hyphens: manual;
 
   & strong {
-    color: var(--color-signal-600);
+    color: var(--color-link);
   }
 `
 
@@ -100,14 +100,14 @@ const Card = styled.li`
   padding: var(--space-7) var(--space-6);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
-  color: var(--color-ink-500);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 `
 
 const CardTitle = styled.h3`
   font-size: 2rem;
   line-height: 1.2;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const CardText = styled.p`

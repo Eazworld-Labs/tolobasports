@@ -22,7 +22,7 @@ const Page = styled.div`
 
 const Options = styled.section`
   padding-block: var(--space-11);
-  background-color: var(--color-grey-50);
+  background-color: var(--color-paper);
 
   @media ${devicesMax.md} {
     padding-block: var(--space-9);
@@ -53,7 +53,7 @@ const Card = styled.li`
   overflow: hidden;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-sm);
 `
 
@@ -65,12 +65,12 @@ const Body = styled.div`
 const CardTitle = styled.h3`
   font-size: var(--heading-3);
   font-weight: 700;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Msg = styled.p`
   margin-top: var(--space-3);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Acts = styled.ul`
@@ -80,7 +80,7 @@ const Acts = styled.ul`
 `
 
 const Act = styled.li`
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 function MentoringContent() {

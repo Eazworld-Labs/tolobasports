@@ -44,7 +44,7 @@ const Tile = styled.button`
   overflow: hidden;
   border: none;
   border-radius: var(--radius-sm);
-  background-color: var(--color-grey-100);
+  background-color: var(--color-paper);
   box-shadow: var(--shadow-sm);
   cursor: zoom-in;
   line-height: 0;

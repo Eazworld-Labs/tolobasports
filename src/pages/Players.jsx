@@ -20,7 +20,7 @@ import { steps } from '../features/home/homeContent'
 const Block = styled.section`
   padding-block: clamp(5.6rem, 8vw, 9.6rem);
   background-color: ${(props) =>
-    props.$tone === 'paper' ? 'var(--color-paper)' : 'var(--color-white)'};
+    props.$tone === 'paper' ? 'var(--color-paper)' : 'var(--color-surface)'};
   scroll-margin-top: 8rem;
 
   & + & {
@@ -55,7 +55,7 @@ const Story = styled.li`
   }
   & h3 {
     font-size: 2rem;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & dl {
     display: grid;
@@ -67,14 +67,14 @@ const Story = styled.li`
   & dt {
     font-family: var(--font-mono);
     font-size: 1.3rem;
-    color: var(--color-ink-500);
+    color: var(--color-text);
   }
   & dd {
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & p {
     margin-top: var(--space-4);
-    color: var(--color-ink-500);
+    color: var(--color-text);
   }
 `
 
@@ -97,11 +97,11 @@ const StepList = styled.ol`
     place-items: center;
     width: 3.6rem;
     height: 3.6rem;
-    border: 1.5px solid var(--color-ink-900);
+    border: 1.5px solid var(--color-heading);
     border-radius: 50%;
     font-family: var(--font-mono);
     font-size: 1.4rem;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & h3 {
     font-family: var(--font-body);
@@ -109,11 +109,11 @@ const StepList = styled.ol`
     font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: 0;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & p {
     font-size: 1.5rem;
-    color: var(--color-ink-500);
+    color: var(--color-text);
   }
 `
 
@@ -129,12 +129,12 @@ const ApplyGrid = styled(Container)`
 
 const ApplyTitle = styled.h2`
   font-size: var(--heading-2);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const ApplyIntro = styled.p`
   margin-top: var(--space-4);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const Small = styled.h3`
@@ -142,7 +142,7 @@ const Small = styled.h3`
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-line);
   font-size: 1.8rem;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 function Players() {

@@ -17,12 +17,12 @@ const Wrap = styled.div`
 
 const Title = styled.h2`
   font-size: var(--heading-2);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Intro = styled.p`
   max-width: 44ch;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 function SectionHead({ id, title, intro }) {

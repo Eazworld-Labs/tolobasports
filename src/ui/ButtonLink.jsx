@@ -43,20 +43,20 @@ const ButtonLink = styled(Link)`
       color: var(--color-white);
 
       &:hover {
-        background-color: var(--color-white);
-        color: var(--color-ink-900);
+        background-color: var(--color-surface);
+        color: var(--color-heading);
       }
     `}
 
   ${(props) =>
     props.$variant === 'outline' &&
     css`
-      border-color: var(--color-ink-700);
-      color: var(--color-ink-700);
+      border-color: var(--color-heading);
+      color: var(--color-heading);
 
       &:hover {
-        background-color: var(--color-ink-700);
-        color: var(--color-white);
+        background-color: var(--color-heading);
+        color: var(--color-surface);
       }
     `}
 `

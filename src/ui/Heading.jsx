@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 const Heading = styled.h1`
   font-family: var(--font-heading);
   font-stretch: var(--heading-stretch);
-  color: var(--color-ink-900);
+  color: var(--color-heading);
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-wrap: balance;

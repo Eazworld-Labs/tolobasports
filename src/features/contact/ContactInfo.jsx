@@ -14,7 +14,7 @@ const Who = styled.ul`
   & li {
     position: relative;
     padding-left: var(--space-6);
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
   & li::before {
     content: '';
@@ -23,7 +23,7 @@ const Who = styled.ul`
     top: 0.55em;
     width: 1rem;
     height: 1rem;
-    border: 1.5px solid var(--color-ink-900);
+    border: 1.5px solid var(--color-heading);
     border-radius: 50%;
     background-color: var(--color-lime);
   }
@@ -34,7 +34,7 @@ const Title = styled.h2`
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-line);
   font-size: 2rem;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const List = styled.address`
@@ -49,27 +49,27 @@ const Row = styled.p`
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & svg {
     flex: none;
     width: 2rem;
     height: 2rem;
     margin-top: 0.3rem;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
 `
 
 const TextLink = styled.a`
   font-weight: 600;
-  color: var(--color-signal);
+  color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.4rem;
   overflow-wrap: anywhere;
 
   &:hover {
-    color: var(--color-signal-700);
+    color: var(--color-link-hover);
   }
 `
 

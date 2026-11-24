@@ -7,7 +7,7 @@ const Card = styled.figure`
   padding: var(--space-5) var(--space-5) var(--space-4);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 `
 
 const Head = styled.div`
@@ -17,13 +17,13 @@ const Head = styled.div`
   gap: var(--space-3);
   font-family: var(--font-mono);
   font-size: 1.2rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 
   & strong {
     font-family: var(--font-body);
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-ink-900);
+    color: var(--color-heading);
   }
 `
 
@@ -34,7 +34,7 @@ const Map = styled.svg`
   margin-top: var(--space-2);
 
   & .dot {
-    fill: #c9d1cb;
+    fill: var(--color-map-dot);
   }
   & .arc {
     fill: none;
@@ -43,23 +43,23 @@ const Map = styled.svg`
     stroke-dasharray: 5 5;
   }
   & .city {
-    fill: var(--color-white);
-    stroke: var(--color-ink-900);
+    fill: var(--color-surface);
+    stroke: var(--color-heading);
     stroke-width: 1.6;
   }
   & .home {
     fill: var(--color-lime);
-    stroke: var(--color-ink-900);
+    stroke: var(--color-heading);
     stroke-width: 1.6;
   }
   & text {
     font-family: var(--font-mono);
     font-size: 12px;
-    fill: var(--color-ink-900);
+    fill: var(--color-heading);
   }
   & text.coord {
     font-size: 10.5px;
-    fill: var(--color-ink-500);
+    fill: var(--color-text);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -77,7 +77,7 @@ const Map = styled.svg`
 const Caption = styled.figcaption`
   margin-top: var(--space-2);
   font-size: 1.4rem;
-  color: var(--color-ink-500);
+  color: var(--color-text);
 `
 
 const DOTS = []

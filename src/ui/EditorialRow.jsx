@@ -11,7 +11,7 @@ import YoutubeEmbed from './YoutubeEmbed'
 const Row = styled.section`
   padding-block: var(--space-9);
   background-color: ${(props) =>
-    props.$tone === 'grey' ? 'var(--color-grey-50)' : 'var(--color-white)'};
+    props.$tone === 'grey' ? 'var(--color-paper)' : 'var(--color-surface)'};
 
   @media ${devicesMax.md} {
     padding-block: var(--space-8);
@@ -44,18 +44,18 @@ const Title = styled.h2`
   font-size: var(--heading-2);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-ink-900);
+  color: var(--color-heading);
 `
 
 const Paragraph = styled.p`
   margin-top: var(--space-5);
   font-size: var(--text-lg);
   line-height: 1.75;
-  color: var(--color-grey-700);
+  color: var(--color-text);
   hyphens: manual;
 
   & strong {
-    color: var(--color-signal-600);
+    color: var(--color-link);
   }
 `
 

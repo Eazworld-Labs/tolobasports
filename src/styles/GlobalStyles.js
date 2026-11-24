@@ -2,15 +2,63 @@ import { createGlobalStyle } from 'styled-components'
 import { devicesMax } from './BreakPoint'
 
 // Design tokens. 1rem = 10px (see html font-size below).
+// Light theme roles (default).
+const lightRoles = `
+  color-scheme: light;
+  --color-bg: #fff;
+  --color-surface: #fff; /* page and card background */
+  --color-paper: #f4f6f3; /* alternate section background */
+  --color-line: #d8ded9;
+  --color-line-strong: #b7c0b9; /* form borders: 3:1 */
+  --color-heading: #13233a;
+  --color-text: #4a5a6e; /* 6.9:1 on white */
+  --color-text-strong: #13233a;
+  --color-text-muted: #4a5a6e;
+  --color-link: #c91d37; /* 5.7:1 on white */
+  --color-link-hover: #a8172d;
+  --color-band: #13233a; /* navy bands: footer, booking band, drawer */
+  --color-map-dot: #c9d1cb;
+  --color-focus: #ea2642; /* 4.3:1 on white, 4.0:1 on paper, 3.7:1 on navy */
+  --color-backdrop: rgba(19, 35, 58, 0.6);
+`
+
+// Dark theme roles. Text is 9:1+, links 6.8:1, form borders 3.5:1 on the surface.
+const darkRoles = `
+  color-scheme: dark;
+  --color-bg: #0f1a29;
+  --color-surface: #0f1a29;
+  --color-paper: #142236;
+  --color-line: #27384e;
+  --color-line-strong: #5d7290;
+  --color-heading: #f1f4f7;
+  --color-text: #b7c3cf;
+  --color-text-strong: #f1f4f7;
+  --color-text-muted: #b7c3cf;
+  --color-link: #ff7b8c;
+  --color-link-hover: #ffa3af;
+  --color-band: #0a1220;
+  --color-map-dot: #2c3d53;
+  --color-focus: #ff7b8c;
+  --color-backdrop: rgba(5, 10, 18, 0.72);
+`
+
 const GlobalStyles = createGlobalStyle`
+/* Dark when the visitor chose it, or when their system is dark and they have
+   not chosen light. index.html sets data-theme from the saved choice before paint. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    ${darkRoles}
+  }
+}
+:root[data-theme='dark'] {
+  ${darkRoles}
+}
+
 :root {
   /* Colour: brand (clean consultancy) */
   --color-ink-900: #13233a; /* navy: headings, footer */
   --color-ink-700: #24364f;
   --color-ink-500: #4a5a6e; /* body text: 6.9:1 on white */
-  --color-paper: #f4f6f3; /* pale pitch-grey section background */
-  --color-line: #d8ded9; /* 1px dividers and card borders */
-  --color-line-strong: #b7c0b9; /* form field borders: 3:1 on white */
   --color-signal: #c91d37; /* actions; white text on it is 5.7:1 */
   --color-signal-600: #c91d37;
   --color-signal-700: #a8172d;
@@ -31,13 +79,8 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #24364f;
   --color-grey-900: #13233a;
 
-  /* Colour: roles */
-  --color-text: var(--color-ink-500);
-  --color-text-strong: var(--color-ink-900);
-  --color-text-muted: var(--color-ink-500);
-  --color-bg: var(--color-white);
-  --color-focus: #ea2642; /* 4.3:1 on white, 4.0:1 on paper, 3.7:1 on navy */
-  --color-backdrop: rgba(19, 35, 58, 0.6);
+  /* Colour: roles. Components use these, so the dark theme only swaps this block. */
+  ${lightRoles}
 
   /* Type: families. Archivo is set wide (font-stretch) for headings. */
   --font-heading: 'Archivo', system-ui, sans-serif;
