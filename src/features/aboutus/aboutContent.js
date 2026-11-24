@@ -46,8 +46,27 @@ export const videos = ['airport-welcome-drummers', 'office-meeting']
 export const teamHeading = 'Our Team'
 
 // The team section appears when this list has entries.
-// Each: { name, title, photo (key in ui/photos.js), position? }.
+// Each: { name, title, photo (key in ui/photos.js), position? }. Leave `name`
+// empty until it is known; the card then shows the role only.
 export const team = [
+  {
+    name: '',
+    title: 'General Manager',
+    photo: 'team-general-manager',
+    position: '50% 25%',
+  },
+  {
+    name: 'Mustapha Alhassan',
+    title: 'Chief Scout',
+    photo: 'team-mustapha-alhassan',
+    position: '50% 25%',
+  },
+  {
+    name: 'Suleiman Yakub Alfa',
+    title: 'Public Relations Officer',
+    photo: 'team-suleiman-yakub-alfa',
+    position: '50% 25%',
+  },
   {
     name: 'Francis Dzameshie',
     title: 'Administrator',

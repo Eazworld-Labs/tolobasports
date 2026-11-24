@@ -374,18 +374,21 @@ function AboutDetail() {
               {team.map((person, index) => (
                 <Reveal
                   as={Person}
-                  key={person.name}
+                  key={person.photo}
                   delay={stagger(index, { step: 100 })}
                 >
                   <PersonPhoto
                     photo={person.photo}
-                    alt={person.name}
+                    alt={
+                      person.name || `${person.title}, Toloba Sports Consult`
+                    }
                     position={person.position}
                     sizes="(max-width: 1024px) 46vw, 22vw"
                   />
                   <PersonText>
-                    <PersonName>{person.name}</PersonName>
-                    <PersonTitle>{person.title}</PersonTitle>
+                    {/* Without a name yet, the role stands in as the heading. */}
+                    <PersonName>{person.name || person.title}</PersonName>
+                    {person.name && <PersonTitle>{person.title}</PersonTitle>}
                   </PersonText>
                 </Reveal>
               ))}
