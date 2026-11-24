@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
+import {
+  HiOutlineEnvelope,
+  HiOutlineMapPin,
+  HiOutlinePhone,
+} from 'react-icons/hi2'
+import { FaWhatsapp } from 'react-icons/fa'
 import { SITE } from '../../ui/siteInfo'
 import { infoHeading, whoFor } from './contactCopy'
 
@@ -90,6 +95,26 @@ function ContactInfo() {
         <Row>
           <HiOutlineEnvelope aria-hidden="true" />
           <TextLink href={`mailto:${SITE.email}`}>{SITE.email}</TextLink>
+        </Row>
+        {SITE.phones.map((ph) => (
+          <Row key={ph.tel}>
+            <HiOutlinePhone aria-hidden="true" />
+            <span>
+              <TextLink href={`tel:${ph.tel}`}>{ph.display}</TextLink> (
+              {ph.label})
+            </span>
+          </Row>
+        ))}
+        <Row>
+          <FaWhatsapp aria-hidden="true" />
+          <TextLink
+            href={SITE.whatsapp.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp {SITE.whatsapp.display}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </TextLink>
         </Row>
         <Row>
           <span aria-hidden="true" style={{ width: '2rem' }} />

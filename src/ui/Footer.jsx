@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import { HiOutlineEnvelope, HiOutlineMapPin } from 'react-icons/hi2'
+import {
+  HiOutlineEnvelope,
+  HiOutlineMapPin,
+  HiOutlinePhone,
+} from 'react-icons/hi2'
+import { FaWhatsapp } from 'react-icons/fa'
 import { devicesMax } from '../styles/BreakPoint'
 import Logo from './Logo'
 import Reveal from './Reveal'
@@ -180,6 +185,31 @@ function Footer() {
               <HiOutlineEnvelope aria-hidden="true" />
               <InlineLink href={`mailto:${SITE.email}`}>
                 {SITE.email}
+              </InlineLink>
+            </ContactRow>
+            <ContactRow>
+              <HiOutlinePhone aria-hidden="true" />
+              <span>
+                {SITE.phones.map((ph, n) => (
+                  <span key={ph.tel}>
+                    {n > 0 && <br />}
+                    <InlineLink href={`tel:${ph.tel}`}>
+                      {ph.display}
+                    </InlineLink>{' '}
+                    ({ph.label})
+                  </span>
+                ))}
+              </span>
+            </ContactRow>
+            <ContactRow>
+              <FaWhatsapp aria-hidden="true" />
+              <InlineLink
+                href={SITE.whatsapp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp {SITE.whatsapp.display}
+                <span className="sr-only"> (opens in a new tab)</span>
               </InlineLink>
             </ContactRow>
           </ContactList>

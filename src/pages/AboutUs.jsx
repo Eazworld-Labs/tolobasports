@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { HiArrowUpRight } from 'react-icons/hi2'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from '../ui/Container'
 import CtaBand from '../ui/CtaBand'
@@ -14,6 +15,7 @@ import Statement from '../ui/kit/Statement'
 import TextLink from '../ui/kit/TextLink'
 import {
   career,
+  community,
   facts,
   hero,
   record,
@@ -68,6 +70,69 @@ const RecordGrid = styled.div`
 
   @media ${devicesMax.lg} {
     grid-template-columns: minmax(0, 1fr);
+  }
+`
+
+/* In the community: a short, sourced note under the track record */
+
+const Community = styled.section`
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr) auto;
+  gap: var(--space-3) var(--space-7);
+  align-items: baseline;
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-line);
+
+  & > p:first-child {
+    margin: 0;
+  }
+  & h3 {
+    grid-column: 1;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: var(--color-heading);
+  }
+  & > p:not(:first-child) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    max-width: 56ch;
+    color: var(--color-text);
+  }
+  & > a {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  @media ${devicesMax.lg} {
+    grid-template-columns: minmax(0, 1fr);
+
+    & h3,
+    & > p:not(:first-child),
+    & > a {
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+`
+
+const ExternalLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 600;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4rem;
+  white-space: nowrap;
+
+  & svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  &:hover {
+    color: var(--color-link-hover);
   }
 `
 
@@ -179,6 +244,20 @@ function AboutUs() {
             <Statement>{record.statement}</Statement>
             <p>{record.text}</p>
           </RecordGrid>
+          <Community aria-labelledby="community-title">
+            <Kicker>{community.kicker}</Kicker>
+            <h3 id="community-title">{community.title}</h3>
+            <p>{community.text}</p>
+            <ExternalLink
+              href={community.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {community.link.label}
+              <HiArrowUpRight aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </ExternalLink>
+          </Community>
         </Container>
       </Block>
 

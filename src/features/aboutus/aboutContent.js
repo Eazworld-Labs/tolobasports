@@ -83,6 +83,17 @@ export const record = {
   text: 'The measure of our success is reflected in the achievements of the players we have nurtured. Their journeys inspire us and stand as testaments to our commitment to nurturing the stars of tomorrow.',
 }
 
+// Sourced from the Modern Ghana report of 8 December 2023.
+export const community = {
+  kicker: 'In the community',
+  title: 'Supporting grassroots football',
+  text: 'In December 2023 we supported the Laiyah Cup football gala in Accra, donating water and drinks to the organisers. Talented players from Nima, Maamobi and Accra Newtown were scouted at Kawukudi Park.',
+  link: {
+    label: 'Read the Modern Ghana report',
+    url: 'https://www.modernghana.com/sports/1278595/toloba-sports-consult-ceo-supports-grassroots-foot.html',
+  },
+}
+
 export const teamHeading = 'Our Team'
 
 // The team section appears when this list has entries.

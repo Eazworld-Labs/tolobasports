@@ -138,21 +138,9 @@ export const field = {
   cta: { label: 'See the full gallery', to: '/image-gallery' },
 }
 
-// "In the news": the GhanaWeb story as the featured card, and the latest blog
-// post beside it. No dates are shown because none are recorded.
+// "In the news". The stories themselves are in features/news/press.js and
+// features/blog/blogPosts.js.
 export const news = {
   heading: 'In the news',
-  intro: 'Press coverage and stories from our work.',
   all: { label: 'All news', to: '/blog' },
-  source: 'GhanaWeb',
-  headline:
-    'Musah Toloba recognised for sports initiatives and offered a collaboration by the Turcaf President',
-  summary:
-    'Mr. Musah Toloba, the Founder and CEO of Toloba Sports Consult, received commendation and a collaboration proposal from Mr. Muhammet Ali Aras, the President of Turcaf, for his efforts in identifying and nurturing talents.',
-  videoId: 'R4WnMNK6zQ0',
-  videoTitle: 'Toloba Sports Consult and Turcaf collaboration',
-  link: {
-    label: 'Read the full story on GhanaWeb',
-    url: 'https://ghanaweb.mobi/ghanaian-entrepreneur-musah-toloba-recognized-for-sports-initiatives-and-receives-collaboration-offer-from-turcaf-president/',
-  },
 }

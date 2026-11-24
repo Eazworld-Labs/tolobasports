@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import { devicesMax } from '../styles/BreakPoint'
 import Container from '../ui/Container'
 import PageHero from '../ui/kit/PageHero'
+import Block from '../ui/kit/Block'
+import SectionHead from '../ui/SectionHead'
+import NewsList from '../features/news/NewsList'
+import { pressItem } from '../features/news/newsItems'
+import { press } from '../features/news/press'
 import Picture from '../ui/Picture'
 import Reveal from '../ui/Reveal'
 import { blogTitle, posts } from '../features/blog/blogPosts'
@@ -127,6 +132,17 @@ function Blog() {
           </List>
         </Container>
       </Wrap>
+
+      <Block $tone="paper" aria-labelledby="press-title">
+        <Container>
+          <SectionHead
+            id="press-title"
+            title="Press coverage"
+            intro="What the media has written about our work. Each story opens on the publisher's site."
+          />
+          <NewsList items={press.map(pressItem)} />
+        </Container>
+      </Block>
     </>
   )
 }

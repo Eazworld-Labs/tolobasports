@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { FaFacebookF, FaInstagram } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { SITE } from './siteInfo'
 
 const List = styled.ul`
@@ -71,6 +71,17 @@ function SocialLinks({ size = 'sm' }) {
           $size={size}
         >
           <FaInstagram aria-hidden="true" />
+        </IconLink>
+      </li>
+      <li>
+        <IconLink
+          href={SITE.whatsapp.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with Toloba Sports Consult on WhatsApp (opens in a new tab)"
+          $size={size}
+        >
+          <FaWhatsapp aria-hidden="true" />
         </IconLink>
       </li>
     </List>
