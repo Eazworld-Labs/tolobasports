@@ -4,10 +4,8 @@ import { devicesMax } from '../../styles/BreakPoint'
 import ButtonLink from '../../ui/ButtonLink'
 import Container from '../../ui/Container'
 import Picture from '../../ui/Picture'
-import VideoClip from '../../ui/VideoClip'
-import { PHOTOS } from '../../ui/photos'
 import SectionHead from '../../ui/SectionHead'
-import { field, paths, services, steps } from './homeContent'
+import { paths, services, steps } from './homeContent'
 
 const Block = styled.section`
   padding-block: clamp(5.6rem, 8vw, 10.4rem);
@@ -45,12 +43,24 @@ const PathGrid = styled.ul`
   }
 `
 
+// The whole card is the click target: the link's ::after covers it.
 const Path = styled.li`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-7) var(--space-6);
   background-color: var(--color-surface);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--color-paper);
+  }
+  & a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
 
   & + & {
     border-left: 1px solid var(--color-line);
@@ -110,7 +120,7 @@ const ServiceGrid = styled(Container)`
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(3.2rem, 5vw, 6.4rem);
-  align-items: start;
+  align-items: center;
 
   @media ${devicesMax.lg} {
     grid-template-columns: minmax(0, 1fr);
@@ -121,7 +131,7 @@ const ServicePhoto = styled(Picture)`
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--radius-md);
 
@@ -259,6 +269,10 @@ const Step = styled.li`
   }
 `
 
+const StepsFoot = styled.div`
+  margin-top: var(--space-9);
+`
+
 export function Steps() {
   return (
     <Block $tone="paper" aria-labelledby="steps-title">
@@ -276,77 +290,9 @@ export function Steps() {
             </Step>
           ))}
         </StepList>
-      </Container>
-    </Block>
-  )
-}
-
-/* In the field */
-
-const Reel = styled(VideoClip)`
-  max-width: 96rem;
-  margin-bottom: var(--space-8);
-`
-
-const FieldGrid = styled.ul`
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: var(--space-4);
-
-  @media ${devicesMax.md} {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`
-
-const FieldPhoto = styled(Picture)`
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-`
-
-const FieldCaption = styled.p`
-  margin-top: var(--space-3);
-  font-size: 1.4rem;
-  color: var(--color-text);
-`
-
-const FieldFoot = styled.div`
-  margin-top: var(--space-8);
-`
-
-export function Field() {
-  return (
-    <Block aria-labelledby="field-title">
-      <Container>
-        <SectionHead
-          id="field-title"
-          title={field.heading}
-          intro={field.intro}
-        />
-        {field.video && <Reel video={field.video} />}
-        <FieldGrid>
-          {field.photos.map((key) => (
-            <li key={key}>
-              <figure>
-                <FieldPhoto
-                  photo={key}
-                  alt=""
-                  sizes="(max-width: 768px) 92vw, 33vw"
-                />
-                {/* The caption describes the photo, so the img itself is alt="". */}
-                <FieldCaption as="figcaption">{PHOTOS[key].alt}</FieldCaption>
-              </figure>
-            </li>
-          ))}
-        </FieldGrid>
-        <FieldFoot>
-          <ButtonLink to={field.cta.to} $variant="outline">
-            {field.cta.label}
-          </ButtonLink>
-        </FieldFoot>
+        <StepsFoot>
+          <ButtonLink to={steps.cta.to}>{steps.cta.label}</ButtonLink>
+        </StepsFoot>
       </Container>
     </Block>
   )

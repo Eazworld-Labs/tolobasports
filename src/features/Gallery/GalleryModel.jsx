@@ -211,7 +211,7 @@ function GalleryModel({
           <IconButton
             ref={closeRef}
             type="button"
-            aria-label={`Close ${noun} viewer`}
+            aria-label={noun ? `Close ${noun} viewer` : 'Close viewer'}
             onClick={onClose}
           >
             <HiOutlineXMark aria-hidden="true" />
@@ -258,14 +258,14 @@ function GalleryModel({
         <Nav onClick={closeOnBackdrop}>
           <IconButton
             type="button"
-            aria-label={`Previous ${noun}`}
+            aria-label={noun ? `Previous ${noun}` : 'Previous'}
             onClick={() => onNavigate((index - 1 + total) % total)}
           >
             <HiOutlineChevronLeft aria-hidden="true" />
           </IconButton>
           <IconButton
             type="button"
-            aria-label={`Next ${noun}`}
+            aria-label={noun ? `Next ${noun}` : 'Next'}
             onClick={() => onNavigate((index + 1) % total)}
           >
             <HiOutlineChevronRight aria-hidden="true" />

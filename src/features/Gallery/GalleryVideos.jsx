@@ -5,29 +5,11 @@ import { devicesMax } from '../../styles/BreakPoint'
 import Container from '../../ui/Container'
 import SectionHead from '../../ui/SectionHead'
 import Block from '../../ui/kit/Block'
-import { VIDEO_ORDER, VIDEOS } from '../../ui/videos'
+import { clips, formatDuration } from './gallery'
 import GalleryModel from './GalleryModel'
 
 // Videos as small poster tiles, like the photos. Clicking one opens the viewer,
 // which plays it; nothing downloads until then.
-const clips = VIDEO_ORDER.map((key) => {
-  const { width, height, title, duration } = VIDEOS[key]
-  return {
-    key,
-    group: 'Videos',
-    video: `/videos/${key}.mp4`,
-    full: `/videos/posters/${key}.webp`,
-    fullWidth: width,
-    fullHeight: height,
-    alt: title,
-    duration,
-  }
-})
-
-function formatDuration(seconds) {
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
-}
-
 const Grid = styled.ul`
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));

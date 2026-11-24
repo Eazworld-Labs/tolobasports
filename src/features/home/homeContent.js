@@ -101,6 +101,7 @@ export const services = {
 export const steps = {
   heading: 'From application to opportunity',
   intro: 'What happens after a player applies.',
+  cta: { label: 'Apply as a player', to: '/players#apply' },
   items: [
     {
       title: 'Apply',
@@ -118,12 +119,23 @@ export const steps = {
   ],
 }
 
+// A bento grid: the reel as the large tile, four photos around it. Every tile
+// opens the shared viewer. Labels are short tags, not captions.
 export const field = {
   heading: 'In the field',
   intro: 'Recent moments from our work in Ghana and abroad.',
-  video: 'highlights-reel',
-  photos: ['minister-meeting', 'airport-interview', 'para-boxing-flag'],
-  cta: { label: 'See the gallery', to: '/image-gallery' },
+  video: {
+    key: 'highlights-reel',
+    label: 'Highlights reel',
+    title: 'Watch the highlights',
+  },
+  photos: [
+    { key: 'minister-meeting', label: 'Officials' },
+    { key: 'airport-interview', label: 'Arrivals' },
+    { key: 'training-challenge', label: 'On the pitch' },
+    { key: 'para-boxing-flag', label: 'Other sports' },
+  ],
+  cta: { label: 'See the full gallery', to: '/image-gallery' },
 }
 
 // A short summary of the GhanaWeb story; the full article is linked.

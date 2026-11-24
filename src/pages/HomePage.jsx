@@ -1,6 +1,7 @@
 import CtaBand from '../ui/CtaBand'
 import Hero from '../features/home/Hero'
-import { Field, Paths, Services, Steps } from '../features/home/HomeSections'
+import FieldBento from '../features/home/FieldBento'
+import { Paths, Services, Steps } from '../features/home/HomeSections'
 import NewsArticle from '../features/home/NewsArticle'
 
 function HomePage() {
@@ -10,7 +11,7 @@ function HomePage() {
       <Paths />
       <Services />
       <Steps />
-      <Field />
+      <FieldBento />
       <NewsArticle />
       <CtaBand
         id="home-book"
