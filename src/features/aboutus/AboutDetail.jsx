@@ -6,7 +6,7 @@ import ButtonLink from '../../ui/ButtonLink'
 import Picture from '../../ui/Picture'
 import Reveal from '../../ui/Reveal'
 import { stagger } from '../../ui/stagger'
-import YoutubeEmbed from '../../ui/YoutubeEmbed'
+import VideoClip from '../../ui/VideoClip'
 import {
   career,
   highlights,
@@ -160,20 +160,13 @@ const Videos = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.$count}, minmax(0, 1fr));
   gap: var(--space-6);
-  max-width: ${(props) => (props.$count === 1 ? '90rem' : 'none')};
+  max-width: ${(props) => (props.$count === 1 ? '90rem' : '76rem')};
   margin-inline: auto;
+  align-items: start;
 
   @media ${devicesMax.md} {
     grid-template-columns: minmax(0, 1fr);
   }
-`
-
-const Video = styled.div`
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
 `
 
 const Header = styled.div`
@@ -295,7 +288,7 @@ const Mail = styled.a`
 `
 
 function AboutDetail() {
-  const embeds = videos.filter((v) => v.embedId)
+  const embeds = videos
 
   return (
     <>
@@ -360,15 +353,13 @@ function AboutDetail() {
       </Band>
 
       {embeds.length > 0 && (
-        <Band aria-label="Video">
+        <Band aria-label="Videos">
           <Container>
-            <Reveal as={Videos} $count={embeds.length} variant="scale-in">
-              {embeds.map((video) => (
-                <Video key={video.embedId}>
-                  <YoutubeEmbed embedId={video.embedId} title={video.title} />
-                </Video>
+            <Videos $count={embeds.length}>
+              {embeds.map((key) => (
+                <VideoClip key={key} video={key} />
               ))}
-            </Reveal>
+            </Videos>
           </Container>
         </Band>
       )}

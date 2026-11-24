@@ -48,8 +48,9 @@ const PAGES = {
       'Apply to be scouted and mentored by our UEFA certified coaches. Football is our focus, and athletes from other sports are welcome too.',
   },
   '/image-gallery': {
-    title: 'Images Gallery',
-    description: 'Images Gallery: photos from Toloba Sports Consult.',
+    title: 'Gallery',
+    description:
+      'Photos and videos from Toloba Sports Consult: scouting visits, partnerships, events and athletes.',
   },
   '/blog': {
     title: 'Media & Blog',

@@ -1,4 +1,5 @@
 import GalleryContent from '../features/Gallery/GalleryContent'
+import GalleryVideos from '../features/Gallery/GalleryVideos'
 import Header from '../ui/Header'
 
 function Gallery() {
@@ -6,10 +7,11 @@ function Gallery() {
     <>
       <Header
         title="Gallery"
-        intro="Moments from our scouting, partnerships, events and athletes."
+        intro="Photos and videos from our scouting, partnerships, events and athletes."
         flush
       />
       <GalleryContent />
+      <GalleryVideos />
     </>
   )
 }

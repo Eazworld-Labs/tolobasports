@@ -121,6 +121,7 @@ export const steps = {
 export const field = {
   heading: 'In the field',
   intro: 'Recent moments from our work in Ghana and abroad.',
+  video: 'highlights-reel',
   photos: ['minister-meeting', 'airport-interview', 'para-boxing-flag'],
   cta: { label: 'See the gallery', to: '/image-gallery' },
 }

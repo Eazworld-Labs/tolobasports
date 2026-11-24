@@ -6,7 +6,7 @@ import CtaBand from '../../ui/CtaBand'
 import EditorialRow from '../../ui/EditorialRow'
 import Heading from '../../ui/Heading'
 import Reveal from '../../ui/Reveal'
-import YoutubeEmbed from '../../ui/YoutubeEmbed'
+import VideoClip from '../../ui/VideoClip'
 import { announcement, closing, rising, rows } from './scoutingCopy'
 
 const Page = styled.div`
@@ -44,30 +44,25 @@ const Stars = styled.section`
 `
 
 const StarsHeader = styled.div`
-  margin-bottom: var(--space-8);
-  text-align: center;
+  max-width: 76rem;
+  margin: 0 auto var(--space-8);
 `
 
 const Videos = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.$count}, minmax(0, 1fr));
   gap: var(--space-6);
+  max-width: 76rem;
+  margin-inline: auto;
+  align-items: start;
 
   @media ${devicesMax.md} {
     grid-template-columns: minmax(0, 1fr);
   }
 `
 
-const Video = styled.div`
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background-color: var(--color-ink-900);
-  box-shadow: var(--shadow-md);
-`
-
 function Scout() {
-  const embeds = rising.videos.filter((v) => v.embedId)
+  const embeds = rising.videos
 
   return (
     <>
@@ -106,13 +101,11 @@ function Scout() {
                 {rising.heading}
               </Heading>
             </Reveal>
-            <Reveal as={Videos} $count={embeds.length} variant="scale-in">
-              {embeds.map((video) => (
-                <Video key={video.embedId}>
-                  <YoutubeEmbed embedId={video.embedId} title={video.title} />
-                </Video>
+            <Videos $count={embeds.length}>
+              {embeds.map((key) => (
+                <VideoClip key={key} video={key} />
               ))}
-            </Reveal>
+            </Videos>
           </Container>
         </Stars>
       )}

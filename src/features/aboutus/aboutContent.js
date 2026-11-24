@@ -40,11 +40,8 @@ export const photos = {
   pitch: { photo: 'scout-shirt-airport-2', position: '50% 35%' },
 }
 
-// Videos render only when embedId is not empty.
-export const videos = [
-  { embedId: 'R4WnMNK6zQ0', title: 'Toloba Sports Consult video' },
-  { embedId: '', title: 'Toloba Sports Consult video' },
-]
+// Self-hosted clips, by key in ui/videos.js.
+export const videos = ['airport-welcome-drummers', 'office-meeting']
 
 export const teamHeading = 'Our Team'
 

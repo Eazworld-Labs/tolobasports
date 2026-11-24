@@ -65,6 +65,10 @@ npx sharp-cli -i source-assets/photos/new-key.jpeg -o public/photos/new-key-1600
 
 Alt text describes only what is visible; add names once they are confirmed. Add the key to `GALLERY_ORDER` to show it in the gallery.
 
+## Videos
+
+Self-hosted clips are in `public/videos/<key>.mp4` with a poster frame in `public/videos/posters/<key>.webp`, listed in `src/ui/videos.js` (size, length, title). `<VideoClip video="key" />` shows one with controls; it loads nothing until the visitor presses play and never autoplays. Keep clips H.264 MP4 at about 1 Mbps; the originals are not kept in the repo. None have captions yet.
+
 ## Deployment
 
 The app needs a host that serves `index.html` for unknown paths, because routing happens in the browser.

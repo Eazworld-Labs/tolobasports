@@ -4,6 +4,7 @@ import { devicesMax } from '../../styles/BreakPoint'
 import ButtonLink from '../../ui/ButtonLink'
 import Container from '../../ui/Container'
 import Picture from '../../ui/Picture'
+import VideoClip from '../../ui/VideoClip'
 import { PHOTOS } from '../../ui/photos'
 import SectionHead from '../../ui/SectionHead'
 import { field, paths, services, steps } from './homeContent'
@@ -282,6 +283,11 @@ export function Steps() {
 
 /* In the field */
 
+const Reel = styled(VideoClip)`
+  max-width: 96rem;
+  margin-bottom: var(--space-8);
+`
+
 const FieldGrid = styled.ul`
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
@@ -320,6 +326,7 @@ export function Field() {
           title={field.heading}
           intro={field.intro}
         />
+        {field.video && <Reel video={field.video} />}
         <FieldGrid>
           {field.photos.map((key) => (
             <li key={key}>

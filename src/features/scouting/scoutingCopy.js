@@ -40,10 +40,8 @@ export const announcement = {
 }
 
 // The section is shown only when at least one embedId is not empty.
+// Self-hosted clips, by key in ui/videos.js.
 export const rising = {
-  heading: 'The Rising Stars',
-  videos: [
-    { embedId: '', title: 'Toloba Sports Consult video' },
-    { embedId: '', title: 'Toloba Sports Consult video' },
-  ],
+  heading: 'Scouting visits',
+  videos: ['airport-media-interview', 'airport-welcome-arrivals'],
 }
