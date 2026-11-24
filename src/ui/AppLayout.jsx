@@ -8,6 +8,12 @@ const StyledAppLayout = styled.div``
 
 const Main = styled.main`
   width: 100%;
+
+  /* Focus lands here after the skip link or a page change; it is a starting
+     point, not a control, so no ring around the whole page. */
+  &:focus {
+    outline: none;
+  }
 `
 
 function AppLayout() {

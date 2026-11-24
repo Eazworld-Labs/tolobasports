@@ -18,6 +18,11 @@ const StyledHeader = styled.header`
   position: sticky;
   top: calc(var(--utility-h) * -1);
   z-index: var(--z-header);
+
+  /* The red focus ring is under 3:1 on the navy bars; lime is over 7:1. */
+  & :focus-visible {
+    outline-color: var(--color-lime);
+  }
 `
 
 const SkipLink = styled.a`
